@@ -98,10 +98,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=OPGDPDPJ
 
 [Document4]
-DocumentPath=jeu_du_moulin_boura_SCH.SchDoc
+DocumentPath=jeu_du_moulin_boura_TouchPAD_SCH.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -115,7 +115,41 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=SKDDHITH
+DocumentUniqueId=VKIJJWCM
+
+[Document5]
+DocumentPath=jeu_du_moulin_boura_uP_SCH.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=LBZYJXZV
+
+[Document6]
+DocumentPath=jeu_du_moulin_boura_LedMatrix_SCH.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=GFDEHSZQ
 
 [Parameter1]
 Name=PCBCheckedBy
@@ -131,11 +165,11 @@ Value=--/--/--
 
 [Parameter4]
 Name=PCBName
-Value=---
+Value=jeu_du_moulin
 
 [Parameter5]
 Name=ProjectEngineer
-Value=---
+Value=Bourquenoud Alexandre
 
 [Parameter6]
 Name=ProjectLevel
@@ -155,7 +189,7 @@ Value=PROTOTYPE
 
 [Parameter10]
 Name=ProjectTitle
-Value=
+Value=Jeu du Moulin
 
 [Parameter11]
 Name=ProjectVersion
@@ -171,7 +205,7 @@ Value=---
 
 [Parameter14]
 Name=SCHDrawnDate
-Value=--/--/--
+Value=12/05/2025
 
 [Configuration1]
 Name=Sources

@@ -1,0 +1,12 @@
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:293:6:SoftDelay	2
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:37:19:TSL_acq_BankConfig	5
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:160:19:TSL_acq_BankWaitEOC	2
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:193:13:TSL_acq_GetMeas	2
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:212:14:TSL_acq_ComputeDelta	1
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:224:13:TSL_acq_ComputeMeas	1
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:235:22:TSL_acq_CheckNoise	1
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:246:17:TSL_acq_UseFilter	1
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:257:17:TSL_acq_TestReferenceOutOfRange	1
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:269:17:TSL_acq_TestFirstReferenceIsValid	1
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:110:6:TSL_acq_BankStartAcq	1
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:135:6:TSL_acq_BankStartAcq_IT	1

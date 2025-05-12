@@ -1,0 +1,6 @@
+12.05.2025:
+Je garde les touches TPD1 et TPD2(les LEDs issue des touches sont : TLEDG1,TLEDR1,TLEDG2,TLEDR2) au cas ou j'en aurai besoin plus tard pour par exemple reset,lancer,changer de mode de jeu(si mathieu veut implementer son IA LOL) la partie
+commencer schematique a 13h00...
+Page 52 datasheet STM32 "2. PA4 offers a reduced touch sensing sensitivity. It is thus recommended to use it as sampling capacitor I/O." -> a noter quelle pin est mieux que d'autre pour les condo d'échantillonage.
+Page 61 datasheet STM32 pour le découplage du uC
+Page 22 datasheet STM32 info pour cable USB

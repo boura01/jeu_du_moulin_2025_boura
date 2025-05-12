@@ -1,0 +1,12 @@
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:293:6:SoftDelay	24	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:37:19:TSL_acq_BankConfig	24	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:160:19:TSL_acq_BankWaitEOC	0	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:193:13:TSL_acq_GetMeas	0	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:212:14:TSL_acq_ComputeDelta	0	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:224:13:TSL_acq_ComputeMeas	0	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:235:22:TSL_acq_CheckNoise	0	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:246:17:TSL_acq_UseFilter	0	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:257:17:TSL_acq_TestReferenceOutOfRange	0	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:269:17:TSL_acq_TestFirstReferenceIsValid	0	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:110:6:TSL_acq_BankStartAcq	16	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c:135:6:TSL_acq_BankStartAcq_IT	16	static
