@@ -17,3 +17,6 @@ Ajout d'un interrupteur pour le circuit!
 recherche d'un empreinte sur snapmagic pour le UFQFPN48 du STM32
 Infos pour la RPP : "https://www.onsemi.com/download/application-notes/pdf/and90146-d.pdf" -> PMOS
 BOM commencer à 15:15
+Les touches sur le prototype que j'ai au 14.05.2025 marchent plutot avec un principe résistif car on touche directement le cuivre donc il n'y a pas de diélectrique pour en faire un condensateur.
+Pour les calculs de dimensionnement et autre, je vais faire sur papier et ensuite passer au format numérique si j'ai le temps.
+pas oublié de mentionné les resistance Rb pour l'USB avec la doc.
