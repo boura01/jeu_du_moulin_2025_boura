@@ -4,4 +4,16 @@ commencer schematique a 13h00...
 Page 52 datasheet STM32 "2. PA4 offers a reduced touch sensing sensitivity. It is thus recommended to use it as sampling capacitor I/O." -> a noter quelle pin est mieux que d'autre pour les condo d'échantillonage.
 Page 61 datasheet STM32 pour le découplage du uC
 Page 22 datasheet STM32 info pour cable USB
-PAS OUBLIER DE PROTEGER LE REGULATEUR DES INVERSION DE POLARITé
+PAS OUBLIER DE PROTEGER LE REGULATEUR DES INVERSIONS DE POLARITé
+13.05.2025:
+schematique depuis 8h
+Changement effectué sur les LEDs de test pour avoir un matrice et donc une pin en moins. A voir
+penser a changer les PINs du régulateur quand j'aurai choisi un model précis
+les symboles pour l'usb-c,le régulateur et les footprints pour le régulateur ont été fournis pas Yassin Noah.
+Question sur les boitier pour le STM32
+Pas oublié le trou pour le connecteur USB-C
++/-30mins theorie sur Cube -> pas oublié le clock pour les GPIO
+Ajout d'un interrupteur pour le circuit!
+recherche d'un empreinte sur snapmagic pour le UFQFPN48 du STM32
+Infos pour la RPP : "https://www.onsemi.com/download/application-notes/pdf/and90146-d.pdf" -> PMOS
+BOM commencer à 15:15
