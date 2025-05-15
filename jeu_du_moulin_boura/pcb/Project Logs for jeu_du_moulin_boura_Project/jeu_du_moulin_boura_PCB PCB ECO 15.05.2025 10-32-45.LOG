@@ -1,0 +1,8 @@
+Change Component Footprint: Designator=C1 Old Footprint=CSMD0805 New Footprint=CSMD0603
+Change component parameters: Designator = "C1" ("C1"); Footprint = "CSMD0805"; UniqueID = "\IRAXFFXU" ("\IRAXFFXU")
+Change component parameters (AddParameter): Name = "EMF_PN"; Value = "CER-HV-13"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number 1"; Value = "C0603C106M8PACTU"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tol"; Value = "0.2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "CX7R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Volt"; Value = "10V"; VariantName = "[No Variations]"

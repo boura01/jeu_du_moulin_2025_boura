@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=NetQ1_2 Pin=Q1-2
+Removed Pin From Net: NetName=NetC13_2 Pin=Q1-3
+Change Component Footprint: Designator=Q1 Old Footprint=D PAK New Footprint=SOT95P240X88-3N
+Added Pin To Net: NetName=NetC13_2 Pin=Q1-2
+Added Pin To Net: NetName=NetQ1_2 Pin=Q1-3
+Change Net Name : Old Net Name=NetQ1_2 New Net Name=NetQ1_3

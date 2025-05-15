@@ -20,3 +20,9 @@ BOM commencer à 15:15
 Les touches sur le prototype que j'ai au 14.05.2025 marchent plutot avec un principe résistif car on touche directement le cuivre donc il n'y a pas de diélectrique pour en faire un condensateur.
 Pour les calculs de dimensionnement et autre, je vais faire sur papier et ensuite passer au format numérique si j'ai le temps.
 pas oublié de mentionné les resistance Rb pour l'USB avec la doc.
+dédicace a loic pour les points de test
+FAUT CHANGER LES LEDS DE SENS !!! et autre lol
+Mentionné ce changement dans la doc 
+en regardant les schéma du datasheet, on peut voir que le courant est trop limité dans les LEDs et que la lumière sera donc faible -> changement des résistances pour la matrice
+1 -> uC au milieux et condo 2 -> touches 3 -> circuit d'alim 4 -> cablage des touches et placement des résistances 5 -> cablage des LEDs
+Pour le Pin Swapping -> Group A sont les touches capacitives, Group B sont les LEDs et Group C sont les Condensateurs de sampling

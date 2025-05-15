@@ -11,7 +11,7 @@ TimestampOutput=0
 SeparateFolders=0
 TemplateLocationPath=
 PinSwapBy_Netlabel=1
-PinSwapBy_Pin=1
+PinSwapBy_Pin=0
 AllowPortNetNames=0
 AllowSheetEntryNetNames=1
 AppendSheetNumberToLocalNets=0
@@ -23,7 +23,7 @@ DefaultPcbPcad=0
 ReorderDocumentsOnCompile=1
 NameNetsHierarchically=0
 PowerPortNamesTakePriority=0
-AutoSheetNumbering=1
+AutoSheetNumbering=0
 AutoCrossReferences=0
 NewIndexingOfSheetSymbols=0
 PushECOToAnnotationFile=1
@@ -168,61 +168,78 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document8]
+DocumentPath=jeu_du_moulin_boura_Project.Annotation
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [Parameter1]
-Name=PCBCheckedBy
-Value=---
+Name=SCHDrawnDate
+Value=12/05/2025
 
 [Parameter2]
-Name=PCBCheckedDate
-Value=---
-
-[Parameter3]
-Name=PCBDrawnDate
-Value=--/--/--
-
-[Parameter4]
-Name=PCBName
-Value=jeu_du_moulin
-
-[Parameter5]
-Name=ProjectEngineer
-Value=Bourquenoud Alexandre
-
-[Parameter6]
-Name=ProjectLevel
-Value=0
-
-[Parameter7]
-Name=ProjectPartNumber
-Value=
-
-[Parameter8]
-Name=ProjectReleaseDate
-Value=--/--/--
-
-[Parameter9]
-Name=ProjectStatus
-Value=PROTOTYPE
-
-[Parameter10]
-Name=ProjectTitle
-Value=Jeu du Moulin
-
-[Parameter11]
-Name=ProjectVersion
-Value=1.0
-
-[Parameter12]
-Name=SCHCheckedBy
-Value=---
-
-[Parameter13]
 Name=SCHCheckedDate
 Value=---
 
+[Parameter3]
+Name=SCHCheckedBy
+Value=---
+
+[Parameter4]
+Name=ProjectVersion
+Value=1.0
+
+[Parameter5]
+Name=ProjectTitle
+Value=Jeu du Moulin
+
+[Parameter6]
+Name=ProjectStatus
+Value=PROTOTYPE
+
+[Parameter7]
+Name=ProjectReleaseDate
+Value=--/--/--
+
+[Parameter8]
+Name=ProjectPartNumber
+Value=
+
+[Parameter9]
+Name=ProjectLevel
+Value=0
+
+[Parameter10]
+Name=ProjectEngineer
+Value=Bourquenoud Alexandre
+
+[Parameter11]
+Name=PCBName
+Value=jeu_du_moulin
+
+[Parameter12]
+Name=PCBDrawnDate
+Value=--/--/--
+
+[Parameter13]
+Name=PCBCheckedDate
+Value=---
+
 [Parameter14]
-Name=SCHDrawnDate
-Value=12/05/2025
+Name=PCBCheckedBy
+Value=---
 
 [Configuration1]
 Name=Sources
@@ -233,6 +250,44 @@ Variant=[No Variations]
 OutputJobsCount=0
 ContentTypeGUID=CB6F2064-E317-11DF-B822-12313F0024A2
 ConfigurationType=Source
+
+[Generic_SmartPDF]
+AutoOpenFile=-1
+AutoOpenOutJob=-1
+
+[Generic_SmartPDFSettings]
+ProjectMode=-1
+ZoomPrecision=50
+AddNetsInformation=-1
+AddNetPins=-1
+AddNetNetLabels=-1
+AddNetPorts=-1
+ShowComponentParameters=-1
+GlobalBookmarks=0
+ExportBOM=0
+TemplateFilename=Board Stack Report.XLT
+TemplateStoreRelative=-1
+PCB_PrintColor=1
+SCH_PrintColor=0
+PrintQuality=-3
+SCH_ShowNoErc=-1
+SCH_ShowParameter=-1
+SCH_ShowProbes=-1
+SCH_ShowBlankets=-1
+SCH_NoERCSymbolsToShow="Thin Cross","Thick Cross","Small Cross",Checkbox,Triangle
+SCH_ShowNote=-1
+SCH_ShowNoteCollapsed=-1
+Wir_PrintColor=0
+Ldr_PrintColor=0
+SCH_ExpandLogicalToPhysical=-1
+SCH_VariantName=[No Variations]
+SCH_ExpandComponentDesignators=-1
+SCH_ExpandNetlabels=0
+SCH_ExpandPorts=0
+SCH_ExpandSheetNumber=0
+SCH_ExpandDocumentNumber=0
+SCH_HasExpandLogicalToPhysicalSheets=-1
+SaveSettingsToOutJob=0
 
 [OutputGroup1]
 Name=Netlist Outputs
@@ -1268,13 +1323,13 @@ UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
 ComponentLibraryIdentifier0=EMF_DataBase.DbLib/Csmd
-ComponentDesignItemID0=CER-HV-09
+ComponentDesignItemID0=CER-HV-12
 ComponentSymbolReference0=E_COND-X7R
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
 ComponentLibIdentifierKind1=Library Name And Type
 ComponentLibraryIdentifier1=EMF_DataBase.DbLib/Csmd
-ComponentDesignItemID1=CER-HV-12
+ComponentDesignItemID1=CER-HV-13
 ComponentSymbolReference1=E_COND-X7R
 ComponentUpdate1=1
 ComponentIsDeviceSheet1=0
@@ -1291,57 +1346,57 @@ ComponentSymbolReference3=E_COND-X7R
 ComponentUpdate3=1
 ComponentIsDeviceSheet3=0
 ComponentLibIdentifierKind4=Library Name And Type
-ComponentLibraryIdentifier4=EMF_DataBase.DbLib/Diode
-ComponentDesignItemID4=D_BZX55_ZENER-01
-ComponentSymbolReference4=E_DIODE ZENER
+ComponentLibraryIdentifier4=EMF_DataBase.DbLib/Rsmd
+ComponentDesignItemID4=RSMD0603-04
+ComponentSymbolReference4=E_RSMD0603
 ComponentUpdate4=1
 ComponentIsDeviceSheet4=0
 ComponentLibIdentifierKind5=Library Name And Type
 ComponentLibraryIdentifier5=EMF_DataBase.DbLib/Rsmd
-ComponentDesignItemID5=RSMD0603-04
+ComponentDesignItemID5=RSMD0603-06
 ComponentSymbolReference5=E_RSMD0603
 ComponentUpdate5=1
 ComponentIsDeviceSheet5=0
 ComponentLibIdentifierKind6=Library Name And Type
 ComponentLibraryIdentifier6=EMF_DataBase.DbLib/Rsmd
-ComponentDesignItemID6=RSMD0603-06
+ComponentDesignItemID6=RSMD0603-26
 ComponentSymbolReference6=E_RSMD0603
 ComponentUpdate6=1
 ComponentIsDeviceSheet6=0
 ComponentLibIdentifierKind7=Library Name And Type
 ComponentLibraryIdentifier7=EMF_DataBase.DbLib/Rsmd
-ComponentDesignItemID7=RSMD0603-26
+ComponentDesignItemID7=RSMD0603-33
 ComponentSymbolReference7=E_RSMD0603
 ComponentUpdate7=1
 ComponentIsDeviceSheet7=0
 ComponentLibIdentifierKind8=Library Name And Type
 ComponentLibraryIdentifier8=EMF_DataBase.DbLib/Rsmd
-ComponentDesignItemID8=RSMD0603-33
+ComponentDesignItemID8=RSMD0603-81
 ComponentSymbolReference8=E_RSMD0603
 ComponentUpdate8=1
 ComponentIsDeviceSheet8=0
 ComponentLibIdentifierKind9=Library Name And Type
-ComponentLibraryIdentifier9=EMF_DataBase.DbLib/Rsmd
-ComponentDesignItemID9=RSMD0603-81
-ComponentSymbolReference9=E_RSMD0603
+ComponentLibraryIdentifier9=EMF_DataBase.DbLib/TP-PS-Trou
+ComponentDesignItemID9=TP-03
+ComponentSymbolReference9=E_TestPoint_Sonde
 ComponentUpdate9=1
 ComponentIsDeviceSheet9=0
 ComponentLibIdentifierKind10=Library Name And Type
-ComponentLibraryIdentifier10=EMF_DataBase.DbLib/TP-Trou
-ComponentDesignItemID10=TP-03
+ComponentLibraryIdentifier10=EMF_DataBase.DbLib/TP-PS-Trou
+ComponentDesignItemID10=TP-04
 ComponentSymbolReference10=E_TestPoint_Sonde
 ComponentUpdate10=1
 ComponentIsDeviceSheet10=0
 ComponentLibIdentifierKind11=Library Name And Type
-ComponentLibraryIdentifier11=EMF_DataBase.DbLib/TP-Trou
-ComponentDesignItemID11=TP-04
+ComponentLibraryIdentifier11=EMF_DataBase.DbLib/TP-PS-Trou
+ComponentDesignItemID11=TP-06
 ComponentSymbolReference11=E_TestPoint_Sonde
 ComponentUpdate11=1
 ComponentIsDeviceSheet11=0
 ComponentLibIdentifierKind12=Library Name And Type
 ComponentLibraryIdentifier12=jeu_du_moulin_boura_INTLIB.IntLib
-ComponentDesignItemID12=Condensateur 0.1uF
-ComponentSymbolReference12=Condensateur 0.1uF
+ComponentDesignItemID12=5.1k
+ComponentSymbolReference12=5.1k
 ComponentUpdate12=1
 ComponentIsDeviceSheet12=0
 ComponentLibIdentifierKind13=Library Name And Type
@@ -1370,22 +1425,28 @@ ComponentUpdate16=1
 ComponentIsDeviceSheet16=0
 ComponentLibIdentifierKind17=Library Name And Type
 ComponentLibraryIdentifier17=jeu_du_moulin_boura_INTLIB.IntLib
-ComponentDesignItemID17=USB4520-03-0-A_REVA
-ComponentSymbolReference17=USB4520-03-0-A_REVA
+ComponentDesignItemID17=TouchPAD-BILED4SMD
+ComponentSymbolReference17=TouchPAD-BILED4SMD
 ComponentUpdate17=1
 ComponentIsDeviceSheet17=0
 ComponentLibIdentifierKind18=Library Name And Type
 ComponentLibraryIdentifier18=jeu_du_moulin_boura_INTLIB.IntLib
-ComponentDesignItemID18=Voltage Regulator 3.3V
-ComponentSymbolReference18=Voltage Regulator 3.3V
+ComponentDesignItemID18=USB4520-03-0-A_REVA
+ComponentSymbolReference18=USB4520-03-0-A_REVA
 ComponentUpdate18=1
 ComponentIsDeviceSheet18=0
 ComponentLibIdentifierKind19=Library Name And Type
-ComponentLibraryIdentifier19=TouchPAD.IntLib
-ComponentDesignItemID19=TouchPAD-BILED4SMD
-ComponentSymbolReference19=TouchPAD-BILED4SMD
+ComponentLibraryIdentifier19=jeu_du_moulin_boura_INTLIB.IntLib
+ComponentDesignItemID19=Voltage Regulator 3.3V
+ComponentSymbolReference19=Voltage Regulator 3.3V
 ComponentUpdate19=1
 ComponentIsDeviceSheet19=0
+ComponentLibIdentifierKind20=Library Name And Type
+ComponentLibraryIdentifier20=jeu_du_moulin_boura_INTLIB.IntLib
+ComponentDesignItemID20=Zener 2.4V
+ComponentSymbolReference20=Zener 2.4V
+ComponentUpdate20=1
+ComponentIsDeviceSheet20=0
 FullReplace=1
 UpdateDesignatorLock=1
 UpdatePartIDLock=1
@@ -1409,63 +1470,57 @@ ParameterName3=EMF_PN
 ParameterUpdate3=1
 ParameterName4=Library Reference
 ParameterUpdate4=1
-ParameterName5=Manufacturer
+ParameterName5=Manufacturer 1
 ParameterUpdate5=1
-ParameterName6=Manufacturer 1
+ParameterName6=Manufacturer Part Number 1
 ParameterUpdate6=1
-ParameterName7=Manufacturer Part Number
+ParameterName7=Power
 ParameterUpdate7=1
-ParameterName8=Manufacturer Part Number 1
+ParameterName8=Stab(ppm)
 ParameterUpdate8=1
-ParameterName9=Power
+ParameterName9=Tol
 ParameterUpdate9=1
-ParameterName10=Stab(ppm)
+ParameterName10=Type
 ParameterUpdate10=1
-ParameterName11=Supplier 1
+ParameterName11=Value
 ParameterUpdate11=1
-ParameterName12=Supplier Part Number 1
+ParameterName12=Volt
 ParameterUpdate12=1
-ParameterName13=Supplier Unit Price 1
-ParameterUpdate13=1
-ParameterName14=Tol
-ParameterUpdate14=1
-ParameterName15=Type
-ParameterUpdate15=1
-ParameterName16=U
-ParameterUpdate16=1
-ParameterName17=Value
-ParameterUpdate17=1
-ParameterName18=Volt
-ParameterUpdate18=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
 ModelName0=CSMD0603
 ModelUpdate0=1
 ModelType1=PCBLIB
-ModelName1=CSMD0805
+ModelName1=D PAK
 ModelUpdate1=1
 ModelType2=PCBLIB
-ModelName2=DO-35
+ModelName2=GCT_USB4520-03-0-A_REVA
 ModelUpdate2=1
 ModelType3=PCBLIB
 ModelName3=RSMD0603
 ModelUpdate3=1
 ModelType4=PCBLIB
-ModelName4=Switch Slide DPDT
+ModelName4=SOD-123
 ModelUpdate4=1
 ModelType5=PCBLIB
-ModelName5=T-Connect 2030
+ModelName5=SOT95P240X88-3N
 ModelUpdate5=1
 ModelType6=PCBLIB
-ModelName6=TouchPAD-8mm+LED 4-SMD CIR
+ModelName6=Switch Slide DPDT
 ModelUpdate6=1
 ModelType7=PCBLIB
-ModelName7=TP10_22
+ModelName7=T-Connect 2030
 ModelUpdate7=1
 ModelType8=PCBLIB
-ModelName8=UFQFPN48
+ModelName8=TouchPAD-8mm+LED 4-SMD CIR
 ModelUpdate8=1
+ModelType9=PCBLIB
+ModelName9=TP10_22
+ModelUpdate9=1
+ModelType10=PCBLIB
+ModelName10=UFQFPN48
+ModelUpdate10=1
 
 [DatabaseUpdateOptions]
 SelectedOnly=0

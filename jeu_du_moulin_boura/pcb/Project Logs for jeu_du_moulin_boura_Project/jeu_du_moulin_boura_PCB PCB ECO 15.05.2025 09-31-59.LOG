@@ -1,0 +1,145 @@
+Removed Pin From Net: NetName=NetD1_2 Pin=D1-3
+Removed Pin From Net: NetName=NetD1_1 Pin=D1-4
+Removed Pin From Net: NetName=NetD2_2 Pin=D2-3
+Removed Pin From Net: NetName=NetD1_1 Pin=D2-4
+Removed Pin From Net: NetName=NetD3_2 Pin=D3-3
+Removed Pin From Net: NetName=NetD1_1 Pin=D3-4
+Removed Pin From Net: NetName=NetD1_2 Pin=D4-3
+Removed Pin From Net: NetName=NetD4_1 Pin=D4-4
+Removed Pin From Net: NetName=NetD2_2 Pin=D5-3
+Removed Pin From Net: NetName=NetD4_1 Pin=D5-4
+Removed Pin From Net: NetName=NetD3_2 Pin=D6-3
+Removed Pin From Net: NetName=NetD4_1 Pin=D6-4
+Removed Pin From Net: NetName=NetD1_2 Pin=D7-3
+Removed Pin From Net: NetName=NetD7_1 Pin=D7-4
+Removed Pin From Net: NetName=NetD2_2 Pin=D8-3
+Removed Pin From Net: NetName=NetD7_1 Pin=D8-4
+Removed Pin From Net: NetName=NetD3_2 Pin=D9-3
+Removed Pin From Net: NetName=NetD7_1 Pin=D9-4
+Removed Pin From Net: NetName=NetD1_2 Pin=D10-3
+Removed Pin From Net: NetName=NetD10_1 Pin=D10-4
+Removed Pin From Net: NetName=NetD2_2 Pin=D11-3
+Removed Pin From Net: NetName=NetD10_1 Pin=D11-4
+Removed Pin From Net: NetName=NetD3_2 Pin=D12-3
+Removed Pin From Net: NetName=NetD10_1 Pin=D12-4
+Removed Pin From Net: NetName=NetD1_2 Pin=D13-3
+Removed Pin From Net: NetName=NetD13_1 Pin=D13-4
+Removed Pin From Net: NetName=NetD2_2 Pin=D14-3
+Removed Pin From Net: NetName=NetD13_1 Pin=D14-4
+Removed Pin From Net: NetName=NetD3_2 Pin=D15-3
+Removed Pin From Net: NetName=NetD13_1 Pin=D15-4
+Removed Pin From Net: NetName=NetD1_2 Pin=D16-3
+Removed Pin From Net: NetName=NetD16_1 Pin=D16-4
+Removed Pin From Net: NetName=NetD2_2 Pin=D17-3
+Removed Pin From Net: NetName=NetD16_1 Pin=D17-4
+Removed Pin From Net: NetName=NetD3_2 Pin=D18-3
+Removed Pin From Net: NetName=NetD16_1 Pin=D18-4
+Removed Pin From Net: NetName=NetD1_2 Pin=D19-3
+Removed Pin From Net: NetName=NetD19_1 Pin=D19-4
+Removed Pin From Net: NetName=NetD2_2 Pin=D20-3
+Removed Pin From Net: NetName=NetD19_1 Pin=D20-4
+Removed Pin From Net: NetName=NetD3_2 Pin=D21-3
+Removed Pin From Net: NetName=NetD19_1 Pin=D21-4
+Removed Pin From Net: NetName=NetD1_2 Pin=D22-3
+Removed Pin From Net: NetName=NetD22_1 Pin=D22-4
+Removed Pin From Net: NetName=NetD2_2 Pin=D23-3
+Removed Pin From Net: NetName=NetD22_1 Pin=D23-4
+Removed Pin From Net: NetName=NetD3_2 Pin=D24-3
+Removed Pin From Net: NetName=NetD22_1 Pin=D24-4
+Removed Pin From Net: NetName=NetD1_2 Pin=R17-2
+Removed Pin From Net: NetName=C2_LED Pin=R18-1
+Removed Pin From Net: NetName=NetD2_2 Pin=R18-2
+Removed Pin From Net: NetName=C3_LED Pin=R19-1
+Removed Pin From Net: NetName=NetD3_2 Pin=R19-2
+Added Component: Designator=R28(RSMD0603)
+Add component (AddParameter): Name = "EMF_PN"; Value = "RSMD0603-04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "60mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stab(ppm)"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tol"; Value = "0.01"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "RSMD-0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "150E"; VariantName = "[No Variations]"
+Added Component: Designator=R29(RSMD0603)
+Add component (AddParameter): Name = "EMF_PN"; Value = "RSMD0603-04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "60mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stab(ppm)"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tol"; Value = "0.01"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "RSMD-0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "150E"; VariantName = "[No Variations]"
+Added Component: Designator=R30(RSMD0603)
+Add component (AddParameter): Name = "EMF_PN"; Value = "RSMD0603-04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "60mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stab(ppm)"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tol"; Value = "0.01"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "RSMD-0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "150E"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetD1_1 Pin=D1-3
+Added Pin To Net: NetName=NetD1_1 Pin=D2-3
+Added Pin To Net: NetName=NetD1_1 Pin=D3-3
+Added Pin To Net: NetName=NetD4_1 Pin=D4-3
+Added Pin To Net: NetName=NetD4_1 Pin=D5-3
+Added Pin To Net: NetName=NetD4_1 Pin=D6-3
+Added Pin To Net: NetName=NetD7_1 Pin=D7-3
+Added Pin To Net: NetName=NetD7_1 Pin=D8-3
+Added Pin To Net: NetName=NetD7_1 Pin=D9-3
+Added Pin To Net: NetName=NetD10_1 Pin=D10-3
+Added Pin To Net: NetName=NetD10_1 Pin=D11-3
+Added Pin To Net: NetName=NetD10_1 Pin=D12-3
+Added Pin To Net: NetName=NetD13_1 Pin=D13-3
+Added Pin To Net: NetName=NetD13_1 Pin=D14-3
+Added Pin To Net: NetName=NetD13_1 Pin=D15-3
+Added Pin To Net: NetName=NetD16_1 Pin=D16-3
+Added Pin To Net: NetName=NetD16_1 Pin=D17-3
+Added Pin To Net: NetName=NetD16_1 Pin=D18-3
+Added Pin To Net: NetName=NetD19_1 Pin=D19-3
+Added Pin To Net: NetName=NetD19_1 Pin=D20-3
+Added Pin To Net: NetName=NetD19_1 Pin=D21-3
+Added Pin To Net: NetName=NetD22_1 Pin=D22-3
+Added Pin To Net: NetName=NetD22_1 Pin=D23-3
+Added Pin To Net: NetName=NetD22_1 Pin=D24-3
+Added Pin To Net: NetName=C3_LED Pin=R18-1
+Added Pin To Net: NetName=C2_LED Pin=R28-1
+Added Pin To Net: NetName=NetD1_2 Pin=R28-2
+Added Pin To Net: NetName=NetD2_2 Pin=R29-2
+Added Pin To Net: NetName=NetD3_2 Pin=R30-2
+Added Pin To Net: NetName=C4_LED Pin=K1-5
+Added Pin To Net: NetName=C4_LED Pin=R29-1
+Added Net: Name=C4_LED
+Added Pin To Net: NetName=C5_LED Pin=K1-6
+Added Pin To Net: NetName=C5_LED Pin=R19-1
+Added Net: Name=C5_LED
+Added Pin To Net: NetName=C6_LED Pin=K1-28
+Added Pin To Net: NetName=C6_LED Pin=R30-1
+Added Net: Name=C6_LED
+Added Pin To Net: NetName=NetD1_4 Pin=D1-4
+Added Pin To Net: NetName=NetD1_4 Pin=D4-4
+Added Pin To Net: NetName=NetD1_4 Pin=D7-4
+Added Pin To Net: NetName=NetD1_4 Pin=D10-4
+Added Pin To Net: NetName=NetD1_4 Pin=D13-4
+Added Pin To Net: NetName=NetD1_4 Pin=D16-4
+Added Pin To Net: NetName=NetD1_4 Pin=D19-4
+Added Pin To Net: NetName=NetD1_4 Pin=D22-4
+Added Pin To Net: NetName=NetD1_4 Pin=R17-2
+Added Net: Name=NetD1_4
+Added Pin To Net: NetName=NetD2_4 Pin=D2-4
+Added Pin To Net: NetName=NetD2_4 Pin=D5-4
+Added Pin To Net: NetName=NetD2_4 Pin=D8-4
+Added Pin To Net: NetName=NetD2_4 Pin=D11-4
+Added Pin To Net: NetName=NetD2_4 Pin=D14-4
+Added Pin To Net: NetName=NetD2_4 Pin=D17-4
+Added Pin To Net: NetName=NetD2_4 Pin=D20-4
+Added Pin To Net: NetName=NetD2_4 Pin=D23-4
+Added Pin To Net: NetName=NetD2_4 Pin=R18-2
+Added Net: Name=NetD2_4
+Added Pin To Net: NetName=NetD3_4 Pin=D3-4
+Added Pin To Net: NetName=NetD3_4 Pin=D6-4
+Added Pin To Net: NetName=NetD3_4 Pin=D9-4
+Added Pin To Net: NetName=NetD3_4 Pin=D12-4
+Added Pin To Net: NetName=NetD3_4 Pin=D15-4
+Added Pin To Net: NetName=NetD3_4 Pin=D18-4
+Added Pin To Net: NetName=NetD3_4 Pin=D21-4
+Added Pin To Net: NetName=NetD3_4 Pin=D24-4
+Added Pin To Net: NetName=NetD3_4 Pin=R19-2
+Added Net: Name=NetD3_4
+Added Member To Class: ClassName=jeu_du_moulin_boura_LedMatrix_SCH Member=Component R28 150E
+Added Member To Class: ClassName=jeu_du_moulin_boura_LedMatrix_SCH Member=Component R29 150E
+Added Member To Class: ClassName=jeu_du_moulin_boura_LedMatrix_SCH Member=Component R30 150E
