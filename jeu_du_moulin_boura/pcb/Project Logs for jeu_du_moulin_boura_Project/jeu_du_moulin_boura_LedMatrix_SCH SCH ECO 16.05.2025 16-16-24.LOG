@@ -1,0 +1,36 @@
+Remove Pin=K1-11 From Net=C1
+Remove Pin=K1-12 From Net=C2
+Remove Pin=K1-13 From Net=C3
+Remove Pin=K1-15 From Net=L1
+Remove Pin=K1-16 From Net=L2
+Remove Pin=K1-17 From Net=L3
+Remove Pin=K1-19 From Net=L7
+Remove Pin=K1-20 From Net=L8
+Remove Pin=K1-21 From Net=L7_LED
+Remove Pin=K1-22 From Net=L8_LED
+Remove Pin=K1-32 From Net=L5
+Remove Pin=K1-33 From Net=L6
+Remove Pin=K1-38 From Net=C2_LED
+Remove Pin=K1-39 From Net=C3_LED
+Remove Pin=K1-40 From Net=L1_LED
+Remove Pin=K1-41 From Net=L2_LED
+Remove Pin=K1-43 From Net=L4_LED
+Remove Pin=K1-45 From Net=L5_LED
+Add Pin To Net: Pin=K1-11 Old Net=C1 New Net=L1
+Add Pin To Net: Pin=K1-12 Old Net=C2 New Net=C3
+Add Pin To Net: Pin=K1-13 Old Net=C3 New Net=C2
+Add Pin To Net: Pin=K1-15 Old Net=L1 New Net=L8
+Add Pin To Net: Pin=K1-16 Old Net=L2 New Net=L7
+Add Pin To Net: Pin=K1-17 Old Net=L3 New Net=C1
+Add Pin To Net: Pin=K1-19 Old Net=L7 New Net=L6
+Add Pin To Net: Pin=K1-20 Old Net=L8 New Net=L5
+Add Pin To Net: Pin=K1-21 Old Net=L7_LED New Net=L5_LED
+Add Pin To Net: Pin=K1-22 Old Net=L8_LED New Net=L4_LED
+Add Pin To Net: Pin=K1-32 Old Net=L5 New Net=L3
+Add Pin To Net: Pin=K1-33 Old Net=L6 New Net=L2
+Add Pin To Net: Pin=K1-38 Old Net=C2_LED New Net=C3_LED
+Add Pin To Net: Pin=K1-39 Old Net=C3_LED New Net=L2_LED
+Add Pin To Net: Pin=K1-40 Old Net=L1_LED New Net=C2_LED
+Add Pin To Net: Pin=K1-41 Old Net=L2_LED New Net=L1_LED
+Add Pin To Net: Pin=K1-43 Old Net=L4_LED New Net=L8_LED
+Add Pin To Net: Pin=K1-45 Old Net=L5_LED New Net=L7_LED
