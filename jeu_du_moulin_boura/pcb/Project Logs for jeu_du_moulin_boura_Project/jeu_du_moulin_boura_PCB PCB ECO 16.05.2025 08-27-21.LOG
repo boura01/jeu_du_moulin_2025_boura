@@ -1,0 +1,20 @@
+Change Component Footprint: Designator=TP3 Old Footprint=TP10_22 New Footprint=TP
+Change Component Footprint: Designator=TP4 Old Footprint=TP10_22 New Footprint=TP
+Change Component Footprint: Designator=TP5 Old Footprint=TP10_22 New Footprint=TP
+Change Component Footprint: Designator=TP6 Old Footprint=TP10_22 New Footprint=TP
+Change Component Comment : Designator=TP3 Old Comment=TP vert New Comment=Test Point
+Change Component Comment : Designator=TP4 Old Comment=TP vert New Comment=Test Point
+Change Component Comment : Designator=TP5 Old Comment=TP vert New Comment=Test Point
+Change Component Comment : Designator=TP6 Old Comment=TP vert New Comment=Test Point
+Added Pin To Net: NetName=C1 Pin=K1-11
+Added Pin To Net: NetName=C2 Pin=K1-12
+Added Pin To Net: NetName=C3 Pin=K1-13
+Added Pin To Net: NetName=L1 Pin=K1-15
+Added Pin To Net: NetName=L2 Pin=K1-16
+Added Pin To Net: NetName=L3 Pin=K1-17
+Added Pin To Net: NetName=L7 Pin=K1-19
+Added Pin To Net: NetName=L8 Pin=K1-20
+Added Pin To Net: NetName=L5 Pin=K1-32
+Added Pin To Net: NetName=L6 Pin=K1-33
+Added Pin To Net: NetName=NetC8_1 Pin=TP5-1
+Added Pin To Net: NetName=NetC11_1 Pin=TP6-1

@@ -1,0 +1,8 @@
+Change Component Footprint: Designator=TP3 Old Footprint=TP10_22 New Footprint=TP
+Change Component Footprint: Designator=TP4 Old Footprint=TP10_22 New Footprint=TP
+Change Component Footprint: Designator=TP5 Old Footprint=TP10_22 New Footprint=TP
+Change Component Footprint: Designator=TP6 Old Footprint=TP10_22 New Footprint=TP
+Change Component Comment : Designator=TP3 Old Comment=TP vert New Comment=Test Point
+Change Component Comment : Designator=TP4 Old Comment=TP vert New Comment=Test Point
+Change Component Comment : Designator=TP5 Old Comment=TP vert New Comment=Test Point
+Change Component Comment : Designator=TP6 Old Comment=TP vert New Comment=Test Point
