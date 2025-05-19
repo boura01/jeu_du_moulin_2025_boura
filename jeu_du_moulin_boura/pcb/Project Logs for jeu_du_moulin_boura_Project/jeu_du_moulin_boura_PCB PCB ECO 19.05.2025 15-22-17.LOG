@@ -1,0 +1,10 @@
+Added Component: Designator=D4(TouchPAD-8mm+LED 4-SMD CIR)
+Added Pin To Net: NetName=NetD4_1 Pin=D4-1
+Added Pin To Net: NetName=NetD1_2 Pin=D4-2
+Added Pin To Net: NetName=NetD1_2 Pin=D4-3
+Added Pin To Net: NetName=NetD4_1 Pin=D4-4
+Added Pin To Net: NetName=L2_TOUCH Pin=D4-5
+Added Pin To Net: NetName=L2_TOUCH Pin=D4-5
+Added Pin To Net: NetName=C1_TOUCH Pin=D4-6
+Added Pin To Net: NetName=C1_TOUCH Pin=D4-6
+Added Member To Class: ClassName=jeu_du_moulin_boura_TouchPAD_SCH Member=Component D4 AAA3528SURKCGKC09
