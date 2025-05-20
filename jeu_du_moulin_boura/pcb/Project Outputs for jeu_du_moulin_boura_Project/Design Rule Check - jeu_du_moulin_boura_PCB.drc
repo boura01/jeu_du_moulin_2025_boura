@@ -1,21 +1,12 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\pcb\jeu_du_moulin_boura_PCB.PcbDoc
-Date     : 19.05.2025
-Time     : 14:18:47
+Date     : 20.05.2025
+Time     : 16:38:14
 
-Processing Rule : Clearance Constraint (Gap=0.25mm) (All),(All)
-   Violation between Clearance Constraint: (0.2mm < 0.25mm) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad X2-A1_B12(66.2mm,78.35mm) on Top Layer 
-   Violation between Clearance Constraint: (0.2mm < 0.25mm) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad X2-A4_B9(65.4mm,78.35mm) on Top Layer 
-   Violation between Clearance Constraint: (0.2mm < 0.25mm) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad X2-A5(64.25mm,78.35mm) on Top Layer 
-   Violation between Clearance Constraint: (0.2mm < 0.25mm) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad X2-B1_A12(59.8mm,78.35mm) on Top Layer 
-   Violation between Clearance Constraint: (0.2mm < 0.25mm) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad X2-B4_A9(60.6mm,78.35mm) on Top Layer 
-   Violation between Clearance Constraint: (0.2mm < 0.25mm) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad X2-B5(61.25mm,78.35mm) on Top Layer 
-   Violation between Clearance Constraint: (0.17mm < 0.2mm) Between Pad K1-12(45.435mm,39.75mm) on Bottom Layer And Pad K1-13(44.75mm,39.065mm) on Bottom Layer 
-   Violation between Clearance Constraint: (0.17mm < 0.2mm) Between Pad K1-24(39.25mm,39.065mm) on Bottom Layer And Pad K1-25(38.565mm,39.75mm) on Bottom Layer 
-   Violation between Clearance Constraint: (0.17mm < 0.2mm) Between Pad K1-36(38.565mm,45.25mm) on Bottom Layer And Pad K1-37(39.25mm,45.935mm) on Bottom Layer 
-Rule Violations :9
+Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
+Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=0.4mm) (InNamedPolygon('Top Layer-No Net 1')),(All)
+Processing Rule : Clearance Constraint (Gap=0.1mm) (InComponent('K1')),(All)
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
@@ -27,13 +18,13 @@ Rule Violations :0
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L7_TOUCH'))
+Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('C1_TOUCH'))
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L5_TOUCH'))
+Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('C2_TOUCH'))
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=0.16mm) (Max=0.3mm) (Preferred=0.25mm) (All)
+Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L3_TOUCH'))
 Rule Violations :0
 
 Processing Rule : Width Constraint (Min=0.25mm) (Max=1mm) (Preferred=0.254mm) (InComponent('D1')  Or InComponent('D2')  Or InComponent('D3')  Or InComponent('D4')  Or InComponent('D5')  Or InComponent('D6')  Or InComponent('D7')  Or InComponent('D8')  Or InComponent('D9')  Or InComponent('D10') Or InComponent('D11') Or InComponent('D12') Or InComponent('D13') Or InComponent('D14'))
@@ -45,25 +36,25 @@ Rule Violations :0
 Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('C3_TOUCH'))
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L1_TOUCH'))
+Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L7_TOUCH'))
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L8_TOUCH'))
+Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L5_TOUCH'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.16mm) (Max=0.3mm) (Preferred=0.25mm) (All)
 Rule Violations :0
 
 Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L6_TOUCH'))
 Rule Violations :0
 
+Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L1_TOUCH'))
+Rule Violations :0
+
 Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L4_TOUCH'))
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('C1_TOUCH'))
-Rule Violations :0
-
-Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('C2_TOUCH'))
-Rule Violations :0
-
-Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L3_TOUCH'))
+Processing Rule : Width Constraint (Min=0.2mm) (Max=0.8mm) (Preferred=0.8mm) (InNet('L8_TOUCH'))
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
@@ -75,22 +66,31 @@ Rule Violations :0
 Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
 Rule Violations :0
 
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
 Processing Rule : Minimum Solder Mask Sliver (Gap=0.015mm) (InComponent('K1')),(All)
 Rule Violations :0
 
-Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+Processing Rule : Silk To Solder Mask (Clearance=0.1mm) (HasFootprint('GCT_USB4520-03-0-A_REVA')),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.1mm) (HasFootprint('UFQFPN48')),(All)
 Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=0.126mm) (IsPad),(All)
 Rule Violations :0
 
-Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+Processing Rule : Silk to Silk (Clearance=0.156mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
 Rule Violations :0
 
 Processing Rule : Net Antennae (Tolerance=2000mm) (OnLayer('Top Layer'))
 Rule Violations :0
 
-Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Processing Rule : Board Clearance Constraint (Gap=0mm) (InComponent('X2'))
 Rule Violations :0
 
 Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
@@ -100,6 +100,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 
-Violations Detected : 9
+Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:04
+Time Elapsed        : 00:00:05

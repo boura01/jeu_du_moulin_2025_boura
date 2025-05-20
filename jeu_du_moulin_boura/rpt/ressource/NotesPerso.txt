@@ -28,3 +28,6 @@ en regardant les schéma du datasheet, on peut voir que le courant est trop limi
 Pour le Pin Swapping -> Group A sont les touches capacitives, Group B sont les LEDs et Group C sont les Condensateurs de sampling
 changer le bouton et les test de courant un peu a gauche pour pouvoir voir un peu mieux le jeu sur le silkscreen
 parler du VDD_USB et de pourquoi on connecte pas (datasheet P.17)
+Parler du fait que j'ai essayer d'éloigné les pistes des touche pour les protéger des signaux haute vitesse.
+Liens utiles pour la doc au sujet des touches capacitives : "https://www.st.com/resource/en/application_note/an3236-how-to-increase-the-number-of-touchkeys-for-touch-sensing-applications-on-stm32-mcus-stmicroelectronics.pdf" "https://www.st.com/resource/en/application_note/an4312-how-to-design-surface-sensors-for-touch-sensing-applications-on-stm32-mcus-stmicroelectronics.pdf" "https://deepbluembedded.com/stm32-tsc-tutorial-examples-touch-sensing-controller/"
+Expliquer le pin swapping
