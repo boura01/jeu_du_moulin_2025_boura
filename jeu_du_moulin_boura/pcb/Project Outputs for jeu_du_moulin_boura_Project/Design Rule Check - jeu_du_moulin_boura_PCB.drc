@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\pcb\jeu_du_moulin_boura_PCB.PcbDoc
-Date     : 20.05.2025
-Time     : 16:38:14
+Date     : 21.05.2025
+Time     : 15:52:09
 
 Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
 Rule Violations :0
@@ -102,4 +102,4 @@ Rule Violations :0
 
 Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:05
+Time Elapsed        : 00:00:03

@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\pcb\jeu_du_moulin_boura_PCB.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=jeu_du_moulin_boura_pcb-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=jeu_du_moulin_boura_pcb-slotholes.txt|DrillLayers=gtl,gbl

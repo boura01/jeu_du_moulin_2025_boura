@@ -1,0 +1,3 @@
+Change Component DesignItemId : Designator=K1 Old DesignItemId=STM32L072CZT6 New DesignItemId=STM32L072CZU6
+Change Component Comment : Designator=K1 Old Comment=STM32L072CZT6 New Comment=STM32L072CZU6
+Add Pin To Net: Unknown Pin: Pin K1-49

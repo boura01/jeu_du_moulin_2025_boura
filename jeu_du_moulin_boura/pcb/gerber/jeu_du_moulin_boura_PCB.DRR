@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: jeu_du_moulin_boura_PCB.PcbDoc   21.05.2025  16:06:03
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : jeu_du_moulin_boura_PCB-RoundHoles.TXT
+ASCII SlotHoles File : jeu_du_moulin_boura_PCB-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.3mm (12mil)                                             Round             129       PTH        688.35mm (27.10inch)
+T2      0.4mm (16mil)                                             Round             48        PTH        573.89mm (22.59inch)
+T3      0.6mm (24mil)                                             Slot              4         PTH        42.94mm (1.69inch)
+T4      1mm (39mil)             +/-0mm (0mil)                     Round             4         PTH        66.83mm (2.63inch)
+T5      1mm (39mil)                                               Round             6         PTH        13.30mm (0.52inch)
+T6      0.9mm (35mil)                                             Round             3         NPTH       7.21mm (0.28inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              194
+
+Total Processing Time (hh:mm:ss) : 00:00:00

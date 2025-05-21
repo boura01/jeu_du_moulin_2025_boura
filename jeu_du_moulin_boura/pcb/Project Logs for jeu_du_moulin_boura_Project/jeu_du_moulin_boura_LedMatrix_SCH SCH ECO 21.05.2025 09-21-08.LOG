@@ -1,0 +1,10 @@
+Remove Pin=K1-38 From Net=C3_LED
+Remove Pin=K1-39 From Net=L2_LED
+Remove Pin=K1-40 From Net=C2_LED
+Remove Pin=K1-41 From Net=L1_LED
+Remove Pin=K1-42 From Net=L3_LED
+Add Pin To Net: Pin=K1-38 Old Net=C3_LED New Net=L3_LED
+Add Pin To Net: Pin=K1-39 Old Net=L2_LED New Net=C3_LED
+Add Pin To Net: Pin=K1-40 Old Net=C2_LED New Net=L2_LED
+Add Pin To Net: Pin=K1-41 Old Net=L1_LED New Net=C2_LED
+Add Pin To Net: Pin=K1-42 Old Net=L3_LED New Net=L1_LED
