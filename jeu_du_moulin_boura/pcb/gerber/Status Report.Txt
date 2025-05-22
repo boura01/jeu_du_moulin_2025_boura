@@ -1,13 +1,16 @@
 Output: NC Drill Files
 Type  : NC Drill
 From  : Project [jeu_du_moulin_boura_Project.PrjPcb]
-   Generated File[jeu_du_moulin_boura_PCB-RoundHoles.TXT]
-   Generated File[jeu_du_moulin_boura_PCB-SlotHoles.TXT]
+   Generated File[jeu_du_moulin_boura_PCB-RoundHoles-Plated.TXT]
+   Generated File[jeu_du_moulin_boura_PCB-RoundHoles-NonPlated.TXT]
+   Generated File[jeu_du_moulin_boura_PCB-SlotHoles-Plated.TXT]
+   Generated File[jeu_du_moulin_boura_PCB.DRL]
+   Generated File[jeu_du_moulin_boura_PCB-BoardEdgeRout.TXT]
    Generated File[jeu_du_moulin_boura_PCB.LDP]
    Generated File[jeu_du_moulin_boura_PCB.DRR]
 
 
-Files Generated   : 4
+Files Generated   : 7
 Documents Printed : 0
 
-Finished Output Generation At 16:06:03 On 21.05.2025
+Finished Output Generation At 09:36:54 On 22.05.2025
