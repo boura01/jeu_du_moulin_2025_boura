@@ -1,13 +1,4 @@
-10:39:05 **** Clean-only build of configuration Debug for project JEU_MOULIN_LQFP64 ****
-make -j8 clean 
-rm -rf ./TOUCHSENSING/App/stmCriticalSection.cyclo ./TOUCHSENSING/App/stmCriticalSection.d ./TOUCHSENSING/App/stmCriticalSection.o ./TOUCHSENSING/App/stmCriticalSection.su ./TOUCHSENSING/App/touchsensing.cyclo ./TOUCHSENSING/App/touchsensing.d ./TOUCHSENSING/App/touchsensing.o ./TOUCHSENSING/App/touchsensing.su ./TOUCHSENSING/App/tsl_user.cyclo ./TOUCHSENSING/App/tsl_user.d ./TOUCHSENSING/App/tsl_user.o ./TOUCHSENSING/App/tsl_user.su
-rm -rf ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl.cyclo ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl.d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl.o ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl.su ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.cyclo ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.o ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.su ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.cyclo ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.su ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.cyclo ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.o ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.su ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.cyclo ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.o ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.su ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_filter.cyclo ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_filter.d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_filter.o ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_filter.su ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_globals.cyclo ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_globals.d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_globals.o ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_globals.su ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_linrot.cyclo ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_linrot.d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_linrot.o ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_linrot.su ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.cyclo ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.o ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.su ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.cyclo ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.o ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.su ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.cyclo ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.su
-rm -rf ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_dma.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_dma.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_dma.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_dma.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_exti.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_exti.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_exti.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_exti.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash_ex.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash_ex.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash_ex.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash_ex.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash_ramfunc.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash_ramfunc.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash_ramfunc.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_flash_ramfunc.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_i2c.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_i2c.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_i2c.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_i2c.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_i2c_ex.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_i2c_ex.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_i2c_ex.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_i2c_ex.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc_ex.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc_ex.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc_ex.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc_ex.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim_ex.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim_ex.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim_ex.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim_ex.su ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.cyclo ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.d ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.su
-rm -rf ./Core/Startup/startup_stm32l072rbtx.d ./Core/Startup/startup_stm32l072rbtx.o
-rm -rf ./Core/Src/gpio.cyclo ./Core/Src/gpio.d ./Core/Src/gpio.o ./Core/Src/gpio.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32l0xx_hal_msp.cyclo ./Core/Src/stm32l0xx_hal_msp.d ./Core/Src/stm32l0xx_hal_msp.o ./Core/Src/stm32l0xx_hal_msp.su ./Core/Src/stm32l0xx_it.cyclo ./Core/Src/stm32l0xx_it.d ./Core/Src/stm32l0xx_it.o ./Core/Src/stm32l0xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32l0xx.cyclo ./Core/Src/system_stm32l0xx.d ./Core/Src/system_stm32l0xx.o ./Core/Src/system_stm32l0xx.su ./Core/Src/tsc.cyclo ./Core/Src/tsc.d ./Core/Src/tsc.o ./Core/Src/tsc.su
-rm -rf JEU_MOULIN_LQFP64.elf JEU_MOULIN_LQFP64.list JEU_MOULIN_LQFP64.map default.size.stdout
- 
-10:39:06 **** Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+14:49:46 **** Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
 make -j8 all 
 arm-none-eabi-gcc "../TOUCHSENSING/App/stmCriticalSection.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"TOUCHSENSING/App/stmCriticalSection.d" -MT"TOUCHSENSING/App/stmCriticalSection.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "TOUCHSENSING/App/stmCriticalSection.o"
 arm-none-eabi-gcc "../TOUCHSENSING/App/touchsensing.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"TOUCHSENSING/App/touchsensing.d" -MT"TOUCHSENSING/App/touchsensing.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "TOUCHSENSING/App/touchsensing.o"
@@ -56,6 +47,150 @@ arm-none-eabi-size  JEU_MOULIN_LQFP64.elf
 arm-none-eabi-objdump -h -S JEU_MOULIN_LQFP64.elf  > "JEU_MOULIN_LQFP64.list"
    text	   data	    bss	    dec	    hex	filename
   11516	     52	   1940	  13508	   34c4	JEU_MOULIN_LQFP64.elf
+Finished building: default.size.stdout
+ 
+Finished building: JEU_MOULIN_LQFP64.list
+ 
+14:50:37 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+make -j8 all 
+arm-none-eabi-size  JEU_MOULIN_LQFP64.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11516	     52	   1940	  13508	   34c4	JEU_MOULIN_LQFP64.elf
+Finished building: default.size.stdout
+ 
+15:26:18 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+make -j8 all 
+arm-none-eabi-size  JEU_MOULIN_LQFP64.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11516	     52	   1940	  13508	   34c4	JEU_MOULIN_LQFP64.elf
+Finished building: default.size.stdout
+ 
+16:35:47 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'LEDP':
+../Core/Src/main.c:347:10: warning: implicit declaration of function 'LED_OFF' [-Wimplicit-function-declaration]
+  347 |          LED_OFF();
+      |          ^~~~~~~
+../Core/Src/main.c:352:30: error: 'RED' undeclared (first use in this function)
+  352 |                 if (color == RED)
+      |                              ^~~
+../Core/Src/main.c:352:30: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:357:30: error: 'GRN' undeclared (first use in this function)
+  357 |                 if (color == GRN)
+      |                              ^~~
+../Core/Src/main.c:359:21: warning: implicit declaration of function 'G0_SetHigh' [-Wimplicit-function-declaration]
+  359 |                     G0_SetHigh();
+      |                     ^~~~~~~~~~
+../Core/Src/main.c:360:21: warning: implicit declaration of function 'C0_SetLow' [-Wimplicit-function-declaration]
+  360 |                     C0_SetLow();
+      |                     ^~~~~~~~~
+../Core/Src/main.c:364:6: warning: conflicting types for 'LED_OFF'; have 'void(void)'
+  364 | void LED_OFF(void)
+      |      ^~~~~~~
+../Core/Src/main.c:364:6: error: static declaration of 'LED_OFF' follows non-static declaration
+../Core/Src/main.c:347:10: note: previous implicit declaration of 'LED_OFF' with type 'void(void)'
+  347 |          LED_OFF();
+      |          ^~~~~~~
+../Core/Src/main.c:384:1: error: expected declaration or statement at end of input
+  384 | }
+      | ^
+At top level:
+../Core/Src/main.c:375:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  375 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:364:6: warning: 'LED_OFF' defined but not used [-Wunused-function]
+  364 | void LED_OFF(void)
+      |      ^~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:55:17 **** Cleaning Selected Files of configuration Debug for project JEU_MOULIN_LQFP64 ****
+Info: Internal Builder is used for build
+Debug/Core/Src/main.su deleted.
+Debug/Core/Src/main.cyclo deleted.
+17:16:35 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "JEU_MOULIN_LQFP64.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\JEU_MOULIN_LQFP64\STM32L072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="JEU_MOULIN_LQFP64.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: JEU_MOULIN_LQFP64.elf
+ 
+arm-none-eabi-size  JEU_MOULIN_LQFP64.elf 
+arm-none-eabi-objdump -h -S JEU_MOULIN_LQFP64.elf  > "JEU_MOULIN_LQFP64.list"
+   text	   data	    bss	    dec	    hex	filename
+  10672	     52	   1940	  12664	   3178	JEU_MOULIN_LQFP64.elf
+Finished building: default.size.stdout
+ 
+Finished building: JEU_MOULIN_LQFP64.list
+ 
+17:17:49 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+make -j8 all 
+arm-none-eabi-size  JEU_MOULIN_LQFP64.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10672	     52	   1940	  12664	   3178	JEU_MOULIN_LQFP64.elf
+Finished building: default.size.stdout
+ 
+17:24:19 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:176:14: error: 'arr' undeclared (first use in this function)
+  176 |           if(arr != 0){
+      |              ^~~
+../Core/Src/main.c:176:14: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:24:38 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "JEU_MOULIN_LQFP64.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\JEU_MOULIN_LQFP64\STM32L072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="JEU_MOULIN_LQFP64.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: JEU_MOULIN_LQFP64.elf
+ 
+arm-none-eabi-size  JEU_MOULIN_LQFP64.elf 
+arm-none-eabi-objdump -h -S JEU_MOULIN_LQFP64.elf  > "JEU_MOULIN_LQFP64.list"
+   text	   data	    bss	    dec	    hex	filename
+  10672	     52	   1940	  12664	   3178	JEU_MOULIN_LQFP64.elf
+Finished building: default.size.stdout
+ 
+Finished building: JEU_MOULIN_LQFP64.list
+ 
+17:25:23 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "JEU_MOULIN_LQFP64.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\JEU_MOULIN_LQFP64\STM32L072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="JEU_MOULIN_LQFP64.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: JEU_MOULIN_LQFP64.elf
+ 
+arm-none-eabi-size  JEU_MOULIN_LQFP64.elf 
+arm-none-eabi-objdump -h -S JEU_MOULIN_LQFP64.elf  > "JEU_MOULIN_LQFP64.list"
+   text	   data	    bss	    dec	    hex	filename
+  10668	     52	   1940	  12660	   3174	JEU_MOULIN_LQFP64.elf
+Finished building: default.size.stdout
+ 
+Finished building: JEU_MOULIN_LQFP64.list
+ 
+17:31:46 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "JEU_MOULIN_LQFP64.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\JEU_MOULIN_LQFP64\STM32L072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="JEU_MOULIN_LQFP64.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: JEU_MOULIN_LQFP64.elf
+ 
+arm-none-eabi-size  JEU_MOULIN_LQFP64.elf 
+arm-none-eabi-objdump -h -S JEU_MOULIN_LQFP64.elf  > "JEU_MOULIN_LQFP64.list"
+   text	   data	    bss	    dec	    hex	filename
+  10696	     52	   1940	  12688	   3190	JEU_MOULIN_LQFP64.elf
+Finished building: default.size.stdout
+ 
+Finished building: JEU_MOULIN_LQFP64.list
+ 
+17:33:41 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "JEU_MOULIN_LQFP64.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\JEU_MOULIN_LQFP64\STM32L072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="JEU_MOULIN_LQFP64.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: JEU_MOULIN_LQFP64.elf
+ 
+arm-none-eabi-size  JEU_MOULIN_LQFP64.elf 
+arm-none-eabi-objdump -h -S JEU_MOULIN_LQFP64.elf  > "JEU_MOULIN_LQFP64.list"
+   text	   data	    bss	    dec	    hex	filename
+  10696	     52	   1940	  12688	   3190	JEU_MOULIN_LQFP64.elf
 Finished building: default.size.stdout
  
 Finished building: JEU_MOULIN_LQFP64.list

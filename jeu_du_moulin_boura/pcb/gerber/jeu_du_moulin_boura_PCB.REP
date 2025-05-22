@@ -2,30 +2,6 @@
 FileName = jeu_du_moulin_boura_PCB.GBR
 AutoAperture = True
 *************************************************************
-Generating : Route Tool Path
-      File : jeu_du_moulin_boura_PCB_Route_Tool_Path.gbr
-
-    Adding Layer      : Route Tool Path
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : jeu_du_moulin_boura_PCB_Legend_Bot.gbr
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D10
-    D14
-    D60
-    D61
-*************************************************************
-
-*************************************************************
 Generating : Outline
       File : jeu_du_moulin_boura_PCB_Outline.gbr
 
@@ -34,6 +10,16 @@ Generating : Outline
 
 Used DCodes :
     D26
+*************************************************************
+
+*************************************************************
+Generating : Route Tool Path
+      File : jeu_du_moulin_boura_PCB_Route_Tool_Path.gbr
+
+    Adding Layer      : Route Tool Path
+
+
+Used DCodes :
 *************************************************************
 
 *************************************************************
@@ -65,6 +51,55 @@ Used DCodes :
     D57
     D58
     D59
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : jeu_du_moulin_boura_PCB_Soldermask_Top.gbr
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : jeu_du_moulin_boura_PCB_Legend_Bot.gbr
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D10
+    D14
+    D60
+    D61
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : jeu_du_moulin_boura_PCB_Legend_Top.gbr
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
 *************************************************************
 
 *************************************************************
@@ -103,26 +138,6 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Solder
-      File : jeu_du_moulin_boura_PCB_Soldermask_Top.gbr
-
-    Adding Layer      : Top Solder
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D15
-    D16
-    D17
-    D18
-    D19
-    D20
-*************************************************************
-
-*************************************************************
 Generating : Top Layer
       File : jeu_du_moulin_boura_PCB_Copper_Signal_Top.gbr
 
@@ -147,20 +162,5 @@ Used DCodes :
     D32
     D33
     D34
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : jeu_du_moulin_boura_PCB_Legend_Top.gbr
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
 *************************************************************
 

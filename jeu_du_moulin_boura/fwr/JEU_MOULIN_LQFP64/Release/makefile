@@ -62,8 +62,8 @@ all: main-build
 main-build: JEU_MOULIN_LQFP64.elf secondary-outputs
 
 # Tool invocations
-JEU_MOULIN_LQFP64.elf JEU_MOULIN_LQFP64.map: $(OBJS) $(USER_OBJS) C:\Users\eglis\OneDrive\ -\ EDUETATFR\uP\Workspace\STM32\JEU_MOULIN_LQFP64\STM32L072RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "JEU_MOULIN_LQFP64.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\eglis\OneDrive - EDUETATFR\uP\Workspace\STM32\JEU_MOULIN_LQFP64\STM32L072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="JEU_MOULIN_LQFP64.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+JEU_MOULIN_LQFP64.elf JEU_MOULIN_LQFP64.map: $(OBJS) $(USER_OBJS) C:\Users\bourquenouda01\OneDrive\ -\ EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\JEU_MOULIN_LQFP64\STM32L072RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "JEU_MOULIN_LQFP64.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\JEU_MOULIN_LQFP64\STM32L072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="JEU_MOULIN_LQFP64.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

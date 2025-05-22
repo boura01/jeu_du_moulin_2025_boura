@@ -1,7 +1,10 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:JEU_MOULIN_LQFP64 Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:JEU_MOULIN_UFQFPN48,org.eclipse.launchbar.core.descriptorType.default\:JEU_MOULIN_LQFP64 Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:JEU_MOULIN_LQFP64\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:JEU_MOULIN_LQFP64\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:JEU_MOULIN_UFQFPN48/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:JEU_MOULIN_UFQFPN48/activeLaunchTarget=null\:---
+org.eclipse.launchbar.core.descriptorType.default\:JEU_MOULIN_LQFP64\ Debug/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

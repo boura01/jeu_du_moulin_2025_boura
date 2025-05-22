@@ -1,0 +1,10 @@
+14:42:00 **** Incremental Build of configuration Debug for project JEU_MOULIN_UFQFPN48 ****
+make -j8 all 
+arm-none-eabi-size  JEU_MOULIN_UFQFPN48.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13708	     52	   2036	  15796	   3db4	JEU_MOULIN_UFQFPN48.elf
+Finished building: default.size.stdout
+ 
+
+14:42:01 Build Finished. 0 errors, 0 warnings. (took 588ms)
+
