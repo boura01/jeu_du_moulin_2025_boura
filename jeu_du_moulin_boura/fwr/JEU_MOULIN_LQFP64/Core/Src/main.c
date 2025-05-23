@@ -176,6 +176,10 @@ int main(void)
 	  //quand une touche est pressée, detecte laquelle et stock la valeur
 		 HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_SET);
 		 HAL_GPIO_WritePin(GPIOB, L1_LED_Pin, GPIO_PIN_RESET);
+		 HAL_GPIO_WritePin(GPIOB, L2_LED_Pin, GPIO_PIN_SET);
+		 HAL_GPIO_WritePin(GPIOB, L3_LED_Pin, GPIO_PIN_SET);
+		 HAL_GPIO_WritePin(GPIOB, L4_LED_Pin, GPIO_PIN_SET);
+
 	    for (int i = 0; i < sizeof(touchDetect); i++) {
 	        if (touchDetect[i] == 1) {
 	            btnPressed = i;  // Return the index of the first occurrence of 1

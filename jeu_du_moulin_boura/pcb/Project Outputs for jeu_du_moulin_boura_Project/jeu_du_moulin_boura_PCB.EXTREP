@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: jeu_du_moulin_boura_PCB.GBR   22.05.2025  10:47:21
+Gerber File Extension Report For: jeu_du_moulin_boura_PCB.GBR   23.05.2025  08:44:11
 ------------------------------------------------------------------------------------------
 
 
@@ -11,6 +11,7 @@ Layer Extension     Layer Description
 .gbr                Top Layer                               
 .gbr                Bottom Layer                            
 .gbr                Bottom Solder                           
+.gbr                Bottom Paste                            
 .gbr                Bottom Overlay                          
 .gbr                Outline                                 
 .gbr                Route Tool Path                         

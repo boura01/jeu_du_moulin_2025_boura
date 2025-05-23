@@ -38,6 +38,24 @@
 #define TKEY_PRX(NB) (MyTKeys[(NB)].p_Data->StateId == TSL_STATEID_PROX)
 #define TKEY_REL(NB) (MyTKeys[(NB)].p_Data->StateId == TSL_STATEID_RELEASE)
 #define TKEY_CAL(NB) (MyTKeys[(NB)].p_Data->StateId == TSL_STATEID_CALIB)
+
+#define P1 1
+#define P2 2
+#define P3 3
+#define P4 4
+#define P5 5
+#define P6 6
+#define P7 7
+#define P8 8
+#define P9 9
+#define P10 10
+#define P11 11
+#define P12 12
+
+//define des couleurs
+#define RED 0
+#define GRN 1
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -51,12 +69,13 @@
 tsl_user_status_t tsl_status;
 uint16_t i,j;
 uint8_t touchDetect[13];					//correspond aux designateurs du PCB, [0] n'est pas utiliser
+uint8_t btnPressed;							//correspond à la valeur du bouton pressé de 0 à 11
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void LEDP (char IdLed,char color);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -153,129 +172,15 @@ int main(void)
 	      HAL_Delay(1); //Can be replace by __WFI()
 	    }
 
-	  if (touchDetect[1])
-	  {
-		  i++;
-		  if (i==2000)
-			  i=0;
-		  HAL_GPIO_WritePin(GPIOB, TLEDG1_Pin, GPIO_PIN_SET);
-	  }
-	  else
-	  {
-		  j++;
-		  if (j==2000)
-			  j=0;
-		  HAL_GPIO_WritePin(GPIOB, TLEDG1_Pin, GPIO_PIN_RESET);
-	  }
-
-	  if (touchDetect[2])
-		  HAL_GPIO_WritePin(GPIOB, TLEDR1_Pin, GPIO_PIN_SET);
-	  else
-		  HAL_GPIO_WritePin(GPIOB, TLEDR1_Pin, GPIO_PIN_RESET);
-	  if (touchDetect[3])
-		  HAL_GPIO_WritePin(GPIOB, TLEDR2_Pin, GPIO_PIN_SET);
-	  else
-		  HAL_GPIO_WritePin(GPIOB, TLEDR2_Pin, GPIO_PIN_RESET);
-
-	  if (touchDetect[4])
-		  HAL_GPIO_WritePin(GPIOB, TLEDG2_Pin, GPIO_PIN_SET);
-	  else
-		  HAL_GPIO_WritePin(GPIOB, TLEDG2_Pin, GPIO_PIN_RESET);
-	  if (touchDetect[5])
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L1_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOC, C2_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_SET);
-	  }
-	  else
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L1_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOC, C2_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_RESET);
-	  }
-	  if (touchDetect[6])
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L1_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_SET);
-	  }
-	  else
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L1_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_RESET);
-	 	  }
-	  if (touchDetect[7])
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L1_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOC, C2_LED_Pin, GPIO_PIN_SET);
-	  }
-	  else
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L1_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOC, C2_LED_Pin, GPIO_PIN_RESET);
-	  }
-	  if (touchDetect[8])
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L2_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOC, C2_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_SET);
-	  }
-	  else
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L2_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOC, C2_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_RESET);
-	  }
-	  if (touchDetect[9])
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L2_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_SET);
-	  }
-	  else
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L2_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_RESET);
-	  }
-	  if (touchDetect[10])
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L2_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOC, C2_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_SET);
-	  }
-	  else
-	  {
-		  HAL_GPIO_WritePin(GPIOB, L2_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOC, C2_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_RESET);
-	  }
-	  if (touchDetect[11])
-	  {
-		  HAL_GPIO_WritePin(GPIOC, L3_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOC, C2_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_SET);
-	  }
-	  else
-	  {
-		  HAL_GPIO_WritePin(GPIOC, L3_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOC, C2_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_RESET);
-	  }
-	  if (touchDetect[12])
-	  {
-		  HAL_GPIO_WritePin(GPIOC, L3_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_SET);
-	  }
-	  else
-	  {
-		  HAL_GPIO_WritePin(GPIOC, L3_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOA, C3_LED_Pin, GPIO_PIN_RESET);
+	  //début des contrôles pour les LEDs
+	  //quand une touche est pressée, detecte laquelle et stock la valeur
+		 HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_SET);
+		 HAL_GPIO_WritePin(GPIOB, L1_LED_Pin, GPIO_PIN_RESET);
+	    for (int i = 0; i < sizeof(touchDetect); i++) {
+	        if (touchDetect[i] == 1) {
+	            btnPressed = i;  // Return the index of the first occurrence of 1
+	        }
+	    //LEDP(btnPressed, GRN);
 	  }
 
     /* USER CODE END WHILE */
@@ -329,6 +234,169 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void LEDP (char IdLed,char color)
+{
+	    //la variable IdLed dit quelle led (P1-P16)
+	    switch (IdLed)
+	    {
+	    //première ligne de LEDs
+	    case P1:
+	        	if (color == RED)
+	        	{
+	        			HAL_GPIO_WritePin(GPIOC, L1_LED_Pin, GPIO_PIN_RESET);
+	        			HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_SET);
+	        		}
+	        		if (color == GRN)
+	        	{
+	        		HAL_GPIO_WritePin(GPIOC, L1_LED_Pin, GPIO_PIN_SET);
+	        		HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_RESET);
+	        	}
+	        	break;
+	    case P2:
+	   	        if (color == RED)
+	   	        {
+	   	        	HAL_GPIO_WritePin(GPIOC, L1_LED_Pin, GPIO_PIN_RESET);
+	   	        	HAL_GPIO_WritePin(GPIOB, C2_LED_Pin, GPIO_PIN_SET);
+	   	        }
+	   	        if (color == GRN)
+	   	        {
+	   	        	HAL_GPIO_WritePin(GPIOC, L1_LED_Pin, GPIO_PIN_SET);
+	   	        	HAL_GPIO_WritePin(GPIOB, C2_LED_Pin, GPIO_PIN_RESET);
+	   	        }
+	   	        break;
+	    case P3:
+	   	        if (color == RED)
+	   	        {
+	   	        	HAL_GPIO_WritePin(GPIOC, L1_LED_Pin, GPIO_PIN_RESET);
+	   	        	HAL_GPIO_WritePin(GPIOB, C3_LED_Pin, GPIO_PIN_SET);
+	   	        }
+	   	        if (color == GRN)
+	   	        {
+	   	        	HAL_GPIO_WritePin(GPIOC, L1_LED_Pin, GPIO_PIN_SET);
+	   	        	HAL_GPIO_WritePin(GPIOB, C3_LED_Pin, GPIO_PIN_RESET);
+	   	        }
+	   	        break;
+
+	   	        //Deuxième ligne de LED
+	    case P4:
+	    	        if (color == RED)
+	    	        {
+	    	        	HAL_GPIO_WritePin(GPIOC, L2_LED_Pin, GPIO_PIN_RESET);
+	    	        	HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_SET);
+	    	        }
+	    	        if (color == GRN)
+	    	        {
+	    	        	HAL_GPIO_WritePin(GPIOC, L2_LED_Pin, GPIO_PIN_SET);
+	    	        	HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_RESET);
+	    	        }
+	    	        break;
+	      case P5:
+	     	        if (color == RED)
+	    	   	    {
+	    	   	       	HAL_GPIO_WritePin(GPIOC, L2_LED_Pin, GPIO_PIN_RESET);
+	    	   	      	HAL_GPIO_WritePin(GPIOB, C2_LED_Pin, GPIO_PIN_SET);
+	    	   	    }
+	    	   	    if (color == GRN)
+	    	   	    {
+	    	   	      	HAL_GPIO_WritePin(GPIOC, L2_LED_Pin, GPIO_PIN_SET);
+	    	   	        HAL_GPIO_WritePin(GPIOB, C2_LED_Pin, GPIO_PIN_RESET);
+	    	   	    }
+	    	   	        break;
+	    case P6:
+	    	   	    if (color == RED)
+	    	   	    {
+	    	   	        HAL_GPIO_WritePin(GPIOC, L2_LED_Pin, GPIO_PIN_RESET);
+	    	   	        HAL_GPIO_WritePin(GPIOB, C3_LED_Pin, GPIO_PIN_SET);
+	    	   	    }
+	    	   	    if (color == GRN)
+	    	   	    {
+	    	   	        HAL_GPIO_WritePin(GPIOC, L2_LED_Pin, GPIO_PIN_SET);
+	    	   	        HAL_GPIO_WritePin(GPIOB, C3_LED_Pin, GPIO_PIN_RESET);
+	    	   	    }
+	    	   	    break;
+
+	    	   	    //troisième ligne
+	    case P7:
+	    	        if (color == RED)
+	    	        {
+	    	        	HAL_GPIO_WritePin(GPIOC, L3_LED_Pin, GPIO_PIN_RESET);
+	    	        	HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_SET);
+	    	        }
+	    	        if (color == GRN)
+	    	        {
+	    	        	HAL_GPIO_WritePin(GPIOC, L3_LED_Pin, GPIO_PIN_SET);
+	    	        	HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_RESET);
+	    	        }
+	    	        break;
+	     case P8:
+	     	        if (color == RED)
+	    	   	    {
+	    	   	       	HAL_GPIO_WritePin(GPIOC, L3_LED_Pin, GPIO_PIN_RESET);
+	    	   	      	HAL_GPIO_WritePin(GPIOB, C2_LED_Pin, GPIO_PIN_SET);
+	    	   	    }
+	    	   	    if (color == GRN)
+	    	   	    {
+	    	   	      	HAL_GPIO_WritePin(GPIOC, L3_LED_Pin, GPIO_PIN_SET);
+	    	   	        HAL_GPIO_WritePin(GPIOB, C2_LED_Pin, GPIO_PIN_RESET);
+	    	   	    }
+	    	   	        break;
+	    case P9:
+	    	   	    if (color == RED)
+	    	   	    {
+	    	   	        HAL_GPIO_WritePin(GPIOC, L3_LED_Pin, GPIO_PIN_RESET);
+	    	   	        HAL_GPIO_WritePin(GPIOB, C3_LED_Pin, GPIO_PIN_SET);
+	    	   	    }
+	    	   	    if (color == GRN)
+	    	   	    {
+	    	   	        HAL_GPIO_WritePin(GPIOC, L3_LED_Pin, GPIO_PIN_SET);
+	    	   	        HAL_GPIO_WritePin(GPIOB, C3_LED_Pin, GPIO_PIN_RESET);
+	    	   	    }
+	    	   	    break;
+
+	    	   	    //quatrième ligne
+	    case P10:
+	    	        if (color == RED)
+	    	        {
+	    	        	HAL_GPIO_WritePin(GPIOC, L4_LED_Pin, GPIO_PIN_RESET);
+	    	        	HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_SET);
+	    	        }
+	    	        if (color == GRN)
+	    	        {
+	    	        	HAL_GPIO_WritePin(GPIOC, L4_LED_Pin, GPIO_PIN_SET);
+	    	        	HAL_GPIO_WritePin(GPIOB, C1_LED_Pin, GPIO_PIN_RESET);
+	    	        }
+	    	        break;
+	     case P11:
+	     	        if (color == RED)
+	    	   	    {
+	    	   	       	HAL_GPIO_WritePin(GPIOC, L4_LED_Pin, GPIO_PIN_RESET);
+	    	   	      	HAL_GPIO_WritePin(GPIOB, C2_LED_Pin, GPIO_PIN_SET);
+	    	   	    }
+	    	   	    if (color == GRN)
+	    	   	    {
+	    	   	      	HAL_GPIO_WritePin(GPIOC, L4_LED_Pin, GPIO_PIN_SET);
+	    	   	        HAL_GPIO_WritePin(GPIOB, C2_LED_Pin, GPIO_PIN_RESET);
+	    	   	    }
+	    	   	        break;
+	    case P12:
+	    	   	    if (color == RED)
+	    	   	    {
+	    	   	        HAL_GPIO_WritePin(GPIOC, L4_LED_Pin, GPIO_PIN_RESET);
+	    	   	        HAL_GPIO_WritePin(GPIOB, C3_LED_Pin, GPIO_PIN_SET);
+	    	   	    }
+	    	   	    if (color == GRN)
+	    	   	    {
+	    	   	        HAL_GPIO_WritePin(GPIOC, L4_LED_Pin, GPIO_PIN_SET);
+	    	   	        HAL_GPIO_WritePin(GPIOB, C3_LED_Pin, GPIO_PIN_RESET);
+	    	   	    }
+	    	   	    break;
+	    }
+}
+
+void LED_OFF(void)
+{
+
+}
 
 /* USER CODE END 4 */
 

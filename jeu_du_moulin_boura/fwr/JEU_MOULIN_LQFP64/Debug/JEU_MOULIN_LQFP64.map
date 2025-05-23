@@ -4337,7 +4337,7 @@ LOAD C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000000008000000                g_pfnVectors
                 0x00000000080000c0                . = ALIGN (0x4)
 
-.text           0x00000000080000c0     0x2630
+.text           0x00000000080000c0     0x2650
                 0x00000000080000c0                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080000c0       0x48 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
@@ -4369,369 +4369,369 @@ LOAD C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .text.SystemClock_Config
                 0x0000000008000574       0x80 ./Core/Src/main.o
                 0x0000000008000574                SystemClock_Config
- .text.main     0x00000000080005f4      0x314 ./Core/Src/main.o
+ .text.main     0x00000000080005f4      0x334 ./Core/Src/main.o
                 0x00000000080005f4                main
  .text.HAL_MspInit
-                0x0000000008000908       0x1c ./Core/Src/stm32l0xx_hal_msp.o
-                0x0000000008000908                HAL_MspInit
+                0x0000000008000928       0x1c ./Core/Src/stm32l0xx_hal_msp.o
+                0x0000000008000928                HAL_MspInit
  .text.NMI_Handler
-                0x0000000008000924        0x2 ./Core/Src/stm32l0xx_it.o
-                0x0000000008000924                NMI_Handler
+                0x0000000008000944        0x2 ./Core/Src/stm32l0xx_it.o
+                0x0000000008000944                NMI_Handler
  .text.HardFault_Handler
-                0x0000000008000926        0x2 ./Core/Src/stm32l0xx_it.o
-                0x0000000008000926                HardFault_Handler
+                0x0000000008000946        0x2 ./Core/Src/stm32l0xx_it.o
+                0x0000000008000946                HardFault_Handler
  .text.SVC_Handler
-                0x0000000008000928        0x2 ./Core/Src/stm32l0xx_it.o
-                0x0000000008000928                SVC_Handler
+                0x0000000008000948        0x2 ./Core/Src/stm32l0xx_it.o
+                0x0000000008000948                SVC_Handler
  .text.PendSV_Handler
-                0x000000000800092a        0x2 ./Core/Src/stm32l0xx_it.o
-                0x000000000800092a                PendSV_Handler
+                0x000000000800094a        0x2 ./Core/Src/stm32l0xx_it.o
+                0x000000000800094a                PendSV_Handler
  .text.SysTick_Handler
-                0x000000000800092c        0xc ./Core/Src/stm32l0xx_it.o
-                0x000000000800092c                SysTick_Handler
+                0x000000000800094c        0xc ./Core/Src/stm32l0xx_it.o
+                0x000000000800094c                SysTick_Handler
  .text.TSC_IRQHandler
-                0x0000000008000938       0x10 ./Core/Src/stm32l0xx_it.o
-                0x0000000008000938                TSC_IRQHandler
+                0x0000000008000958       0x10 ./Core/Src/stm32l0xx_it.o
+                0x0000000008000958                TSC_IRQHandler
  .text.SystemInit
-                0x0000000008000948        0x2 ./Core/Src/system_stm32l0xx.o
-                0x0000000008000948                SystemInit
- *fill*         0x000000000800094a        0x2 
+                0x0000000008000968        0x2 ./Core/Src/system_stm32l0xx.o
+                0x0000000008000968                SystemInit
+ *fill*         0x000000000800096a        0x2 
  .text.MX_TSC_Init
-                0x000000000800094c       0x5c ./Core/Src/tsc.o
-                0x000000000800094c                MX_TSC_Init
+                0x000000000800096c       0x5c ./Core/Src/tsc.o
+                0x000000000800096c                MX_TSC_Init
  .text.HAL_TSC_MspInit
-                0x00000000080009a8       0xd8 ./Core/Src/tsc.o
-                0x00000000080009a8                HAL_TSC_MspInit
+                0x00000000080009c8       0xd8 ./Core/Src/tsc.o
+                0x00000000080009c8                HAL_TSC_MspInit
  .text.Reset_Handler
-                0x0000000008000a80       0x50 ./Core/Startup/startup_stm32l072rbtx.o
-                0x0000000008000a80                Reset_Handler
+                0x0000000008000aa0       0x50 ./Core/Startup/startup_stm32l072rbtx.o
+                0x0000000008000aa0                Reset_Handler
  .text.Default_Handler
-                0x0000000008000ad0        0x2 ./Core/Startup/startup_stm32l072rbtx.o
-                0x0000000008000ad0                ADC1_COMP_IRQHandler
-                0x0000000008000ad0                PVD_IRQHandler
-                0x0000000008000ad0                I2C1_IRQHandler
-                0x0000000008000ad0                RCC_CRS_IRQHandler
-                0x0000000008000ad0                SPI1_IRQHandler
-                0x0000000008000ad0                TIM6_DAC_IRQHandler
-                0x0000000008000ad0                EXTI2_3_IRQHandler
-                0x0000000008000ad0                I2C2_IRQHandler
-                0x0000000008000ad0                RTC_IRQHandler
-                0x0000000008000ad0                DMA1_Channel4_5_6_7_IRQHandler
-                0x0000000008000ad0                TIM3_IRQHandler
-                0x0000000008000ad0                EXTI4_15_IRQHandler
-                0x0000000008000ad0                DMA1_Channel1_IRQHandler
-                0x0000000008000ad0                USART4_5_IRQHandler
-                0x0000000008000ad0                Default_Handler
-                0x0000000008000ad0                TIM22_IRQHandler
-                0x0000000008000ad0                TIM7_IRQHandler
-                0x0000000008000ad0                EXTI0_1_IRQHandler
-                0x0000000008000ad0                USB_IRQHandler
-                0x0000000008000ad0                I2C3_IRQHandler
-                0x0000000008000ad0                SPI2_IRQHandler
-                0x0000000008000ad0                TIM21_IRQHandler
-                0x0000000008000ad0                WWDG_IRQHandler
-                0x0000000008000ad0                TIM2_IRQHandler
-                0x0000000008000ad0                DMA1_Channel2_3_IRQHandler
-                0x0000000008000ad0                USART2_IRQHandler
-                0x0000000008000ad0                FLASH_IRQHandler
-                0x0000000008000ad0                USART1_IRQHandler
-                0x0000000008000ad0                RNG_LPUART1_IRQHandler
-                0x0000000008000ad0                LPTIM1_IRQHandler
- *fill*         0x0000000008000ad2        0x2 
+                0x0000000008000af0        0x2 ./Core/Startup/startup_stm32l072rbtx.o
+                0x0000000008000af0                ADC1_COMP_IRQHandler
+                0x0000000008000af0                PVD_IRQHandler
+                0x0000000008000af0                I2C1_IRQHandler
+                0x0000000008000af0                RCC_CRS_IRQHandler
+                0x0000000008000af0                SPI1_IRQHandler
+                0x0000000008000af0                TIM6_DAC_IRQHandler
+                0x0000000008000af0                EXTI2_3_IRQHandler
+                0x0000000008000af0                I2C2_IRQHandler
+                0x0000000008000af0                RTC_IRQHandler
+                0x0000000008000af0                DMA1_Channel4_5_6_7_IRQHandler
+                0x0000000008000af0                TIM3_IRQHandler
+                0x0000000008000af0                EXTI4_15_IRQHandler
+                0x0000000008000af0                DMA1_Channel1_IRQHandler
+                0x0000000008000af0                USART4_5_IRQHandler
+                0x0000000008000af0                Default_Handler
+                0x0000000008000af0                TIM22_IRQHandler
+                0x0000000008000af0                TIM7_IRQHandler
+                0x0000000008000af0                EXTI0_1_IRQHandler
+                0x0000000008000af0                USB_IRQHandler
+                0x0000000008000af0                I2C3_IRQHandler
+                0x0000000008000af0                SPI2_IRQHandler
+                0x0000000008000af0                TIM21_IRQHandler
+                0x0000000008000af0                WWDG_IRQHandler
+                0x0000000008000af0                TIM2_IRQHandler
+                0x0000000008000af0                DMA1_Channel2_3_IRQHandler
+                0x0000000008000af0                USART2_IRQHandler
+                0x0000000008000af0                FLASH_IRQHandler
+                0x0000000008000af0                USART1_IRQHandler
+                0x0000000008000af0                RNG_LPUART1_IRQHandler
+                0x0000000008000af0                LPTIM1_IRQHandler
+ *fill*         0x0000000008000af2        0x2 
  .text.HAL_InitTick
-                0x0000000008000ad4       0x50 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
-                0x0000000008000ad4                HAL_InitTick
+                0x0000000008000af4       0x50 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
+                0x0000000008000af4                HAL_InitTick
  .text.HAL_Init
-                0x0000000008000b24       0x28 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
-                0x0000000008000b24                HAL_Init
+                0x0000000008000b44       0x28 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
+                0x0000000008000b44                HAL_Init
  .text.HAL_IncTick
-                0x0000000008000b4c       0x18 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
-                0x0000000008000b4c                HAL_IncTick
+                0x0000000008000b6c       0x18 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
+                0x0000000008000b6c                HAL_IncTick
  .text.HAL_GetTick
-                0x0000000008000b64        0xc ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
-                0x0000000008000b64                HAL_GetTick
+                0x0000000008000b84        0xc ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
+                0x0000000008000b84                HAL_GetTick
  .text.HAL_Delay
-                0x0000000008000b70       0x24 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
-                0x0000000008000b70                HAL_Delay
+                0x0000000008000b90       0x24 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
+                0x0000000008000b90                HAL_Delay
  .text.HAL_NVIC_SetPriority
-                0x0000000008000b94       0x60 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.o
-                0x0000000008000b94                HAL_NVIC_SetPriority
+                0x0000000008000bb4       0x60 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.o
+                0x0000000008000bb4                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x0000000008000bf4       0x18 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.o
-                0x0000000008000bf4                HAL_NVIC_EnableIRQ
+                0x0000000008000c14       0x18 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.o
+                0x0000000008000c14                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x0000000008000c0c       0x38 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.o
-                0x0000000008000c0c                HAL_SYSTICK_Config
+                0x0000000008000c2c       0x38 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.o
+                0x0000000008000c2c                HAL_SYSTICK_Config
  .text.HAL_GPIO_Init
-                0x0000000008000c44      0x198 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.o
-                0x0000000008000c44                HAL_GPIO_Init
+                0x0000000008000c64      0x198 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.o
+                0x0000000008000c64                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x0000000008000ddc        0xc ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.o
-                0x0000000008000ddc                HAL_GPIO_WritePin
+                0x0000000008000dfc        0xc ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.o
+                0x0000000008000dfc                HAL_GPIO_WritePin
  .text.HAL_RCC_GetSysClockFreq
-                0x0000000008000de8       0xb0 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.o
-                0x0000000008000de8                HAL_RCC_GetSysClockFreq
+                0x0000000008000e08       0xb0 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.o
+                0x0000000008000e08                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_OscConfig
-                0x0000000008000e98      0x598 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.o
-                0x0000000008000e98                HAL_RCC_OscConfig
+                0x0000000008000eb8      0x598 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.o
+                0x0000000008000eb8                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x0000000008001430      0x1d8 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.o
-                0x0000000008001430                HAL_RCC_ClockConfig
+                0x0000000008001450      0x1d8 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.o
+                0x0000000008001450                HAL_RCC_ClockConfig
  .text.TSC_extract_groups
-                0x0000000008001608       0x24 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
+                0x0000000008001628       0x24 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
  .text.HAL_TSC_Init
-                0x000000000800162c       0xa8 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
-                0x000000000800162c                HAL_TSC_Init
+                0x000000000800164c       0xa8 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
+                0x000000000800164c                HAL_TSC_Init
  .text.HAL_TSC_ErrorCallback
-                0x00000000080016d4        0x2 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
-                0x00000000080016d4                HAL_TSC_ErrorCallback
+                0x00000000080016f4        0x2 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
+                0x00000000080016f4                HAL_TSC_ErrorCallback
  .text.HAL_TSC_IRQHandler
-                0x00000000080016d6       0x32 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
-                0x00000000080016d6                HAL_TSC_IRQHandler
+                0x00000000080016f6       0x32 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
+                0x00000000080016f6                HAL_TSC_IRQHandler
  .text.TSL_Init
-                0x0000000008001708       0x34 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl.o
-                0x0000000008001708                TSL_Init
+                0x0000000008001728       0x34 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl.o
+                0x0000000008001728                TSL_Init
  .text.TSL_acq_BankGetResult
-                0x000000000800173c      0x164 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.o
-                0x000000000800173c                TSL_acq_BankGetResult
+                0x000000000800175c      0x164 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.o
+                0x000000000800175c                TSL_acq_BankGetResult
  .text.SoftDelay
-                0x00000000080018a0       0x24 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+                0x00000000080018c0       0x24 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
  .text.TSL_acq_BankConfig
-                0x00000000080018c4       0x80 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
-                0x00000000080018c4                TSL_acq_BankConfig
+                0x00000000080018e4       0x80 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+                0x00000000080018e4                TSL_acq_BankConfig
  .text.TSL_acq_GetMeas
-                0x0000000008001944       0x1c ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
-                0x0000000008001944                TSL_acq_GetMeas
+                0x0000000008001964       0x1c ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+                0x0000000008001964                TSL_acq_GetMeas
  .text.TSL_acq_ComputeDelta
-                0x0000000008001960        0x6 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
-                0x0000000008001960                TSL_acq_ComputeDelta
+                0x0000000008001980        0x6 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+                0x0000000008001980                TSL_acq_ComputeDelta
  .text.TSL_acq_ComputeMeas
-                0x0000000008001966        0x6 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
-                0x0000000008001966                TSL_acq_ComputeMeas
+                0x0000000008001986        0x6 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+                0x0000000008001986                TSL_acq_ComputeMeas
  .text.TSL_acq_CheckNoise
-                0x000000000800196c        0x4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
-                0x000000000800196c                TSL_acq_CheckNoise
+                0x000000000800198c        0x4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+                0x000000000800198c                TSL_acq_CheckNoise
  .text.TSL_acq_UseFilter
-                0x0000000008001970        0x4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
-                0x0000000008001970                TSL_acq_UseFilter
+                0x0000000008001990        0x4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+                0x0000000008001990                TSL_acq_UseFilter
  .text.TSL_acq_TestReferenceOutOfRange
-                0x0000000008001974        0x4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
-                0x0000000008001974                TSL_acq_TestReferenceOutOfRange
+                0x0000000008001994        0x4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+                0x0000000008001994                TSL_acq_TestReferenceOutOfRange
  .text.TSL_acq_TestFirstReferenceIsValid
-                0x0000000008001978        0x4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
-                0x0000000008001978                TSL_acq_TestFirstReferenceIsValid
+                0x0000000008001998        0x4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+                0x0000000008001998                TSL_acq_TestFirstReferenceIsValid
  .text.TSL_acq_BankStartAcq_IT
-                0x000000000800197c       0x2c ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
-                0x000000000800197c                TSL_acq_BankStartAcq_IT
+                0x000000000800199c       0x2c ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+                0x000000000800199c                TSL_acq_BankStartAcq_IT
  .text.TSL_dxs_FirstObj
-                0x00000000080019a8        0x2 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.o
-                0x00000000080019a8                TSL_dxs_FirstObj
- *fill*         0x00000000080019aa        0x2 
+                0x00000000080019c8        0x2 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.o
+                0x00000000080019c8                TSL_dxs_FirstObj
+ *fill*         0x00000000080019ca        0x2 
  .text.TSL_ecs_CalcK
-                0x00000000080019ac       0xd0 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.o
-                0x00000000080019ac                TSL_ecs_CalcK
+                0x00000000080019cc       0xd0 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.o
+                0x00000000080019cc                TSL_ecs_CalcK
  .text.TSL_ecs_ProcessK
-                0x0000000008001a7c       0xdc ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.o
-                0x0000000008001a7c                TSL_ecs_ProcessK
+                0x0000000008001a9c       0xdc ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.o
+                0x0000000008001a9c                TSL_ecs_ProcessK
  .text.TSL_ecs_Process
-                0x0000000008001b58       0x84 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.o
-                0x0000000008001b58                TSL_ecs_Process
+                0x0000000008001b78       0x84 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.o
+                0x0000000008001b78                TSL_ecs_Process
  .text.TSL_obj_SetGlobalObj
-                0x0000000008001bdc       0x1c ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.o
-                0x0000000008001bdc                TSL_obj_SetGlobalObj
+                0x0000000008001bfc       0x1c ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.o
+                0x0000000008001bfc                TSL_obj_SetGlobalObj
  .text.TSL_obj_GroupInit
-                0x0000000008001bf8       0x68 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.o
-                0x0000000008001bf8                TSL_obj_GroupInit
+                0x0000000008001c18       0x68 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.o
+                0x0000000008001c18                TSL_obj_GroupInit
  .text.TSL_obj_GroupProcess
-                0x0000000008001c60       0x68 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.o
-                0x0000000008001c60                TSL_obj_GroupProcess
+                0x0000000008001c80       0x68 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.o
+                0x0000000008001c80                TSL_obj_GroupProcess
  .text.TSL_tim_ProcessIT
-                0x0000000008001cc8       0x40 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.o
-                0x0000000008001cc8                TSL_tim_ProcessIT
+                0x0000000008001ce8       0x40 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.o
+                0x0000000008001ce8                TSL_tim_ProcessIT
  .text.TSL_tim_CheckDelay_ms
-                0x0000000008001d08       0x64 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.o
-                0x0000000008001d08                TSL_tim_CheckDelay_ms
+                0x0000000008001d28       0x64 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.o
+                0x0000000008001d28                TSL_tim_CheckDelay_ms
  .text.TSL_tkey_Process
-                0x0000000008001d6c       0x60 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008001d6c                TSL_tkey_Process
+                0x0000000008001d8c       0x60 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x0000000008001d8c                TSL_tkey_Process
  .text.TSL_tkey_SetStateCalibration
-                0x0000000008001dcc       0x74 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008001dcc                TSL_tkey_SetStateCalibration
+                0x0000000008001dec       0x74 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x0000000008001dec                TSL_tkey_SetStateCalibration
  .text.TSL_tkey_Init
-                0x0000000008001e40       0x58 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008001e40                TSL_tkey_Init
+                0x0000000008001e60       0x58 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x0000000008001e60                TSL_tkey_Init
  .text.TSL_tkey_GetStateMask
-                0x0000000008001e98       0x24 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008001e98                TSL_tkey_GetStateMask
+                0x0000000008001eb8       0x24 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x0000000008001eb8                TSL_tkey_GetStateMask
  .text.TSL_tkey_DebReleaseProxStateProcess
-                0x0000000008001ebc       0x50 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008001ebc                TSL_tkey_DebReleaseProxStateProcess
+                0x0000000008001edc       0x50 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x0000000008001edc                TSL_tkey_DebReleaseProxStateProcess
  .text.TSL_tkey_DebReleaseDetectStateProcess
-                0x0000000008001f0c       0x60 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008001f0c                TSL_tkey_DebReleaseDetectStateProcess
+                0x0000000008001f2c       0x60 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x0000000008001f2c                TSL_tkey_DebReleaseDetectStateProcess
  .text.TSL_tkey_DebReleaseTouchStateProcess
-                0x0000000008001f6c       0x60 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008001f6c                TSL_tkey_DebReleaseTouchStateProcess
+                0x0000000008001f8c       0x60 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x0000000008001f8c                TSL_tkey_DebReleaseTouchStateProcess
  .text.TSL_tkey_ReleaseStateProcess
-                0x0000000008001fcc       0xb0 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008001fcc                TSL_tkey_ReleaseStateProcess
+                0x0000000008001fec       0xb0 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x0000000008001fec                TSL_tkey_ReleaseStateProcess
  .text.TSL_tkey_DebCalibrationStateProcess
-                0x000000000800207c       0x58 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x000000000800207c                TSL_tkey_DebCalibrationStateProcess
+                0x000000000800209c       0x58 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x000000000800209c                TSL_tkey_DebCalibrationStateProcess
  .text.TSL_tkey_CalibrationStateProcess
-                0x00000000080020d4       0xd4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x00000000080020d4                TSL_tkey_CalibrationStateProcess
+                0x00000000080020f4       0xd4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x00000000080020f4                TSL_tkey_CalibrationStateProcess
  .text.TSL_tkey_DebProxStateProcess
-                0x00000000080021a8       0x74 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x00000000080021a8                TSL_tkey_DebProxStateProcess
+                0x00000000080021c8       0x74 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x00000000080021c8                TSL_tkey_DebProxStateProcess
  .text.TSL_tkey_DebProxDetectStateProcess
-                0x000000000800221c       0x74 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x000000000800221c                TSL_tkey_DebProxDetectStateProcess
+                0x000000000800223c       0x74 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x000000000800223c                TSL_tkey_DebProxDetectStateProcess
  .text.TSL_tkey_DebProxTouchStateProcess
-                0x0000000008002290       0x74 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008002290                TSL_tkey_DebProxTouchStateProcess
+                0x00000000080022b0       0x74 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x00000000080022b0                TSL_tkey_DebProxTouchStateProcess
  .text.TSL_tkey_ProxStateProcess
-                0x0000000008002304       0x84 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008002304                TSL_tkey_ProxStateProcess
+                0x0000000008002324       0x84 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x0000000008002324                TSL_tkey_ProxStateProcess
  .text.TSL_tkey_DebDetectStateProcess
-                0x0000000008002388       0x74 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008002388                TSL_tkey_DebDetectStateProcess
+                0x00000000080023a8       0x74 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x00000000080023a8                TSL_tkey_DebDetectStateProcess
  .text.TSL_tkey_DetectStateProcess
-                0x00000000080023fc       0x84 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x00000000080023fc                TSL_tkey_DetectStateProcess
+                0x000000000800241c       0x84 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x000000000800241c                TSL_tkey_DetectStateProcess
  .text.TSL_tkey_TouchStateProcess
-                0x0000000008002480       0x84 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008002480                TSL_tkey_TouchStateProcess
+                0x00000000080024a0       0x84 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x00000000080024a0                TSL_tkey_TouchStateProcess
  .text.TSL_tkey_DebErrorStateProcess
-                0x0000000008002504       0x8c ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
-                0x0000000008002504                TSL_tkey_DebErrorStateProcess
+                0x0000000008002524       0x8c ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+                0x0000000008002524                TSL_tkey_DebErrorStateProcess
  .text.MX_TOUCHSENSING_Init
-                0x0000000008002590        0x8 ./TOUCHSENSING/App/touchsensing.o
-                0x0000000008002590                MX_TOUCHSENSING_Init
+                0x00000000080025b0        0x8 ./TOUCHSENSING/App/touchsensing.o
+                0x00000000080025b0                MX_TOUCHSENSING_Init
  .text.MyTKeys_ErrorStateProcess
-                0x0000000008002598        0x2 ./TOUCHSENSING/App/tsl_user.o
-                0x0000000008002598                MyTKeys_ErrorStateProcess
+                0x00000000080025b8        0x2 ./TOUCHSENSING/App/tsl_user.o
+                0x00000000080025b8                MyTKeys_ErrorStateProcess
  .text.MyTKeys_OffStateProcess
-                0x000000000800259a        0x2 ./TOUCHSENSING/App/tsl_user.o
-                0x000000000800259a                MyTKeys_OffStateProcess
+                0x00000000080025ba        0x2 ./TOUCHSENSING/App/tsl_user.o
+                0x00000000080025ba                MyTKeys_OffStateProcess
  .text.tsl_user_Init
-                0x000000000800259c       0x18 ./TOUCHSENSING/App/tsl_user.o
-                0x000000000800259c                tsl_user_Init
+                0x00000000080025bc       0x18 ./TOUCHSENSING/App/tsl_user.o
+                0x00000000080025bc                tsl_user_Init
  .text.HAL_TSC_ConvCpltCallback
-                0x00000000080025b4       0x3c ./TOUCHSENSING/App/tsl_user.o
-                0x00000000080025b4                HAL_TSC_ConvCpltCallback
+                0x00000000080025d4       0x3c ./TOUCHSENSING/App/tsl_user.o
+                0x00000000080025d4                HAL_TSC_ConvCpltCallback
  .text.tsl_user_Exec_IT
-                0x00000000080025f0       0x90 ./TOUCHSENSING/App/tsl_user.o
-                0x00000000080025f0                tsl_user_Exec_IT
- .text.memset   0x0000000008002680       0x10 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-memset.o)
-                0x0000000008002680                memset
+                0x0000000008002610       0x90 ./TOUCHSENSING/App/tsl_user.o
+                0x0000000008002610                tsl_user_Exec_IT
+ .text.memset   0x00000000080026a0       0x10 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-memset.o)
+                0x00000000080026a0                memset
  .text.__libc_init_array
-                0x0000000008002690       0x48 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-init.o)
-                0x0000000008002690                __libc_init_array
+                0x00000000080026b0       0x48 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-init.o)
+                0x00000000080026b0                __libc_init_array
  *(.glue_7)
- .glue_7        0x00000000080026d8        0x0 linker stubs
+ .glue_7        0x00000000080026f8        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00000000080026d8        0x0 linker stubs
+ .glue_7t       0x00000000080026f8        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x00000000080026d8        0x0 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
+ .eh_frame      0x00000000080026f8        0x0 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
  *(.init)
- .init          0x00000000080026d8        0x4 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crti.o
-                0x00000000080026d8                _init
- .init          0x00000000080026dc        0x8 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtn.o
+ .init          0x00000000080026f8        0x4 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crti.o
+                0x00000000080026f8                _init
+ .init          0x00000000080026fc        0x8 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtn.o
  *(.fini)
- .fini          0x00000000080026e4        0x4 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crti.o
-                0x00000000080026e4                _fini
- .fini          0x00000000080026e8        0x8 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtn.o
-                0x00000000080026f0                . = ALIGN (0x4)
-                0x00000000080026f0                _etext = .
+ .fini          0x0000000008002704        0x4 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crti.o
+                0x0000000008002704                _fini
+ .fini          0x0000000008002708        0x8 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtn.o
+                0x0000000008002710                . = ALIGN (0x4)
+                0x0000000008002710                _etext = .
 
-.vfp11_veneer   0x00000000080026f0        0x0
- .vfp11_veneer  0x00000000080026f0        0x0 linker stubs
+.vfp11_veneer   0x0000000008002710        0x0
+ .vfp11_veneer  0x0000000008002710        0x0 linker stubs
 
-.v4_bx          0x00000000080026f0        0x0
- .v4_bx         0x00000000080026f0        0x0 linker stubs
+.v4_bx          0x0000000008002710        0x0
+ .v4_bx         0x0000000008002710        0x0 linker stubs
 
-.iplt           0x00000000080026f0        0x0
- .iplt          0x00000000080026f0        0x0 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x0000000008002710        0x0
+ .iplt          0x0000000008002710        0x0 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x00000000080026f0      0x2d0
-                0x00000000080026f0                . = ALIGN (0x4)
+.rodata         0x0000000008002710      0x2d0
+                0x0000000008002710                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata.AHBPrescTable
-                0x00000000080026f0       0x10 ./Core/Src/system_stm32l0xx.o
-                0x00000000080026f0                AHBPrescTable
+                0x0000000008002710       0x10 ./Core/Src/system_stm32l0xx.o
+                0x0000000008002710                AHBPrescTable
  .rodata.PLLMulTable
-                0x0000000008002700        0x9 ./Core/Src/system_stm32l0xx.o
-                0x0000000008002700                PLLMulTable
- *fill*         0x0000000008002709        0x3 
+                0x0000000008002720        0x9 ./Core/Src/system_stm32l0xx.o
+                0x0000000008002720                PLLMulTable
+ *fill*         0x0000000008002729        0x3 
  .rodata.MyBanks
-                0x000000000800270c       0x90 ./TOUCHSENSING/App/tsl_user.o
-                0x000000000800270c                MyBanks
+                0x000000000800272c       0x90 ./TOUCHSENSING/App/tsl_user.o
+                0x000000000800272c                MyBanks
  .rodata.MyChannels_Dest
-                0x000000000800279c       0x12 ./TOUCHSENSING/App/tsl_user.o
-                0x000000000800279c                MyChannels_Dest
- *fill*         0x00000000080027ae        0x2 
+                0x00000000080027bc       0x12 ./TOUCHSENSING/App/tsl_user.o
+                0x00000000080027bc                MyChannels_Dest
+ *fill*         0x00000000080027ce        0x2 
  .rodata.MyChannels_Src
-                0x00000000080027b0       0x6c ./TOUCHSENSING/App/tsl_user.o
-                0x00000000080027b0                MyChannels_Src
+                0x00000000080027d0       0x6c ./TOUCHSENSING/App/tsl_user.o
+                0x00000000080027d0                MyChannels_Src
  .rodata.MyObjects
-                0x000000000800281c       0x48 ./TOUCHSENSING/App/tsl_user.o
-                0x000000000800281c                MyObjects
+                0x000000000800283c       0x48 ./TOUCHSENSING/App/tsl_user.o
+                0x000000000800283c                MyObjects
  .rodata.MyTKeys
-                0x0000000008002864       0xb4 ./TOUCHSENSING/App/tsl_user.o
-                0x0000000008002864                MyTKeys
+                0x0000000008002884       0xb4 ./TOUCHSENSING/App/tsl_user.o
+                0x0000000008002884                MyTKeys
  .rodata.MyTKeys_Methods
-                0x0000000008002918        0x8 ./TOUCHSENSING/App/tsl_user.o
-                0x0000000008002918                MyTKeys_Methods
+                0x0000000008002938        0x8 ./TOUCHSENSING/App/tsl_user.o
+                0x0000000008002938                MyTKeys_Methods
  .rodata.MyTKeys_StateMachine
-                0x0000000008002920       0xa0 ./TOUCHSENSING/App/tsl_user.o
-                0x0000000008002920                MyTKeys_StateMachine
-                0x00000000080029c0                . = ALIGN (0x4)
+                0x0000000008002940       0xa0 ./TOUCHSENSING/App/tsl_user.o
+                0x0000000008002940                MyTKeys_StateMachine
+                0x00000000080029e0                . = ALIGN (0x4)
 
-.ARM.extab      0x00000000080029c0        0x0
-                0x00000000080029c0                . = ALIGN (0x4)
+.ARM.extab      0x00000000080029e0        0x0
+                0x00000000080029e0                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000000080029c0                . = ALIGN (0x4)
+                0x00000000080029e0                . = ALIGN (0x4)
 
-.ARM            0x00000000080029c0        0x8
-                0x00000000080029c0                . = ALIGN (0x4)
-                0x00000000080029c0                __exidx_start = .
+.ARM            0x00000000080029e0        0x8
+                0x00000000080029e0                . = ALIGN (0x4)
+                0x00000000080029e0                __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x00000000080029c0        0x8 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp\libgcc.a(_udivmoddi4.o)
-                0x00000000080029c8                __exidx_end = .
-                0x00000000080029c8                . = ALIGN (0x4)
+ .ARM.exidx     0x00000000080029e0        0x8 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp\libgcc.a(_udivmoddi4.o)
+                0x00000000080029e8                __exidx_end = .
+                0x00000000080029e8                . = ALIGN (0x4)
 
-.rel.dyn        0x00000000080029c8        0x0
- .rel.iplt      0x00000000080029c8        0x0 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
+.rel.dyn        0x00000000080029e8        0x0
+ .rel.iplt      0x00000000080029e8        0x0 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.preinit_array  0x00000000080029c8        0x0
-                0x00000000080029c8                . = ALIGN (0x4)
-                0x00000000080029c8                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x00000000080029e8        0x0
+                0x00000000080029e8                . = ALIGN (0x4)
+                0x00000000080029e8                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x00000000080029c8                PROVIDE (__preinit_array_end = .)
-                0x00000000080029c8                . = ALIGN (0x4)
+                0x00000000080029e8                PROVIDE (__preinit_array_end = .)
+                0x00000000080029e8                . = ALIGN (0x4)
 
-.init_array     0x00000000080029c8        0x4
-                0x00000000080029c8                . = ALIGN (0x4)
-                0x00000000080029c8                PROVIDE (__init_array_start = .)
+.init_array     0x00000000080029e8        0x4
+                0x00000000080029e8                . = ALIGN (0x4)
+                0x00000000080029e8                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x00000000080029c8        0x4 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
-                0x00000000080029cc                PROVIDE (__init_array_end = .)
-                0x00000000080029cc                . = ALIGN (0x4)
+ .init_array    0x00000000080029e8        0x4 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
+                0x00000000080029ec                PROVIDE (__init_array_end = .)
+                0x00000000080029ec                . = ALIGN (0x4)
 
-.fini_array     0x00000000080029cc        0x4
-                0x00000000080029cc                . = ALIGN (0x4)
+.fini_array     0x00000000080029ec        0x4
+                0x00000000080029ec                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x00000000080029cc        0x4 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
+ .fini_array    0x00000000080029ec        0x4 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x00000000080029d0                . = ALIGN (0x4)
-                0x00000000080029d0                _sidata = LOADADDR (.data)
+                0x00000000080029f0                . = ALIGN (0x4)
+                0x00000000080029f0                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000       0x2c load address 0x00000000080029d0
+.data           0x0000000020000000       0x2c load address 0x00000000080029f0
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -4757,11 +4757,11 @@ LOAD C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x000000002000002c                . = ALIGN (0x4)
                 0x000000002000002c                _edata = .
 
-.igot.plt       0x000000002000002c        0x0 load address 0x00000000080029fc
+.igot.plt       0x000000002000002c        0x0 load address 0x0000000008002a1c
  .igot.plt      0x000000002000002c        0x0 C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v6-m/nofp/crtbegin.o
                 0x000000002000002c                . = ALIGN (0x4)
 
-.bss            0x000000002000002c      0x190 load address 0x00000000080029fc
+.bss            0x000000002000002c      0x190 load address 0x0000000008002a1c
                 0x000000002000002c                _sbss = .
                 0x000000002000002c                __bss_start__ = _sbss
  *(.bss)
@@ -4814,7 +4814,7 @@ LOAD C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x00000000200001bc                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x00000000200001bc      0x604 load address 0x00000000080029fc
+                0x00000000200001bc      0x604 load address 0x0000000008002a1c
                 0x00000000200001c0                . = ALIGN (0x8)
  *fill*         0x00000000200001bc        0x4 
                 [!provide]                        PROVIDE (end = .)
@@ -4935,30 +4935,30 @@ LOAD C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .comment       0x0000000000000043       0x44 ./TOUCHSENSING/App/touchsensing.o
  .comment       0x0000000000000043       0x44 ./TOUCHSENSING/App/tsl_user.o
 
-.debug_info     0x0000000000000000     0xb4fd
+.debug_info     0x0000000000000000     0xb559
  .debug_info    0x0000000000000000      0x45a ./Core/Src/gpio.o
- .debug_info    0x000000000000045a     0x1105 ./Core/Src/main.o
- .debug_info    0x000000000000155f      0x1ba ./Core/Src/stm32l0xx_hal_msp.o
- .debug_info    0x0000000000001719      0x3b1 ./Core/Src/stm32l0xx_it.o
- .debug_info    0x0000000000001aca      0x30d ./Core/Src/system_stm32l0xx.o
- .debug_info    0x0000000000001dd7      0x8e3 ./Core/Src/tsc.o
- .debug_info    0x00000000000026ba       0x23 ./Core/Startup/startup_stm32l072rbtx.o
- .debug_info    0x00000000000026dd      0x94c ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
- .debug_info    0x0000000000003029      0x992 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.o
- .debug_info    0x00000000000039bb      0x655 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.o
- .debug_info    0x0000000000004010      0xd58 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.o
- .debug_info    0x0000000000004d68      0x7f1 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
- .debug_info    0x0000000000005559      0x76b ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl.o
- .debug_info    0x0000000000005cc4      0xc2f ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.o
- .debug_info    0x00000000000068f3      0xaee ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
- .debug_info    0x00000000000073e1      0x207 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.o
- .debug_info    0x00000000000075e8      0xb7e ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.o
- .debug_info    0x0000000000008166      0x6e4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_globals.o
- .debug_info    0x000000000000884a      0x87e ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.o
- .debug_info    0x00000000000090c8      0x85f ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.o
- .debug_info    0x0000000000009927      0xab3 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
- .debug_info    0x000000000000a3da       0x9c ./TOUCHSENSING/App/touchsensing.o
- .debug_info    0x000000000000a476     0x1087 ./TOUCHSENSING/App/tsl_user.o
+ .debug_info    0x000000000000045a     0x1161 ./Core/Src/main.o
+ .debug_info    0x00000000000015bb      0x1ba ./Core/Src/stm32l0xx_hal_msp.o
+ .debug_info    0x0000000000001775      0x3b1 ./Core/Src/stm32l0xx_it.o
+ .debug_info    0x0000000000001b26      0x30d ./Core/Src/system_stm32l0xx.o
+ .debug_info    0x0000000000001e33      0x8e3 ./Core/Src/tsc.o
+ .debug_info    0x0000000000002716       0x23 ./Core/Startup/startup_stm32l072rbtx.o
+ .debug_info    0x0000000000002739      0x94c ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
+ .debug_info    0x0000000000003085      0x992 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.o
+ .debug_info    0x0000000000003a17      0x655 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.o
+ .debug_info    0x000000000000406c      0xd58 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.o
+ .debug_info    0x0000000000004dc4      0x7f1 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
+ .debug_info    0x00000000000055b5      0x76b ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl.o
+ .debug_info    0x0000000000005d20      0xc2f ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.o
+ .debug_info    0x000000000000694f      0xaee ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+ .debug_info    0x000000000000743d      0x207 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.o
+ .debug_info    0x0000000000007644      0xb7e ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.o
+ .debug_info    0x00000000000081c2      0x6e4 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_globals.o
+ .debug_info    0x00000000000088a6      0x87e ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.o
+ .debug_info    0x0000000000009124      0x85f ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.o
+ .debug_info    0x0000000000009983      0xab3 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+ .debug_info    0x000000000000a436       0x9c ./TOUCHSENSING/App/touchsensing.o
+ .debug_info    0x000000000000a4d2     0x1087 ./TOUCHSENSING/App/tsl_user.o
 
 .debug_abbrev   0x0000000000000000     0x283e
  .debug_abbrev  0x0000000000000000      0x177 ./Core/Src/gpio.o
@@ -5151,30 +5151,30 @@ LOAD C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x0000000000014f08      0x279 ./TOUCHSENSING/App/touchsensing.o
  .debug_macro   0x0000000000015181      0x26f ./TOUCHSENSING/App/tsl_user.o
 
-.debug_line     0x0000000000000000     0xf3a4
+.debug_line     0x0000000000000000     0xf3a7
  .debug_line    0x0000000000000000      0x7c1 ./Core/Src/gpio.o
- .debug_line    0x00000000000007c1      0xf29 ./Core/Src/main.o
- .debug_line    0x00000000000016ea      0x739 ./Core/Src/stm32l0xx_hal_msp.o
- .debug_line    0x0000000000001e23      0x880 ./Core/Src/stm32l0xx_it.o
- .debug_line    0x00000000000026a3      0x822 ./Core/Src/system_stm32l0xx.o
- .debug_line    0x0000000000002ec5      0x8e3 ./Core/Src/tsc.o
- .debug_line    0x00000000000037a8       0x7b ./Core/Startup/startup_stm32l072rbtx.o
- .debug_line    0x0000000000003823      0xb33 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
- .debug_line    0x0000000000004356      0xbd0 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.o
- .debug_line    0x0000000000004f26      0xc05 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.o
- .debug_line    0x0000000000005b2b     0x134c ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.o
- .debug_line    0x0000000000006e77      0xdb3 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
- .debug_line    0x0000000000007c2a      0x8a2 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl.o
- .debug_line    0x00000000000084cc      0xd22 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.o
- .debug_line    0x00000000000091ee      0xadb ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
- .debug_line    0x0000000000009cc9      0x85d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.o
- .debug_line    0x000000000000a526      0xbc8 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.o
- .debug_line    0x000000000000b0ee      0x83f ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_globals.o
- .debug_line    0x000000000000b92d      0xa21 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.o
- .debug_line    0x000000000000c34e      0x9d6 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.o
- .debug_line    0x000000000000cd24     0x13e9 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
- .debug_line    0x000000000000e10d      0x87a ./TOUCHSENSING/App/touchsensing.o
- .debug_line    0x000000000000e987      0xa1d ./TOUCHSENSING/App/tsl_user.o
+ .debug_line    0x00000000000007c1      0xf2c ./Core/Src/main.o
+ .debug_line    0x00000000000016ed      0x739 ./Core/Src/stm32l0xx_hal_msp.o
+ .debug_line    0x0000000000001e26      0x880 ./Core/Src/stm32l0xx_it.o
+ .debug_line    0x00000000000026a6      0x822 ./Core/Src/system_stm32l0xx.o
+ .debug_line    0x0000000000002ec8      0x8e3 ./Core/Src/tsc.o
+ .debug_line    0x00000000000037ab       0x7b ./Core/Startup/startup_stm32l072rbtx.o
+ .debug_line    0x0000000000003826      0xb33 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.o
+ .debug_line    0x0000000000004359      0xbd0 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.o
+ .debug_line    0x0000000000004f29      0xc05 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.o
+ .debug_line    0x0000000000005b2e     0x134c ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.o
+ .debug_line    0x0000000000006e7a      0xdb3 ./Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tsc.o
+ .debug_line    0x0000000000007c2d      0x8a2 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl.o
+ .debug_line    0x00000000000084cf      0xd22 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.o
+ .debug_line    0x00000000000091f1      0xadb ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.o
+ .debug_line    0x0000000000009ccc      0x85d ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.o
+ .debug_line    0x000000000000a529      0xbc8 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.o
+ .debug_line    0x000000000000b0f1      0x83f ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_globals.o
+ .debug_line    0x000000000000b930      0xa21 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.o
+ .debug_line    0x000000000000c351      0x9d6 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.o
+ .debug_line    0x000000000000cd27     0x13e9 ./Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.o
+ .debug_line    0x000000000000e110      0x87a ./TOUCHSENSING/App/touchsensing.o
+ .debug_line    0x000000000000e98a      0xa1d ./TOUCHSENSING/App/tsl_user.o
 
 .debug_str      0x0000000000000000    0x79199
  .debug_str     0x0000000000000000    0x7493b ./Core/Src/gpio.o
