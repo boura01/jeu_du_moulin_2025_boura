@@ -6,8 +6,18 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Mode"/>
+		<item key="selection" value="Global"/>
 		<list key="findhistory">
+			<item value="global"/>
+			<item value="touchDetect"/>
+			<item value="TKEY_CAL"/>
+			<item value="acquended"/>
+			<item value="TSLPRM_TOTAL_CHANNELS"/>
+			<item value="end of acquisition"/>
+			<item value="user code"/>
+			<item value="ACQ"/>
+			<item value="ACQU"/>
+			<item value="int i = 0; i &lt; sizeof(touchDetect); i++"/>
 			<item value="input"/>
 			<item value="mode"/>
 			<item value="i"/>

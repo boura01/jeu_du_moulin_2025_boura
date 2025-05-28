@@ -25,8 +25,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c_ex.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h \
+ ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h \
+ ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tsc.h \
- ../TOUCHSENSING/App/touchsensing.h ../TOUCHSENSING/App/tsl_conf.h \
+ ../Core/Inc/tim.h ../Core/Inc/main.h ../TOUCHSENSING/App/touchsensing.h \
+ ../TOUCHSENSING/App/tsl_conf.h \
  ../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq_tsc.h \
  ../TOUCHSENSING/App/tsl_conf.h \
  ../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_types.h \
@@ -43,7 +46,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_ecs.h \
  ../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_filter.h \
  ../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_globals.h \
- ../Core/Inc/tsc.h ../Core/Inc/main.h ../Core/Inc/gpio.h
+ ../Core/Inc/tsc.h ../Core/Inc/gpio.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h:
 ../Core/Inc/stm32l0xx_hal_conf.h:
@@ -71,7 +74,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c_ex.h:
 ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr.h:
 ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h:
+../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h:
+../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h:
 ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tsc.h:
+../Core/Inc/tim.h:
+../Core/Inc/main.h:
 ../TOUCHSENSING/App/touchsensing.h:
 ../TOUCHSENSING/App/tsl_conf.h:
 ../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq_tsc.h:
@@ -91,5 +98,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_filter.h:
 ../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_globals.h:
 ../Core/Inc/tsc.h:
-../Core/Inc/main.h:
 ../Core/Inc/gpio.h:

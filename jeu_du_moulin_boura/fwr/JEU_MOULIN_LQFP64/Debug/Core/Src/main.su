@@ -1,6 +1,7 @@
-../Core/Src/main.c:696:6:LED_OFF	0	static
-../Core/Src/main.c:700:6:LED_MODE	12	static
-../Core/Src/main.c:302:6:LEDP	16	static
-../Core/Src/main.c:717:6:Error_Handler	0	static,ignoring_inline_asm
-../Core/Src/main.c:265:6:SystemClock_Config	88	static
-../Core/Src/main.c:125:5:main	8	static
+../Core/Src/main.c:1467:6:LED_MODE	12	static
+../Core/Src/main.c:1446:6:LED_OFF	16	static
+../Core/Src/main.c:341:6:LEDP	16	static
+../Core/Src/main.c:1433:6:LED_Field	16	static
+../Core/Src/main.c:1482:6:Error_Handler	0	static,ignoring_inline_asm
+../Core/Src/main.c:300:6:SystemClock_Config	88	static
+../Core/Src/main.c:126:5:main	8	static

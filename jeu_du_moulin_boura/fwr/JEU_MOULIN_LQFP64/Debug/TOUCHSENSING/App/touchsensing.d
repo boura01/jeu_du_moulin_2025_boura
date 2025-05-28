@@ -26,6 +26,8 @@ TOUCHSENSING/App/touchsensing.o: ../TOUCHSENSING/App/touchsensing.c \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c_ex.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h \
+ ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h \
+ ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tsc.h \
  ../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq_tsc.h \
  ../TOUCHSENSING/App/tsl_conf.h \
@@ -72,6 +74,8 @@ TOUCHSENSING/App/touchsensing.o: ../TOUCHSENSING/App/touchsensing.c \
 ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c_ex.h:
 ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr.h:
 ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h:
+../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h:
+../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h:
 ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tsc.h:
 ../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq_tsc.h:
 ../TOUCHSENSING/App/tsl_conf.h:
