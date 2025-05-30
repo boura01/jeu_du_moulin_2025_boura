@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Global"/>
+		<item key="selection" value="ID"/>
 		<list key="findhistory">
+			<item value="id"/>
 			<item value="global"/>
 			<item value="touchDetect"/>
 			<item value="TKEY_CAL"/>

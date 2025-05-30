@@ -1,17 +1,10 @@
-15:20:16 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
+17:09:18 **** Incremental Build of configuration Debug for project JEU_MOULIN_LQFP64 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/gpio.o"
-arm-none-eabi-gcc -o "JEU_MOULIN_LQFP64.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\JEU_MOULIN_LQFP64\STM32L072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="JEU_MOULIN_LQFP64.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: JEU_MOULIN_LQFP64.elf
- 
 arm-none-eabi-size  JEU_MOULIN_LQFP64.elf 
-arm-none-eabi-objdump -h -S JEU_MOULIN_LQFP64.elf  > "JEU_MOULIN_LQFP64.list"
    text	   data	    bss	    dec	    hex	filename
   13804	     56	   2056	  15916	   3e2c	JEU_MOULIN_LQFP64.elf
 Finished building: default.size.stdout
  
-Finished building: JEU_MOULIN_LQFP64.list
- 
 
-15:20:18 Build Finished. 0 errors, 0 warnings. (took 2s.86ms)
+17:09:19 Build Finished. 0 errors, 0 warnings. (took 1s.109ms)
 

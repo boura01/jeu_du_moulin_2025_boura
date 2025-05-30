@@ -40,6 +40,8 @@ CONST TSL_ChannelSrc_T MyChannels_Src[TSLPRM_TOTAL_CHANNELS] =
     { CHANNEL_6_SRC, CHANNEL_6_IO_MSK, CHANNEL_6_GRP_MSK },
     { CHANNEL_7_SRC, CHANNEL_7_IO_MSK, CHANNEL_7_GRP_MSK },
     { CHANNEL_8_SRC, CHANNEL_8_IO_MSK, CHANNEL_8_GRP_MSK },
+    { CHANNEL_9_SRC, CHANNEL_9_IO_MSK, CHANNEL_9_GRP_MSK },
+    { CHANNEL_10_SRC, CHANNEL_10_IO_MSK, CHANNEL_10_GRP_MSK },
 };
 
 /* Destination (ROM) */
@@ -54,6 +56,8 @@ CONST TSL_ChannelDest_T MyChannels_Dest[TSLPRM_TOTAL_CHANNELS] =
     { CHANNEL_6_DEST },
     { CHANNEL_7_DEST },
     { CHANNEL_8_DEST },
+    { CHANNEL_9_DEST },
+    { CHANNEL_10_DEST },
 };
 
 /* Data (RAM) */
@@ -146,7 +150,9 @@ CONST TSL_TouchKey_T MyTKeys[TSLPRM_TOTAL_TOUCHKEYS] =
   { &MyTKeys_Data[5], &MyTKeys_Param[5], &MyChannels_Data[CHANNEL_5_DEST], MyTKeys_StateMachine, &MyTKeys_Methods },
   { &MyTKeys_Data[6], &MyTKeys_Param[6], &MyChannels_Data[CHANNEL_6_DEST], MyTKeys_StateMachine, &MyTKeys_Methods },
   { &MyTKeys_Data[7], &MyTKeys_Param[7], &MyChannels_Data[CHANNEL_7_DEST], MyTKeys_StateMachine, &MyTKeys_Methods },
-  { &MyTKeys_Data[8], &MyTKeys_Param[8], &MyChannels_Data[CHANNEL_8_DEST], MyTKeys_StateMachine, &MyTKeys_Methods }
+  { &MyTKeys_Data[8], &MyTKeys_Param[8], &MyChannels_Data[CHANNEL_8_DEST], MyTKeys_StateMachine, &MyTKeys_Methods },
+  { &MyTKeys_Data[9], &MyTKeys_Param[9], &MyChannels_Data[CHANNEL_9_DEST], MyTKeys_StateMachine, &MyTKeys_Methods },
+  { &MyTKeys_Data[10], &MyTKeys_Param[10], &MyChannels_Data[CHANNEL_10_DEST], MyTKeys_StateMachine, &MyTKeys_Methods }
 };
 
 /*============================================================================*/
@@ -164,7 +170,9 @@ CONST TSL_Object_T MyObjects[TSLPRM_TOTAL_OBJECTS] =
   { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[5] },
   { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[6] },
   { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[7] },
-  { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[8] }
+  { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[8] },
+  { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[9] },
+  { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[10] }
 };
 
 /* Group (RAM) */

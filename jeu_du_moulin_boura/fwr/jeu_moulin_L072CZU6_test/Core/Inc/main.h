@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.h
+ * @brief          : Header for main.c file.
+ *                   This file contains the common defines of the application.
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2025 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
@@ -57,12 +57,42 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define CS_G1_Pin GPIO_PIN_0
+#define CS_G1_GPIO_Port GPIOA
+#define L1_Pin GPIO_PIN_1
+#define L1_GPIO_Port GPIOA
+#define C3_Pin GPIO_PIN_2
+#define C3_GPIO_Port GPIOA
+#define C2_Pin GPIO_PIN_3
+#define C2_GPIO_Port GPIOA
+#define CS_G2_Pin GPIO_PIN_4
+#define CS_G2_GPIO_Port GPIOA
+#define L8_Pin GPIO_PIN_5
+#define L8_GPIO_Port GPIOA
+#define L7_Pin GPIO_PIN_6
+#define L7_GPIO_Port GPIOA
+#define C1_Pin GPIO_PIN_7
+#define C1_GPIO_Port GPIOA
+#define CS_G4_Pin GPIO_PIN_0
+#define CS_G4_GPIO_Port GPIOB
+#define L6_Pin GPIO_PIN_1
+#define L6_GPIO_Port GPIOB
+#define L5_Pin GPIO_PIN_2
+#define L5_GPIO_Port GPIOB
 #define L5_LED_Pin GPIO_PIN_10
 #define L5_LED_GPIO_Port GPIOB
 #define L4_LED_Pin GPIO_PIN_11
 #define L4_LED_GPIO_Port GPIOB
 #define C1_LED_Pin GPIO_PIN_8
 #define C1_LED_GPIO_Port GPIOA
+#define CS_G3_Pin GPIO_PIN_9
+#define CS_G3_GPIO_Port GPIOA
+#define L4_Pin GPIO_PIN_10
+#define L4_GPIO_Port GPIOA
+#define L3_Pin GPIO_PIN_11
+#define L3_GPIO_Port GPIOA
+#define L2_Pin GPIO_PIN_12
+#define L2_GPIO_Port GPIOA
 #define C3_LED_Pin GPIO_PIN_15
 #define C3_LED_GPIO_Port GPIOA
 #define L2_LED_Pin GPIO_PIN_3

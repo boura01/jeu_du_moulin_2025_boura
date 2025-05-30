@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2025 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -111,13 +111,13 @@ TSC_HandleTypeDef htsc;
 /* USER CODE BEGIN PV */
 tsl_user_status_t tsl_status;
 uint16_t i, j;
-uint8_t touchDetect[13];	  //correspond aux designateurs du PCB, [0] n'est pas utiliser
-uint8_t prevTouchDetect[13];   //correspond à l'ancien état du tableau
-uint8_t fieldState[13] = {0}; //correspond aux tableau du terrain contenant les positions
-uint8_t touchPressMem[18];    //correspond à la mémoire des touches pressées la case [0] n'est pas utilisé parce que ??
-uint8_t memIncrease = 0; 	  //correspond à la variable utile pour monter de cases mémoire
-uint8_t btnPressed;			  //correspond à la valeur du bouton pressé de 0 à 11
-uint8_t tour = RED;       	  //correspond au tour actuel, sois au rouges, sois au vert
+uint8_t touchDetect[25];//correspond aux designateurs du PCB, [0] n'est pas utiliser
+uint8_t prevTouchDetect[25];   //correspond à l'ancien état du tableau
+uint8_t fieldState[25] = { 0 }; //correspond aux tableau du terrain contenant les positions
+uint8_t touchPressMem[18]; //correspond à la mémoire des touches pressées la case [0] n'est pas utilisé parce que ??
+uint8_t memIncrease = 0; //correspond à la variable utile pour monter de cases mémoire
+uint8_t btnPressed;			 //correspond à la valeur du bouton pressé de 0 à 11
+uint8_t tour = RED;    //correspond au tour actuel, sois au rouges, sois au vert
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -172,8 +172,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+	while (1) {/*
 		if (tsl_user_Exec_IT() != TSL_USER_STATUS_BUSY) {
 			int id;
 			for (id = 0; id < TSLPRM_TOTAL_CHANNELS; id++) {
@@ -183,11 +182,11 @@ int main(void)
 					 ,MyTKeys[id].p_ChD->Delta
 					 ,MyTKeys[id].p_ChD->Ref
 					 ,MyTKeys[id].p_ChD->Meas
-					 ,MyTKeys[id].p_Data->StateId);*/
-					if (TKEY_DET(3) && (TKEY_DET(6))) {
+					 ,MyTKeys[id].p_Data->StateId);*//*
+					if (TKEY_DET(10) && (TKEY_DET(1))) {
 						touchDetect[1] = 1;
 					}		//(TKEY_DET(id))// we detect a touch
-					else if (TKEY_REL(3) && (TKEY_REL(6))) {
+					else if (TKEY_REL(10) && (TKEY_REL(1))) {
 						touchDetect[1] = 0;
 					}	//(TKEY_REL(id)) // No more detection
 
@@ -256,6 +255,78 @@ int main(void)
 					} else if (TKEY_REL(8) && (TKEY_REL(2))) {
 						touchDetect[12] = 0;
 					}
+					if (TKEY_DET(3) && (TKEY_DET(6))) {
+						touchDetect[13] = 1;
+					}		//(TKEY_DET(id))// we detect a touch
+					else if (TKEY_REL(3) && (TKEY_REL(6))) {
+						touchDetect[13] = 0;
+					}	//(TKEY_REL(id)) // No more detection
+
+					if (TKEY_DET(3) && (TKEY_DET(7))) {
+						touchDetect[14] = 1;
+					} else if (TKEY_REL(3) && (TKEY_REL(7))) {
+						touchDetect[14] = 0;
+					}
+
+					if (TKEY_DET(3) && (TKEY_DET(2))) {
+						touchDetect[15] = 1;
+					} else if (TKEY_REL(3) && (TKEY_REL(2))) {
+						touchDetect[15] = 0;
+					}
+
+					if (TKEY_DET(1) && (TKEY_DET(6))) {
+						touchDetect[16] = 1;
+					} else if (TKEY_REL(1) && (TKEY_REL(6))) {
+						touchDetect[16] = 0;
+					}
+
+					if (TKEY_DET(1) && (TKEY_DET(7))) {
+						touchDetect[17] = 1;
+					} else if (TKEY_REL(1) && (TKEY_REL(7))) {
+						touchDetect[17] = 0;
+					}
+
+					if (TKEY_DET(1) && (TKEY_DET(2))) {
+						touchDetect[18] = 1;
+					} else if (TKEY_REL(1) && (TKEY_REL(2))) {
+						touchDetect[18] = 0;
+					}
+
+					if (TKEY_DET(0) && (TKEY_DET(6))) {
+						touchDetect[19] = 1;
+					} else if (TKEY_REL(0) && (TKEY_REL(6))) {
+						touchDetect[19] = 0;
+					}
+
+					if (TKEY_DET(0) && (TKEY_DET(7))) {
+						touchDetect[20] = 1;
+					} else if (TKEY_REL(0) && (TKEY_REL(7))) {
+						touchDetect[20] = 0;
+					}
+
+					if (TKEY_DET(0) && (TKEY_DET(2))) {
+						touchDetect[21] = 1;
+					} else if (TKEY_REL(0) && (TKEY_REL(2))) {
+						touchDetect[21] = 0;
+					}
+
+					if (TKEY_DET(8) && (TKEY_DET(6))) {
+						touchDetect[22] = 1;
+					} else if (TKEY_REL(8) && (TKEY_REL(6))) {
+						touchDetect[22] = 0;
+					}
+
+					if (TKEY_DET(8) && (TKEY_DET(7))) {
+						touchDetect[23] = 1;
+					} else if (TKEY_REL(8) && (TKEY_REL(7))) {
+						touchDetect[23] = 0;
+					}
+
+					if (TKEY_DET(8) && (TKEY_DET(2))) {
+						touchDetect[24] = 1;
+					} else if (TKEY_REL(8) && (TKEY_REL(2))) {
+						touchDetect[24] = 0;
+					}
 				}
 			}
 		} else {
@@ -272,42 +343,41 @@ int main(void)
 					//if(btnPressed != i){memIncrease++;}
 					btnPressed = i; // Return the index of the first occurrence of 1
 				}
-					memIncrease++;
-					touchPressMem[memIncrease] = btnPressed;
-					//of the LED is RED turn it off
-					if(fieldState[i] == RED){
-						fieldState[btnPressed] = OFF;
-					}
-					//if it isnt, just change the colour according to the turn
-					else{
+				memIncrease++;
+				touchPressMem[memIncrease] = btnPressed;
+				//of the LED is RED turn it off
+				if (fieldState[i] == RED) {
+					fieldState[btnPressed] = OFF;
+				}
+				//if it isnt, just change the colour according to the turn
+				else {
 					fieldState[btnPressed] = tour;
 					//progresses the turn
-						switch (tour){
-						case RED :
-							tour = GRN;
-							break;
-						case GRN :
-							tour = RED;
-							break;
-						case OFF :
-							tour = RED;
-							break;
-						}
+					switch (tour) {
+					case RED:
+						tour = GRN;
+						break;
+					case GRN:
+						tour = RED;
+						break;
+					case OFF:
+						tour = RED;
+						break;
 					}
+				}
 				//resets the memory emplacement to 0 when overflow happens
-				if(memIncrease >= 18)
-				{
+				if (memIncrease >= 18) {
 					memIncrease = 0;
 				}
 			}
-		prevTouchDetect[i] = touchDetect[i];
+			prevTouchDetect[i] = touchDetect[i];
 		}
 		//fonction qui affiche l'état de toutes les position
-		LED_Field(fieldState);
+		LED_Field(fieldState);*/
     /* USER CODE END WHILE */
-
+LEDP(2,RED);
     /* USER CODE BEGIN 3 */
-  }
+	}
   /* USER CODE END 3 */
 }
 
@@ -513,7 +583,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED2 de la ligne 1
+		//LED2 de la ligne 1
 	case P2:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -558,7 +628,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED3 de la ligne 1
+		//LED3 de la ligne 1
 	case P3:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -648,7 +718,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED2 de la ligne 2
+		//LED2 de la ligne 2
 	case P5:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -693,7 +763,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED3 de la ligne 2
+		//LED3 de la ligne 2
 	case P6:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -783,7 +853,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED2 de la ligne 3
+		//LED2 de la ligne 3
 	case P8:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -828,7 +898,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED3 de la ligne 3
+		//LED3 de la ligne 3
 	case P9:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -918,7 +988,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED2 de la ligne 4
+		//LED2 de la ligne 4
 	case P11:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -963,7 +1033,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED3 de la ligne 4
+		//LED3 de la ligne 4
 	case P12:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -1008,7 +1078,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED1 de la ligne 5
+		//LED1 de la ligne 5
 	case P13:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -1053,7 +1123,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED2 de la ligne 5
+		//LED2 de la ligne 5
 	case P14:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -1098,7 +1168,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED3 de la ligne 5
+		//LED3 de la ligne 5
 	case P15:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -1187,7 +1257,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED2 de la ligne 6
+		//LED2 de la ligne 6
 	case P17:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -1232,7 +1302,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED3 de la ligne 6
+		//LED3 de la ligne 6
 	case P18:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -1322,7 +1392,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED2 de la ligne 7
+		//LED2 de la ligne 7
 	case P20:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -1367,7 +1437,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED3 de la ligne 7
+		//LED3 de la ligne 7
 	case P21:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -1457,7 +1527,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED2 de la ligne 8
+		//LED2 de la ligne 8
 	case P23:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -1502,7 +1572,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 
-	//LED3 de la ligne 8
+		//LED3 de la ligne 8
 	case P24:
 		if (color == RED) {
 			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
@@ -1550,14 +1620,12 @@ void LEDP(char IdLed, char color) {
 	LED_OFF();
 }
 //fonction qui gère les LEDs avec un teableau
-void LED_Field(uint8_t array[13])
-{
-	for(int i = 1; i < 13; i++)
-	{
+void LED_Field(uint8_t array[13]) {
+	for (int i = 1; i < 13; i++) {
 		//if it's OFF
-		if(array[i] != 0){
-		//regarde la valeur de la case pour savoir si il faut l'allumer, l'éteindre...
-		LEDP(i,array[i]);
+		if (array[i] != 0) {
+			//regarde la valeur de la case pour savoir si il faut l'allumer, l'éteindre...
+			LEDP(i, array[i]);
 		}
 	}
 }
@@ -1602,11 +1670,10 @@ void LED_MODE(char pin, GPIO_TypeDef *group, char mode) {
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
+	/* User can add his own implementation to report the HAL error return state */
+	__disable_irq();
+	while (1) {
+	}
   /* USER CODE END Error_Handler_Debug */
 }
 
