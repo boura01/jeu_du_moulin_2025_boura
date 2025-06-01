@@ -62,8 +62,8 @@ all: main-build
 main-build: jeu_moulin_L072CZU6_test.elf secondary-outputs
 
 # Tool invocations
-jeu_moulin_L072CZU6_test.elf jeu_moulin_L072CZU6_test.map: $(OBJS) $(USER_OBJS) C:\Users\bourquenouda01\OneDrive\ -\ EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6_test\STM32L073CZUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "jeu_moulin_L072CZU6_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6_test\STM32L073CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+jeu_moulin_L072CZU6_test.elf jeu_moulin_L072CZU6_test.map: $(OBJS) $(USER_OBJS) D:\projet\jeu\ du\ moulin\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6_test\STM32L073CZUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "jeu_moulin_L072CZU6_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"D:\projet\jeu du moulin\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6_test\STM32L073CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

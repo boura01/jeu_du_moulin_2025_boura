@@ -1,0 +1,7 @@
+../Core/Src/main.c:142:5:main	16	static
+../Core/Src/main.c:393:6:SystemClock_Config	96	static
+../Core/Src/main.c:434:6:LEDP	16	static
+../Core/Src/main.c:1499:6:LED_Field	24	static
+../Core/Src/main.c:1510:6:LED_OFF	8	static
+../Core/Src/main.c:1531:6:LED_MODE	16	static
+../Core/Src/main.c:1545:6:Error_Handler	8	static,ignoring_inline_asm
