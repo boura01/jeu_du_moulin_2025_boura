@@ -6,23 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="BUSY"/>
+		<item key="selection" value="touchDetect[23] = 1;"/>
 		<list key="findhistory">
-			<item value="busy"/>
-			<item value="TSLPRM"/>
-			<item value="tslprm"/>
-			<item value="threshold"/>
-			<item value="interr"/>
-			<item value="NVIC"/>
-			<item value="19"/>
-			<item value="//LED3"/>
-			<item value="//LED2"/>
-			<item value="//LED1"/>
-			<item value="id"/>
-			<item value="global"/>
-			<item value="touchDetect"/>
-			<item value="TKEY_CAL"/>
-			<item value="acquended"/>
+			<item value="touchDetect[23] = 1;"/>
+			<item value="touchDetect[20] = 1;"/>
+			<item value="touchDetect[17] = 1;"/>
+			<item value="touchDetect[14] = 1;"/>
+			<item value="touchDetect[11] = 1;"/>
+			<item value="touchDetect[8] = 1;"/>
+			<item value="touchDetect[5] = 1;"/>
+			<item value="touchDetect[2] = 1;"/>
+			<item value="touchDetect[22] = 1;"/>
+			<item value="touchDetect[19] = 1;"/>
+			<item value="touchDetect[16] = 1;"/>
+			<item value="touchDetect[13] = 1;"/>
+			<item value="touchDetect[10] = 1;"/>
+			<item value="touchDetect[7] = 1;"/>
+			<item value="touchDetect[4] = 1;"/>
 		</list>
 		<list key="replacehistory">
 		</list>

@@ -1,18 +1,28 @@
-00:37:04 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+22:46:00 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\projet\jeu du moulin\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  25572	     56	   2072	  27700	   6c34	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+22:46:29 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25572	     56	   2072	  27700	   6c34	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+22:48:38 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:178:25: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  178 |                         printf("Sensor0: Delta %3d Ref %3d Meas %3d StateId %d\n",
-      |                         ^~~~~~
-../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   23 | #include "gpio.h"
-  +++ |+#include <stdio.h>
-   24 | 
-../Core/Src/main.c:178:25: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  178 |                         printf("Sensor0: Delta %3d Ref %3d Meas %3d StateId %d\n",
-      |                         ^~~~~~
-../Core/Src/main.c:178:25: note: include '<stdio.h>' or provide a declaration of 'printf'
 ../Core/Src/main.c:188:41: warning: "/*" within comment [-Wcomment]
   188 |                                         /*   printf("Sensor%d: Delta %3d Ref %3d Measurement %3d StateId %3d\n"
       |                                          
@@ -22,49 +32,379 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  28320	    148	   2404	  30872	   7898	jeu_moulin_L072CZU6.elf
+  22204	     52	   1964	  24220	   5e9c	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-00:37:39 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+22:49:26 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:189:41: warning: "/*" within comment [-Wcomment]
+  189 |                                         /*   printf("Sensor%d: Delta %3d Ref %3d Measurement %3d StateId %3d\n"
+      |                                          
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\projet\jeu du moulin\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: jeu_moulin_L072CZU6.elf
  
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  25552	     56	   2072	  27680	   6c20	jeu_moulin_L072CZU6.elf
+  22212	     52	   1964	  24228	   5ea4	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-00:40:10 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+22:50:14 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:189:41: warning: "/*" within comment [-Wcomment]
+  189 |                                         /*   printf("Sensor%d: Delta %3d Ref %3d Measurement %3d StateId %3d\n"
+      |                                          
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\projet\jeu du moulin\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: jeu_moulin_L072CZU6.elf
  
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  25552	     56	   2072	  27680	   6c20	jeu_moulin_L072CZU6.elf
+  22148	     52	   1964	  24164	   5e64	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-00:47:09 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+22:52:48 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:104: warning: "C1" redefined
+  104 | #define C1 8
+      | 
+../Core/Src/main.c:73: note: this is the location of the previous definition
+   73 | #define C1 10
+      | 
+../Core/Src/main.c:105: warning: "C2" redefined
+  105 | #define C2 5
+      | 
+../Core/Src/main.c:74: note: this is the location of the previous definition
+   74 | #define C2 9
+      | 
+../Core/Src/main.c:106: warning: "C3" redefined
+  106 | #define C3 3
+      | 
+../Core/Src/main.c:75: note: this is the location of the previous definition
+   75 | #define C3 5
+      | 
+../Core/Src/main.c:108: warning: "L1" redefined
+  108 | #define L1 6
+      | 
+../Core/Src/main.c:76: note: this is the location of the previous definition
+   76 | #define L1 1
+      | 
+../Core/Src/main.c:109: warning: "L2" redefined
+  109 | #define L2 4
+      | 
+../Core/Src/main.c:77: note: this is the location of the previous definition
+   77 | #define L2 11
+      | 
+../Core/Src/main.c:110: warning: "L3" redefined
+  110 | #define L3 15
+      | 
+../Core/Src/main.c:78: note: this is the location of the previous definition
+   78 | #define L3 8
+      | 
+../Core/Src/main.c:111: warning: "L4" redefined
+  111 | #define L4 11
+      | 
+../Core/Src/main.c:79: note: this is the location of the previous definition
+   79 | #define L4 4
+      | 
+../Core/Src/main.c:112: warning: "L5" redefined
+  112 | #define L5 10
+      | 
+../Core/Src/main.c:80: note: this is the location of the previous definition
+   80 | #define L5 7
+      | 
+../Core/Src/main.c:113: warning: "L6" redefined
+  113 | #define L6 9
+      | 
+../Core/Src/main.c:81: note: this is the location of the previous definition
+   81 | #define L6 3
+      | 
+../Core/Src/main.c:114: warning: "L7" redefined
+  114 | #define L7 8
+      | 
+../Core/Src/main.c:82: note: this is the location of the previous definition
+   82 | #define L7 6
+      | 
+../Core/Src/main.c:115: warning: "L8" redefined
+  115 | #define L8 7
+      | 
+../Core/Src/main.c:83: note: this is the location of the previous definition
+   83 | #define L8 2
+      | 
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:202:41: warning: "/*" within comment [-Wcomment]
+  202 |                                         /*   printf("Sensor%d: Delta %3d Ref %3d Measurement %3d StateId %3d\n"
+      |                                          
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\projet\jeu du moulin\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: jeu_moulin_L072CZU6.elf
  
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  24196	     56	   2072	  26324	   66d4	jeu_moulin_L072CZU6.elf
+  22212	     52	   1964	  24228	   5ea4	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+22:53:55 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:104: warning: "C1" redefined
+  104 | #define C1 8
+      | 
+../Core/Src/main.c:73: note: this is the location of the previous definition
+   73 | #define C1 10
+      | 
+../Core/Src/main.c:105: warning: "C2" redefined
+  105 | #define C2 5
+      | 
+../Core/Src/main.c:74: note: this is the location of the previous definition
+   74 | #define C2 9
+      | 
+../Core/Src/main.c:106: warning: "C3" redefined
+  106 | #define C3 3
+      | 
+../Core/Src/main.c:75: note: this is the location of the previous definition
+   75 | #define C3 5
+      | 
+../Core/Src/main.c:108: warning: "L1" redefined
+  108 | #define L1 6
+      | 
+../Core/Src/main.c:76: note: this is the location of the previous definition
+   76 | #define L1 1
+      | 
+../Core/Src/main.c:109: warning: "L2" redefined
+  109 | #define L2 4
+      | 
+../Core/Src/main.c:77: note: this is the location of the previous definition
+   77 | #define L2 11
+      | 
+../Core/Src/main.c:110: warning: "L3" redefined
+  110 | #define L3 15
+      | 
+../Core/Src/main.c:78: note: this is the location of the previous definition
+   78 | #define L3 8
+      | 
+../Core/Src/main.c:111: warning: "L4" redefined
+  111 | #define L4 11
+      | 
+../Core/Src/main.c:79: note: this is the location of the previous definition
+   79 | #define L4 4
+      | 
+../Core/Src/main.c:112: warning: "L5" redefined
+  112 | #define L5 10
+      | 
+../Core/Src/main.c:80: note: this is the location of the previous definition
+   80 | #define L5 7
+      | 
+../Core/Src/main.c:113: warning: "L6" redefined
+  113 | #define L6 9
+      | 
+../Core/Src/main.c:81: note: this is the location of the previous definition
+   81 | #define L6 3
+      | 
+../Core/Src/main.c:114: warning: "L7" redefined
+  114 | #define L7 8
+      | 
+../Core/Src/main.c:82: note: this is the location of the previous definition
+   82 | #define L7 6
+      | 
+../Core/Src/main.c:115: warning: "L8" redefined
+  115 | #define L8 7
+      | 
+../Core/Src/main.c:83: note: this is the location of the previous definition
+   83 | #define L8 2
+      | 
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:205:41: warning: "/*" within comment [-Wcomment]
+  205 |                                         /*   printf("Sensor%d: Delta %3d Ref %3d Measurement %3d StateId %3d\n"
+      |                                          
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\projet\jeu du moulin\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  22236	     52	   1964	  24252	   5ebc	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+22:55:06 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:104: warning: "C1" redefined
+  104 | #define C1 8
+      | 
+../Core/Src/main.c:73: note: this is the location of the previous definition
+   73 | #define C1 10
+      | 
+../Core/Src/main.c:105: warning: "C2" redefined
+  105 | #define C2 5
+      | 
+../Core/Src/main.c:74: note: this is the location of the previous definition
+   74 | #define C2 9
+      | 
+../Core/Src/main.c:106: warning: "C3" redefined
+  106 | #define C3 3
+      | 
+../Core/Src/main.c:75: note: this is the location of the previous definition
+   75 | #define C3 5
+      | 
+../Core/Src/main.c:108: warning: "L1" redefined
+  108 | #define L1 6
+      | 
+../Core/Src/main.c:76: note: this is the location of the previous definition
+   76 | #define L1 1
+      | 
+../Core/Src/main.c:109: warning: "L2" redefined
+  109 | #define L2 4
+      | 
+../Core/Src/main.c:77: note: this is the location of the previous definition
+   77 | #define L2 11
+      | 
+../Core/Src/main.c:110: warning: "L3" redefined
+  110 | #define L3 15
+      | 
+../Core/Src/main.c:78: note: this is the location of the previous definition
+   78 | #define L3 8
+      | 
+../Core/Src/main.c:111: warning: "L4" redefined
+  111 | #define L4 11
+      | 
+../Core/Src/main.c:79: note: this is the location of the previous definition
+   79 | #define L4 4
+      | 
+../Core/Src/main.c:112: warning: "L5" redefined
+  112 | #define L5 10
+      | 
+../Core/Src/main.c:80: note: this is the location of the previous definition
+   80 | #define L5 7
+      | 
+../Core/Src/main.c:113: warning: "L6" redefined
+  113 | #define L6 9
+      | 
+../Core/Src/main.c:81: note: this is the location of the previous definition
+   81 | #define L6 3
+      | 
+../Core/Src/main.c:114: warning: "L7" redefined
+  114 | #define L7 8
+      | 
+../Core/Src/main.c:82: note: this is the location of the previous definition
+   82 | #define L7 6
+      | 
+../Core/Src/main.c:115: warning: "L8" redefined
+  115 | #define L8 7
+      | 
+../Core/Src/main.c:83: note: this is the location of the previous definition
+   83 | #define L8 2
+      | 
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:211:41: warning: "/*" within comment [-Wcomment]
+  211 |                                         /*   printf("Sensor%d: Delta %3d Ref %3d Measurement %3d StateId %3d\n"
+      |                                          
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\projet\jeu du moulin\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  22284	     52	   1964	  24300	   5eec	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+22:56:14 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:104: warning: "C1" redefined
+  104 | #define C1 8
+      | 
+../Core/Src/main.c:73: note: this is the location of the previous definition
+   73 | #define C1 10
+      | 
+../Core/Src/main.c:105: warning: "C2" redefined
+  105 | #define C2 5
+      | 
+../Core/Src/main.c:74: note: this is the location of the previous definition
+   74 | #define C2 9
+      | 
+../Core/Src/main.c:106: warning: "C3" redefined
+  106 | #define C3 3
+      | 
+../Core/Src/main.c:75: note: this is the location of the previous definition
+   75 | #define C3 5
+      | 
+../Core/Src/main.c:108: warning: "L1" redefined
+  108 | #define L1 6
+      | 
+../Core/Src/main.c:76: note: this is the location of the previous definition
+   76 | #define L1 1
+      | 
+../Core/Src/main.c:109: warning: "L2" redefined
+  109 | #define L2 4
+      | 
+../Core/Src/main.c:77: note: this is the location of the previous definition
+   77 | #define L2 11
+      | 
+../Core/Src/main.c:110: warning: "L3" redefined
+  110 | #define L3 15
+      | 
+../Core/Src/main.c:78: note: this is the location of the previous definition
+   78 | #define L3 8
+      | 
+../Core/Src/main.c:111: warning: "L4" redefined
+  111 | #define L4 11
+      | 
+../Core/Src/main.c:79: note: this is the location of the previous definition
+   79 | #define L4 4
+      | 
+../Core/Src/main.c:112: warning: "L5" redefined
+  112 | #define L5 10
+      | 
+../Core/Src/main.c:80: note: this is the location of the previous definition
+   80 | #define L5 7
+      | 
+../Core/Src/main.c:113: warning: "L6" redefined
+  113 | #define L6 9
+      | 
+../Core/Src/main.c:81: note: this is the location of the previous definition
+   81 | #define L6 3
+      | 
+../Core/Src/main.c:114: warning: "L7" redefined
+  114 | #define L7 8
+      | 
+../Core/Src/main.c:82: note: this is the location of the previous definition
+   82 | #define L7 6
+      | 
+../Core/Src/main.c:115: warning: "L8" redefined
+  115 | #define L8 7
+      | 
+../Core/Src/main.c:83: note: this is the location of the previous definition
+   83 | #define L8 2
+      | 
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:216:41: warning: "/*" within comment [-Wcomment]
+  216 |                                         /*   printf("Sensor%d: Delta %3d Ref %3d Measurement %3d StateId %3d\n"
+      |                                          
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\projet\jeu du moulin\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  22332	     52	   1964	  24348	   5f1c	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list

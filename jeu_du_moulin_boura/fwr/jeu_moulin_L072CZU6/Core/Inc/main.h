@@ -61,8 +61,8 @@ void Error_Handler(void);
 #define CS_G1_GPIO_Port GPIOA
 #define L1_Pin GPIO_PIN_1
 #define L1_GPIO_Port GPIOA
-#define C1_Pin GPIO_PIN_2
-#define C1_GPIO_Port GPIOA
+#define C3_Pin GPIO_PIN_2
+#define C3_GPIO_Port GPIOA
 #define C2_Pin GPIO_PIN_3
 #define C2_GPIO_Port GPIOA
 #define CS_G2_Pin GPIO_PIN_4
@@ -71,8 +71,8 @@ void Error_Handler(void);
 #define L8_GPIO_Port GPIOA
 #define L7_Pin GPIO_PIN_6
 #define L7_GPIO_Port GPIOA
-#define C1A7_Pin GPIO_PIN_7
-#define C1A7_GPIO_Port GPIOA
+#define C1_Pin GPIO_PIN_7
+#define C1_GPIO_Port GPIOA
 #define CS_G4_Pin GPIO_PIN_0
 #define CS_G4_GPIO_Port GPIOB
 #define L6_Pin GPIO_PIN_1
