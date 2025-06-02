@@ -24,7 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "tsl.h"
+//#include "tsl.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -171,7 +171,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-  tsl_user_Init();
+	//tsl_user_Init();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -185,6 +185,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	while (1) {
+		/*
 		LEDP(1,RED);
 		LEDP(2,RED);
 		LEDP(3,RED);
@@ -208,17 +209,18 @@ int main(void)
 		LEDP(21,RED);
 		LEDP(22,RED);
 		LEDP(23,RED);
-		LEDP(24,RED);
-		/*
+		LEDP(24,RED);*/
+
 		if (tsl_user_Exec_IT() != TSL_USER_STATUS_BUSY) {
 			int id;
 			for (id = 0; id < TSLPRM_TOTAL_CHANNELS; id++) {
+				if(!TKEY_CAL(id)){
 					/*   printf("Sensor%d: Delta %3d Ref %3d Measurement %3d StateId %3d\n"
 					 ,id
 					 ,MyTKeys[id].p_ChD->Delta
 					 ,MyTKeys[id].p_ChD->Ref
 					 ,MyTKeys[id].p_ChD->Meas
-					 ,MyTKeys[id].p_Data->StateId);*//*
+					 ,MyTKeys[id].p_Data->StateId);*/
 
 					if (TKEY_DET(C1_TK) && (TKEY_DET(L1_TK))) {
 						touchDetect[1] = 1;
@@ -365,12 +367,13 @@ int main(void)
 					}
 				}
 			}
+		}
 		else {
 			HAL_Delay(1); //Can be replace by __WFI()
 		}
 		//début des contrôles pour les LEDs
 		//quand la détection est terminée passse dans tous le tableau
-		for (int i = 0; i < sizeof(touchDetect); i++) {
+		/*		for (int i = 0; i < sizeof(touchDetect); i++) {
 			//test si le tableau de fin de détection est le même que celui de l'ancienne détection pour savoir si un flanc a changer d'état
 			if (prevTouchDetect[i] == 0 && touchDetect[i] == 1) {
 				//flanc détecté
@@ -1595,7 +1598,7 @@ void Error_Handler(void)
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
+	/* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }

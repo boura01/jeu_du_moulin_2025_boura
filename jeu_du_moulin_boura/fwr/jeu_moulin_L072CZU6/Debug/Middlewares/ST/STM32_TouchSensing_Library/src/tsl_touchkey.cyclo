@@ -1,6 +1,6 @@
-../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:92:6:TSL_tkey_Init	1
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:122:6:TSL_tkey_Process	5
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:183:6:TSL_tkey_SetStateCalibration	3
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:92:6:TSL_tkey_Init	1
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:215:6:TSL_tkey_SetStateOff	1
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:228:6:TSL_tkey_SetStateBurstOnly	1
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:241:20:TSL_tkey_GetStateId	1
@@ -19,5 +19,5 @@
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:810:6:TSL_tkey_DebDetectStateProcess	7
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:862:6:TSL_tkey_DetectStateProcess	7
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:939:6:TSL_tkey_TouchStateProcess	7
-../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:1015:6:TSL_tkey_DebErrorStateProcess	10
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:1015:6:TSL_tkey_DebErrorStateProcess	9
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:1065:6:TSL_tkey_DTOGetTime	1

@@ -7,11 +7,18 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\JEU_MOULIN_UFQFPN48"/>
-			<item value="C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\JEU_MOULIN_LQFP64"/>
+			<item value="C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="501"/>
+		<item key="DIALOG_Y_ORIGIN" value="341"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
 		</list>
 	</section>
 </section>
