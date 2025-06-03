@@ -1,3 +1,13 @@
 uwTick
 acq_done_it
 idx_bank_it
+touchDetect
+MyTKeys[1].p_ChD->Delta
+MyTKeys[2].p_ChD->Delta
+MyTKeys[3].p_ChD->Delta
+MyTKeys[4].p_ChD->Delta
+MyTKeys[5].p_ChD->Delta
+MyTKeys[6].p_ChD->Delta
+MyTKeys[7].p_ChD->Delta
+MyTKeys[8].p_ChD->Delta
+MyTKeys[0].p_ChD->Delta

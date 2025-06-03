@@ -1,0 +1,1591 @@
+/* USER CODE BEGIN Header */
+/**
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2025 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "touchsensing.h"
+#include "tsc.h"
+#include "gpio.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+//#include "tsl.h"
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+#define TKEY_DET(NB) (MyTKeys[(NB)].p_Data->StateId == TSL_STATEID_DETECT)
+#define TKEY_PRX(NB) (MyTKeys[(NB)].p_Data->StateId == TSL_STATEID_PROX)
+#define TKEY_REL(NB) (MyTKeys[(NB)].p_Data->StateId == TSL_STATEID_RELEASE)
+#define TKEY_CAL(NB) (MyTKeys[(NB)].p_Data->StateId == TSL_STATEID_CALIB)
+
+#define P1 1
+#define P2 2
+#define P3 3
+#define P4 4
+#define P5 5
+#define P6 6
+#define P7 7
+#define P8 8
+#define P9 9
+#define P10 10
+#define P11 11
+#define P12 12
+#define P13 13
+#define P14 14
+#define P15 15
+#define P16 16
+#define P17 17
+#define P18 18
+#define P19 19
+#define P20 20
+#define P21 21
+#define P22 22
+#define P23 23
+#define P24 24
+
+//define des couleurs
+#define RED 1
+#define GRN 2
+#define OFF 0
+
+//define des touch keys
+#define C1_TK 6
+#define C2_TK 3
+#define C3_TK 2
+#define L1_TK 1
+#define L2_TK 10
+#define L3_TK 11
+#define L4_TK 9
+#define L5_TK 8
+#define L6_TK 7
+#define L7_TK 5
+#define L8_TK 4
+
+//define pour les modes de pins
+#define OUTMODE 0x10
+#define INMODE 0x20
+
+//define pour les groupe des I/O des LEDs
+#define C1_G GPIOA
+#define C2_G GPIOB
+#define C3_G GPIOB
+
+#define L1_G GPIOB
+#define L2_G GPIOB
+#define L3_G GPIOA
+#define L4_G GPIOB
+#define L5_G GPIOB
+#define L6_G GPIOB
+#define L7_G GPIOB
+#define L8_G GPIOB
+
+//define pour les nombre des pins des LEDs
+#define C1 8
+#define C2 5
+#define C3 3
+
+#define L1 6
+#define L2 4
+#define L3 15
+#define L4 11
+#define L5 10
+#define L6 9
+#define L7 8
+#define L8 7
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+
+/* USER CODE BEGIN PV */
+tsl_user_status_t tsl_status;
+uint16_t i, j;
+uint8_t touchDetect[25];//correspond aux designateurs du PCB, [0] n'est pas utiliser
+uint8_t prevTouchDetect[25];   //correspond à l'ancien état du tableau
+uint8_t fieldState[25] = { 0 }; //correspond aux tableau du terrain contenant les positions
+uint8_t touchPressMem[18]; //correspond à la mémoire des touches pressées la case [0] n'est pas utilisé parce que ??
+uint8_t memIncrease = 0; //correspond à la variable utile pour monter de cases mémoire
+uint8_t btnPressed;			 //correspond à la valeur du bouton pressé de 0 à 11
+uint8_t tour = RED;    //correspond au tour actuel, sois au rouges, sois au vert
+char colour = RED; 	   //correspond à la var. utilisé pour changer les LED de couleur dans LED_TEST
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+/* USER CODE BEGIN PFP */
+void LEDP(char IdLed, char color);
+void LED_MODE(char pin, GPIO_TypeDef *group, char mode);
+void LED_OFF(void);
+void LED_Field(uint8_t array[13]);
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+	//tsl_user_Init();
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_TSC_Init();
+  MX_TOUCHSENSING_Init();
+  /* USER CODE BEGIN 2 */
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+	while (1) {
+		if (tsl_user_Exec_IT() != TSL_USER_STATUS_BUSY) {
+			int id;
+			for (id = 0; id < TSLPRM_TOTAL_CHANNELS; id++) {
+				if(!TKEY_CAL(id)){
+					/*   printf("Sensor%d: Delta %3d Ref %3d Measurement %3d StateId %3d\n"
+					 ,id
+					 ,MyTKeys[id].p_ChD->Delta
+					 ,MyTKeys[id].p_ChD->Ref
+					 ,MyTKeys[id].p_ChD->Meas
+			 	 	 ,MyTKeys[id].p_Data->StateId);*/
+
+					if (TKEY_DET(C1_TK) && (TKEY_DET(L1_TK))) {
+						touchDetect[1] = 1;
+					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L1_TK))) {
+						touchDetect[1] = 0;
+					}
+
+					if (TKEY_DET(C2_TK) && (TKEY_DET(L1_TK))) {
+						touchDetect[2] = 1;
+					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L1_TK))) {
+						touchDetect[2] = 0;
+					}
+
+					if (TKEY_DET(C3_TK) && (TKEY_DET(L1_TK))) {
+						touchDetect[3] = 1;
+					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L1_TK))) {
+						touchDetect[8] = 0;
+					}
+
+					if (TKEY_DET(C1_TK) && (TKEY_DET(L2_TK))) {
+						touchDetect[4] = 1;
+					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L2_TK))) {
+						touchDetect[4] = 0;
+					}
+
+					if (TKEY_DET(C2_TK) && (TKEY_DET(L2_TK))) {
+						touchDetect[5] = 1;
+					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L2_TK))) {
+						touchDetect[5] = 0;
+					}
+
+					if (TKEY_DET(C3_TK) && (TKEY_DET(L2_TK))) {
+						touchDetect[6] = 1;
+					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L2_TK))) {
+						touchDetect[6] = 0;
+					}
+
+					if (TKEY_DET(C1_TK) && (TKEY_DET(L3_TK))) {
+						touchDetect[7] = 1;
+					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L3_TK))) {
+						touchDetect[7] = 0;
+					}
+
+					if (TKEY_DET(C2_TK) && (TKEY_DET(L3_TK))) {
+						touchDetect[8] = 1;
+					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L3_TK))) {
+						touchDetect[8] = 0;
+					}
+
+					if (TKEY_DET(C3_TK) && (TKEY_DET(L3_TK))) {
+						touchDetect[9] = 1;
+					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L3_TK))) {
+						touchDetect[9] = 0;
+					}
+
+					if (TKEY_DET(C1_TK) && (TKEY_DET(L4_TK))) {
+						touchDetect[10] = 1;
+					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L4_TK))) {
+						touchDetect[10] = 0;
+					}
+
+					if (TKEY_DET(C2_TK) && (TKEY_DET(L4_TK))) {
+						touchDetect[11] = 1;
+					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L4_TK))) {
+						touchDetect[11] = 0;
+					}
+
+					if (TKEY_DET(C3_TK) && (TKEY_DET(L4_TK))) {
+						touchDetect[12] = 1;
+					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L4_TK))) {
+						touchDetect[12] = 0;
+					}
+					if (TKEY_DET(C1_TK) && (TKEY_DET(L5_TK))) {
+						touchDetect[13] = 1;
+					}		//(TKEY_DET(id))// we detect a touch
+					else if (TKEY_REL(C1_TK) && (TKEY_REL(L5_TK))) {
+						touchDetect[13] = 0;
+					}
+
+					if (TKEY_DET(C2_TK) && (TKEY_DET(L5_TK))) {
+						touchDetect[14] = 1;
+					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L5_TK))) {
+						touchDetect[14] = 0;
+					}
+
+					if (TKEY_DET(C3_TK) && (TKEY_DET(L5_TK))) {
+						touchDetect[15] = 1;
+					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L5_TK))) {
+						touchDetect[15] = 0;
+					}
+
+					if (TKEY_DET(C1_TK) && (TKEY_DET(L6_TK))) {
+						touchDetect[16] = 1;
+					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L6_TK))) {
+						touchDetect[16] = 0;
+					}
+
+					if (TKEY_DET(C2_TK) && (TKEY_DET(L6_TK))) {
+						touchDetect[17] = 1;
+					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L6_TK))) {
+						touchDetect[17] = 0;
+					}
+
+					if (TKEY_DET(C3_TK) && (TKEY_DET(L6_TK))) {
+						touchDetect[18] = 1;
+					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L6_TK))) {
+						touchDetect[18] = 0;
+					}
+
+					if (TKEY_DET(C1_TK) && (TKEY_DET(L7_TK))) {
+						touchDetect[19] = 1;
+					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L7_TK))) {
+						touchDetect[19] = 0;
+					}
+
+					if (TKEY_DET(C2_TK) && (TKEY_DET(L7_TK))) {
+						touchDetect[20] = 1;
+					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L7_TK))) {
+						touchDetect[20] = 0;
+					}
+
+					if (TKEY_DET(C3_TK) && (TKEY_DET(L7_TK))) {
+						touchDetect[21] = 1;
+					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L7_TK))) {
+						touchDetect[21] = 0;
+					}
+
+					if (TKEY_DET(C1_TK) && (TKEY_DET(L8_TK))) {
+						touchDetect[22] = 1;
+					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L8_TK))) {
+						touchDetect[22] = 0;
+					}
+
+					if (TKEY_DET(C2_TK) && (TKEY_DET(L8_TK))) {
+						touchDetect[23] = 1;
+					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L8_TK))) {
+						touchDetect[23] = 0;
+					}
+
+					if (TKEY_DET(C3_TK) && (TKEY_DET(L8_TK))) {
+						touchDetect[24] = 1;
+					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L8_TK))) {
+						touchDetect[24] = 0;
+					}
+				}
+			}
+		}
+		else {
+			HAL_Delay(1); //Can be replace by __WFI()
+		}
+		//début des contrôles pour les LEDs
+		//quand la détection est terminée passse dans tous le tableau
+		/*		for (int i = 0; i < sizeof(touchDetect); i++) {
+			//test si le tableau de fin de détection est le même que celui de l'ancienne détection pour savoir si un flanc a changer d'état
+			if (prevTouchDetect[i] == 0 && touchDetect[i] == 1) {
+				//flanc détecté
+				//test si le tableau à l'addresse i égal 1
+				if (touchDetect[i] == 1) {
+					//if(btnPressed != i){memIncrease++;}
+					btnPressed = i; // Return the index of the first occurrence of 1
+				}
+				memIncrease++;
+				touchPressMem[memIncrease] = btnPressed;
+				//of the LED is RED turn it off
+				if (fieldState[i] == RED) {
+					fieldState[btnPressed] = OFF;
+				}
+				//if it isnt, just change the colour according to the turn
+				else {
+					fieldState[btnPressed] = tour;
+					//progresses the turn
+					switch (tour) {
+					case RED:
+						tour = GRN;
+						break;
+					case GRN:
+						tour = RED;
+						break;
+					case OFF:
+						tour = RED;
+						break;
+					}
+				}
+				//resets the memory emplacement to 0 when overflow happens
+				if (memIncrease >= 18) {
+					memIncrease = 0;
+				}
+			}
+			prevTouchDetect[i] = touchDetect[i];
+		}
+		//fonction qui affiche l'état de toutes les position
+		LED_Field(fieldState);*/
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+	}
+  /* USER CODE END 3 */
+}
+
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  /** Configure the main internal regulator output voltage
+  */
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLLMUL_4;
+  RCC_OscInitStruct.PLL.PLLDIV = RCC_PLLDIV_2;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/* USER CODE BEGIN 4 */
+//fonction pour allumer 1 LED
+void LEDP(char IdLed, char color) {
+	//change toutes les pins de colonne en output
+	HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+
+	LED_MODE(C1, C1_G, OUTMODE);
+	LED_MODE(C2, C2_G, OUTMODE);
+	LED_MODE(C3, C3_G, OUTMODE);
+
+	//la variable IdLed dit quelle led (P1-P16)
+	switch (IdLed) {
+	//LED1 de la ligne 1
+	case P1:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C1, C1_G, OUTMODE);
+		LED_MODE(C2, C2_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED2 de la ligne 1
+	case P2:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C2, C2_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED3 de la ligne 1
+	case P3:
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C3, C3_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C2, C2_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED1 de la ligne 2
+	case P4:
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C1, C1_G, OUTMODE);
+		LED_MODE(C3, C3_G, INMODE);
+		LED_MODE(C2, C2_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED2 de la ligne 2
+	case P5:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C2, C2_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED3 de la ligne 2
+	case P6:
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C3, C3_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C2, C2_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED1 de la ligne 3
+	case P7:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C1, C1_G, OUTMODE);
+		LED_MODE(C2, C2_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED2 de la ligne 3
+	case P8:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C2, C2_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED3 de la ligne 3
+	case P9:
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C3, C3_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C2, C2_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED1 de la ligne 4
+	case P10:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C1, C1_G, OUTMODE);
+		LED_MODE(C2, C2_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED2 de la ligne 4
+	case P11:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C2, C2_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED3 de la ligne 4
+	case P12:
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C3, C3_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C2, C2_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED1 de la ligne 5
+	case P13:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C1, C1_G, OUTMODE);
+		LED_MODE(C2, C2_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED2 de la ligne 5
+	case P14:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C2, C2_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED3 de la ligne 5
+	case P15:
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C3, C3_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C2, C2_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+		//LED1 de la ligne 6
+	case P16:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C1, C1_G, OUTMODE);
+		LED_MODE(C2, C2_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED2 de la ligne 6
+	case P17:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C2, C2_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED3 de la ligne 6
+	case P18:
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C3, C3_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C2, C2_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED1 de la ligne 7
+	case P19:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C1, C1_G, OUTMODE);
+		LED_MODE(C2, C2_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED2 de la ligne 7
+	case P20:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C2, C2_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED3 de la ligne 7
+	case P21:
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C3, C3_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C2, C2_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED1 de la ligne 8
+	case P22:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C1, C1_G, OUTMODE);
+		LED_MODE(C2, C2_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED2 de la ligne 8
+	case P23:
+		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C2, C2_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C3, C3_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+
+		//LED3 de la ligne 8
+	case P24:
+		HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_RESET);
+		LED_MODE(C3, C3_G, OUTMODE);
+		LED_MODE(C1, C1_G, INMODE);
+		LED_MODE(C2, C2_G, INMODE);
+
+		if (color == RED) {
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+		}
+		if (color == GRN) {
+			//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
+			LED_MODE(C1, C1_G, INMODE);
+			LED_MODE(C2, C2_G, INMODE);
+
+			//envoie la commande pour la LED qu'on veut allumer
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_SET);
+
+			//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+			HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L5_G, L5_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L6_G, L6_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L7_G, L7_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_RESET);
+		}
+		if (color == OFF) {
+			//éteint la LED
+			HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(L8_G, L8_LED_Pin, GPIO_PIN_RESET);
+		}
+		break;
+	}
+	LED_OFF();
+}
+//fonction qui gère les LEDs avec un teableau
+void LED_Field(uint8_t array[13]) {
+	for (int i = 1; i < 13; i++) {
+		//if it's OFF
+		if (array[i] != 0) {
+			//regarde la valeur de la case pour savoir si il faut l'allumer, l'éteindre...
+			LEDP(i, array[i]);
+		}
+	}
+}
+
+//fonction pour éteindre toutes les LEDs
+void LED_OFF(void) {
+	HAL_Delay(1);
+
+	//change toutes les pins de colonne en sortie
+	LED_MODE(C1, C1_G, OUTMODE);
+	LED_MODE(C2, C2_G, OUTMODE);
+	LED_MODE(C3, C3_G, OUTMODE);
+
+	//envoie la commande pour la LED qu'on veut allumer
+	HAL_GPIO_WritePin(C1_G, C1_LED_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(C2_G, C2_LED_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(C3_G, C3_LED_Pin, GPIO_PIN_SET);
+
+	//set tout les autre pin de ligne à 1 pour ne rien allumer en trop
+	HAL_GPIO_WritePin(L1_G, L1_LED_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(L2_G, L2_LED_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(L3_G, L3_LED_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(L4_G, L4_LED_Pin, GPIO_PIN_SET);
+
+}
+//change le registre pour modifié la PIN en in/output pour faire fonctionner la matrice
+void LED_MODE(char pin, GPIO_TypeDef *group, char mode) {
+	if (mode == OUTMODE) {
+		group->MODER |= (0x1 << (pin * 2));
+	}
+	if (mode == INMODE) {
+		group->MODER &= ~(0x3 << (pin * 2));
+	}
+}
+void LED_TEST()
+{
+	for(i = 0; i >= 25;i++)
+	{
+	LEDP(i,colour)
+	}
+	if(colour == RED)
+	{
+		colour = GRN;
+	}
+}
+/* USER CODE END 4 */
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+	/* User can add his own implementation to report the HAL error return state */
+	__disable_irq();
+	while (1) {
+	}
+  /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+	/* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */

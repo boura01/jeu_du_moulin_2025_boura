@@ -88,6 +88,11 @@ typedef enum
 #define CHANNEL_7_SRC       (TSC_GROUP3_IDX)
 #define CHANNEL_7_DEST      (7)
 
+#define CHANNEL_8_IO_MSK    (TSC_GROUP4_IO2)
+#define CHANNEL_8_GRP_MSK   (TSC_GROUP4)
+#define CHANNEL_8_SRC       (TSC_GROUP4_IDX)
+#define CHANNEL_8_DEST      (8)
+
 /* Shield IOs definition */
 #define SHIELD_IO_MSK      (0)
 
@@ -113,9 +118,9 @@ typedef enum
 #define BANK_4_MSK_CHANNELS   (CHANNEL_5_IO_MSK | CHANNEL_6_IO_MSK)
 #define BANK_4_MSK_GROUPS     (CHANNEL_5_GRP_MSK | CHANNEL_6_GRP_MSK)
 
-#define BANK_5_NBCHANNELS (1)
-#define BANK_5_MSK_CHANNELS   (CHANNEL_7_IO_MSK)
-#define BANK_5_MSK_GROUPS     (CHANNEL_7_GRP_MSK)
+#define BANK_5_NBCHANNELS (2)
+#define BANK_5_MSK_CHANNELS   (CHANNEL_7_IO_MSK | CHANNEL_8_IO_MSK)
+#define BANK_5_MSK_GROUPS     (CHANNEL_7_GRP_MSK | CHANNEL_8_GRP_MSK)
 
 /* User Parameters */
 extern CONST TSL_Bank_T MyBanks[];

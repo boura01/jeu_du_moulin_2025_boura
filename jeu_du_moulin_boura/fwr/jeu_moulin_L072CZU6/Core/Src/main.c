@@ -70,17 +70,17 @@
 #define OFF 0
 
 //define des touch keys
-#define C1_TK 10
-#define C2_TK 9
-#define C3_TK 5
+#define C1_TK 6
+#define C2_TK 3
+#define C3_TK 2
 #define L1_TK 1
-#define L2_TK 11
-#define L3_TK 8
-#define L4_TK 4
-#define L5_TK 7
-#define L6_TK 3
-#define L7_TK 6
-#define L8_TK 2
+#define L2_TK 10
+#define L3_TK 11
+#define L4_TK 9
+#define L5_TK 8
+#define L6_TK 7
+#define L7_TK 5
+#define L8_TK 4
 
 //define pour les modes de pins
 #define OUTMODE 0x10
@@ -132,6 +132,7 @@ uint8_t touchPressMem[18]; //correspond à la mémoire des touches pressées la 
 uint8_t memIncrease = 0; //correspond à la variable utile pour monter de cases mémoire
 uint8_t btnPressed;			 //correspond à la valeur du bouton pressé de 0 à 11
 uint8_t tour = RED;    //correspond au tour actuel, sois au rouges, sois au vert
+char colour = RED; 	   //correspond à la var. utilisé pour changer les LED de couleur dans LED_TEST
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -141,6 +142,8 @@ void LEDP(char IdLed, char color);
 void LED_MODE(char pin, GPIO_TypeDef *group, char mode);
 void LED_OFF(void);
 void LED_Field(uint8_t array[13]);
+void LED_TEST(void);
+void TOUCH_DETECT(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -184,240 +187,33 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	while (1) {
-		/*
-		LEDP(1,RED);
-		LEDP(2,RED);
-		LEDP(3,RED);
-		LEDP(4,RED);
-		LEDP(5,RED);
-		LEDP(6,RED);
-		LEDP(7,RED);
-		LEDP(8,RED);
-		LEDP(9,RED);
-		LEDP(10,RED);
-		LEDP(11,RED);
-		LEDP(12,RED);
-		LEDP(13,RED);
-		LEDP(14,RED);
-		LEDP(15,RED);
-		LEDP(16,RED);
-		LEDP(17,RED);
-		LEDP(18,RED);
-		LEDP(19,RED);
-		LEDP(20,RED);
-		LEDP(21,RED);
-		LEDP(22,RED);
-		LEDP(23,RED);
-		LEDP(24,RED);*/
+  while (1) {
+	  TOUCH_DETECT();
 
-		if (tsl_user_Exec_IT() != TSL_USER_STATUS_BUSY) {
-			int id;
-			for (id = 0; id < TSLPRM_TOTAL_CHANNELS; id++) {
-				if(!TKEY_CAL(id)){
-					/*   printf("Sensor%d: Delta %3d Ref %3d Measurement %3d StateId %3d\n"
-					 ,id
-					 ,MyTKeys[id].p_ChD->Delta
-					 ,MyTKeys[id].p_ChD->Ref
-					 ,MyTKeys[id].p_ChD->Meas
-					 ,MyTKeys[id].p_Data->StateId);*/
+	  //LED_TEST();
 
-					if (TKEY_DET(C1_TK) && (TKEY_DET(L1_TK))) {
-						touchDetect[1] = 1;
-					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L1_TK))) {
-						touchDetect[1] = 0;
-					}
 
-					if (TKEY_DET(C2_TK) && (TKEY_DET(L1_TK))) {
-						touchDetect[2] = 1;
-					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L1_TK))) {
-						touchDetect[2] = 0;
-					}
+	  LEDP(23,RED);
+	  LEDP(20,RED);
+	  LEDP(17,RED);
+	  LEDP(14,RED);
+	  LEDP(11,RED);
+	  LEDP(8,RED);
+	  LEDP(5,RED);
+	  LEDP(2,RED);
+	  LEDP(1,RED);
+	  LEDP(7,RED);
+	  LEDP(13,RED);
+	  LEDP(19,RED);
+	  LEDP(3,RED);
+	  LEDP(9,RED);
+	  LEDP(15,RED);
+	  LEDP(21,RED);
+	  LEDP(22,RED);
+	  LEDP(10,RED);
 
-					if (TKEY_DET(C3_TK) && (TKEY_DET(L1_TK))) {
-						touchDetect[3] = 1;
-					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L1_TK))) {
-						touchDetect[8] = 0;
-					}
-
-					if (TKEY_DET(C1_TK) && (TKEY_DET(L2_TK))) {
-						touchDetect[4] = 1;
-					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L2_TK))) {
-						touchDetect[4] = 0;
-					}
-
-					if (TKEY_DET(C2_TK) && (TKEY_DET(L2_TK))) {
-						touchDetect[5] = 1;
-					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L2_TK))) {
-						touchDetect[5] = 0;
-					}
-
-					if (TKEY_DET(C3_TK) && (TKEY_DET(L2_TK))) {
-						touchDetect[6] = 1;
-					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L2_TK))) {
-						touchDetect[6] = 0;
-					}
-
-					if (TKEY_DET(C1_TK) && (TKEY_DET(L3_TK))) {
-						touchDetect[7] = 1;
-					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L3_TK))) {
-						touchDetect[7] = 0;
-					}
-
-					if (TKEY_DET(C2_TK) && (TKEY_DET(L3_TK))) {
-						touchDetect[8] = 1;
-					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L3_TK))) {
-						touchDetect[8] = 0;
-					}
-
-					if (TKEY_DET(C3_TK) && (TKEY_DET(L3_TK))) {
-						touchDetect[9] = 1;
-					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L3_TK))) {
-						touchDetect[9] = 0;
-					}
-
-					if (TKEY_DET(C1_TK) && (TKEY_DET(L4_TK))) {
-						touchDetect[10] = 1;
-					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L4_TK))) {
-						touchDetect[10] = 0;
-					}
-
-					if (TKEY_DET(C2_TK) && (TKEY_DET(L4_TK))) {
-						touchDetect[11] = 1;
-					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L4_TK))) {
-						touchDetect[11] = 0;
-					}
-
-					if (TKEY_DET(C3_TK) && (TKEY_DET(L4_TK))) {
-						touchDetect[12] = 1;
-					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L4_TK))) {
-						touchDetect[12] = 0;
-					}
-					if (TKEY_DET(C1_TK) && (TKEY_DET(L5_TK))) {
-						touchDetect[13] = 1;
-					}		//(TKEY_DET(id))// we detect a touch
-					else if (TKEY_REL(C1_TK) && (TKEY_REL(L5_TK))) {
-						touchDetect[13] = 0;
-					}
-
-					if (TKEY_DET(C2_TK) && (TKEY_DET(L5_TK))) {
-						touchDetect[14] = 1;
-					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L5_TK))) {
-						touchDetect[14] = 0;
-					}
-
-					if (TKEY_DET(C3_TK) && (TKEY_DET(L5_TK))) {
-						touchDetect[15] = 1;
-					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L5_TK))) {
-						touchDetect[15] = 0;
-					}
-
-					if (TKEY_DET(C1_TK) && (TKEY_DET(L6_TK))) {
-						touchDetect[16] = 1;
-					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L6_TK))) {
-						touchDetect[16] = 0;
-					}
-
-					if (TKEY_DET(C2_TK) && (TKEY_DET(L6_TK))) {
-						touchDetect[17] = 1;
-					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L6_TK))) {
-						touchDetect[17] = 0;
-					}
-
-					if (TKEY_DET(C3_TK) && (TKEY_DET(L6_TK))) {
-						touchDetect[18] = 1;
-					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L6_TK))) {
-						touchDetect[18] = 0;
-					}
-
-					if (TKEY_DET(C1_TK) && (TKEY_DET(L7_TK))) {
-						touchDetect[19] = 1;
-					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L7_TK))) {
-						touchDetect[19] = 0;
-					}
-
-					if (TKEY_DET(C2_TK) && (TKEY_DET(L7_TK))) {
-						touchDetect[20] = 1;
-					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L7_TK))) {
-						touchDetect[20] = 0;
-					}
-
-					if (TKEY_DET(C3_TK) && (TKEY_DET(L7_TK))) {
-						touchDetect[21] = 1;
-					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L7_TK))) {
-						touchDetect[21] = 0;
-					}
-
-					if (TKEY_DET(C1_TK) && (TKEY_DET(L8_TK))) {
-						touchDetect[22] = 1;
-					} else if (TKEY_REL(C1_TK) && (TKEY_REL(L8_TK))) {
-						touchDetect[22] = 0;
-					}
-
-					if (TKEY_DET(C2_TK) && (TKEY_DET(L8_TK))) {
-						touchDetect[23] = 1;
-					} else if (TKEY_REL(C2_TK) && (TKEY_REL(L8_TK))) {
-						touchDetect[23] = 0;
-					}
-
-					if (TKEY_DET(C3_TK) && (TKEY_DET(L8_TK))) {
-						touchDetect[24] = 1;
-					} else if (TKEY_REL(C3_TK) && (TKEY_REL(L8_TK))) {
-						touchDetect[24] = 0;
-					}
-				}
-			}
-		}
-		else {
-			HAL_Delay(1); //Can be replace by __WFI()
-		}
-		//début des contrôles pour les LEDs
-		//quand la détection est terminée passse dans tous le tableau
-		/*		for (int i = 0; i < sizeof(touchDetect); i++) {
-			//test si le tableau de fin de détection est le même que celui de l'ancienne détection pour savoir si un flanc a changer d'état
-			if (prevTouchDetect[i] == 0 && touchDetect[i] == 1) {
-				//flanc détecté
-				//test si le tableau à l'addresse i égal 1
-				if (touchDetect[i] == 1) {
-					//if(btnPressed != i){memIncrease++;}
-					btnPressed = i; // Return the index of the first occurrence of 1
-				}
-				memIncrease++;
-				touchPressMem[memIncrease] = btnPressed;
-				//of the LED is RED turn it off
-				if (fieldState[i] == RED) {
-					fieldState[btnPressed] = OFF;
-				}
-				//if it isnt, just change the colour according to the turn
-				else {
-					fieldState[btnPressed] = tour;
-					//progresses the turn
-					switch (tour) {
-					case RED:
-						tour = GRN;
-						break;
-					case GRN:
-						tour = RED;
-						break;
-					case OFF:
-						tour = RED;
-						break;
-					}
-				}
-				//resets the memory emplacement to 0 when overflow happens
-				if (memIncrease >= 18) {
-					memIncrease = 0;
-				}
-			}
-			prevTouchDetect[i] = touchDetect[i];
-		}
-		//fonction qui affiche l'état de toutes les position
-		LED_Field(fieldState);*/
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-		//changes les pins pour les colonne qu'on ne souhaite pas allumer en input
-	}
+  /* USER CODE END WHILE */
+  }
   /* USER CODE END 3 */
 }
 
@@ -1528,6 +1324,7 @@ void LEDP(char IdLed, char color) {
 		}
 		break;
 	}
+	//HAL_Delay(500);
 	LED_OFF();
 }
 //fonction qui gère les LEDs avec un teableau
@@ -1571,12 +1368,226 @@ void LED_MODE(char pin, GPIO_TypeDef *group, char mode) {
 		group->MODER &= ~(0x3 << (pin * 2));
 	}
 }
-/* USER CODE END 4 */
+void LED_TEST(void)
+{
+	for(i = 1; i <= 24;i++)
+	{
+	LEDP(i,colour);
+	}
+	if(colour == RED)
+	{
+		colour = GRN;
+	}
+	else if(colour == GRN)
+	{
+		colour = RED;
+	}
+}
+void TOUCH_DETECT(void)
+{
+	if (tsl_user_Exec_IT() != TSL_USER_STATUS_BUSY) {
+		int id;
+		for (id = 0; id < TSLPRM_TOTAL_CHANNELS; id++) {
+			if(!TKEY_CAL(id)){
+				/*   printf("Sensor%d: Delta %3d Ref %3d Measurement %3d StateId %3d\n"
+				 ,id
+				 ,MyTKeys[id].p_ChD->Delta
+				 ,MyTKeys[id].p_ChD->Ref
+				 ,MyTKeys[id].p_ChD->Meas
+		 	 	 ,MyTKeys[id].p_Data->StateId);*/
 
-/**
-  * @brief  This function is executed in case of error occurrence.
-  * @retval None
-  */
+				if (TKEY_DET(C1_TK) && (TKEY_DET(L1_TK))) {
+					touchDetect[1] = 1;
+				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L1_TK))) {
+					touchDetect[1] = 0;
+				}
+
+				if (TKEY_DET(C2_TK) && (TKEY_DET(L1_TK))) {
+					touchDetect[2] = 1;
+				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L1_TK))) {
+					touchDetect[2] = 0;
+				}
+
+				if (TKEY_DET(C3_TK) && (TKEY_DET(L1_TK))) {
+					touchDetect[3] = 1;
+				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L1_TK))) {
+					touchDetect[8] = 0;
+				}
+
+				if (TKEY_DET(C1_TK) && (TKEY_DET(L2_TK))) {
+					touchDetect[4] = 1;
+				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L2_TK))) {
+					touchDetect[4] = 0;
+				}
+
+				if (TKEY_DET(C2_TK) && (TKEY_DET(L2_TK))) {
+					touchDetect[5] = 1;
+				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L2_TK))) {
+					touchDetect[5] = 0;
+				}
+
+				if (TKEY_DET(C3_TK) && (TKEY_DET(L2_TK))) {
+					touchDetect[6] = 1;
+				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L2_TK))) {
+					touchDetect[6] = 0;
+				}
+
+				if (TKEY_DET(C1_TK) && (TKEY_DET(L3_TK))) {
+					touchDetect[7] = 1;
+				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L3_TK))) {
+					touchDetect[7] = 0;
+				}
+
+				if (TKEY_DET(C2_TK) && (TKEY_DET(L3_TK))) {
+					touchDetect[8] = 1;
+				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L3_TK))) {
+					touchDetect[8] = 0;
+				}
+
+				if (TKEY_DET(C3_TK) && (TKEY_DET(L3_TK))) {
+					touchDetect[9] = 1;
+				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L3_TK))) {
+					touchDetect[9] = 0;
+				}
+
+				if (TKEY_DET(C1_TK) && (TKEY_DET(L4_TK))) {
+					touchDetect[10] = 1;
+				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L4_TK))) {
+					touchDetect[10] = 0;
+				}
+
+				if (TKEY_DET(C2_TK) && (TKEY_DET(L4_TK))) {
+					touchDetect[11] = 1;
+				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L4_TK))) {
+					touchDetect[11] = 0;
+				}
+
+				if (TKEY_DET(C3_TK) && (TKEY_DET(L4_TK))) {
+					touchDetect[12] = 1;
+				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L4_TK))) {
+					touchDetect[12] = 0;
+				}
+				if (TKEY_DET(C1_TK) && (TKEY_DET(L5_TK))) {
+					touchDetect[13] = 1;
+				}		//(TKEY_DET(id))// we detect a touch
+				else if (TKEY_REL(C1_TK) && (TKEY_REL(L5_TK))) {
+					touchDetect[13] = 0;
+				}
+
+				if (TKEY_DET(C2_TK) && (TKEY_DET(L5_TK))) {
+					touchDetect[14] = 1;
+				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L5_TK))) {
+					touchDetect[14] = 0;
+				}
+
+				if (TKEY_DET(C3_TK) && (TKEY_DET(L5_TK))) {
+					touchDetect[15] = 1;
+				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L5_TK))) {
+					touchDetect[15] = 0;
+				}
+
+				if (TKEY_DET(C1_TK) && (TKEY_DET(L6_TK))) {
+					touchDetect[16] = 1;
+				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L6_TK))) {
+					touchDetect[16] = 0;
+				}
+
+				if (TKEY_DET(C2_TK) && (TKEY_DET(L6_TK))) {
+					touchDetect[17] = 1;
+				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L6_TK))) {
+					touchDetect[17] = 0;
+				}
+
+				if (TKEY_DET(C3_TK) && (TKEY_DET(L6_TK))) {
+					touchDetect[18] = 1;
+				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L6_TK))) {
+					touchDetect[18] = 0;
+				}
+
+				if (TKEY_DET(C1_TK) && (TKEY_DET(L7_TK))) {
+					touchDetect[19] = 1;
+				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L7_TK))) {
+					touchDetect[19] = 0;
+				}
+
+				if (TKEY_DET(C2_TK) && (TKEY_DET(L7_TK))) {
+					touchDetect[20] = 1;
+				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L7_TK))) {
+					touchDetect[20] = 0;
+				}
+
+				if (TKEY_DET(C3_TK) && (TKEY_DET(L7_TK))) {
+					touchDetect[21] = 1;
+				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L7_TK))) {
+					touchDetect[21] = 0;
+				}
+
+				if (TKEY_DET(C1_TK) && (TKEY_DET(L8_TK))) {
+					touchDetect[22] = 1;
+				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L8_TK))) {
+					touchDetect[22] = 0;
+				}
+
+				if (TKEY_DET(C2_TK) && (TKEY_DET(L8_TK))) {
+					touchDetect[23] = 1;
+				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L8_TK))) {
+					touchDetect[23] = 0;
+				}
+
+				if (TKEY_DET(C3_TK) && (TKEY_DET(L8_TK))) {
+					touchDetect[24] = 1;
+				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L8_TK))) {
+					touchDetect[24] = 0;
+				}
+			}
+		}
+	}
+	else {
+		HAL_Delay(1); //Can be replace by __WFI()
+	}
+	//début des contrôles pour les LEDs
+	//quand la détection est terminée passse dans tous le tableau
+	for (int i = 0; i < sizeof(touchDetect); i++) {
+		//test si le tableau de fin de détection est le même que celui de l'ancienne détection pour savoir si un flanc a changer d'état
+		if (prevTouchDetect[i] == 0 && touchDetect[i] == 1) {
+			//flanc détecté
+			//test si le tableau à l'addresse i égal 1
+			if (touchDetect[i] == 1) {
+				//if(btnPressed != i){memIncrease++;}
+				btnPressed = i; // Return the index of the first occurrence of 1
+			}
+			memIncrease++;
+			touchPressMem[memIncrease] = btnPressed;
+			//of the LED is RED turn it off
+			if (fieldState[i] == RED) {
+				fieldState[btnPressed] = OFF;
+			}
+			//if it isnt, just change the colour according to the turn
+			else {
+				fieldState[btnPressed] = tour;
+				//progresses the turn
+				switch (tour) {
+				case RED:
+					tour = GRN;
+					break;
+				case GRN:
+					tour = RED;
+					break;
+				case OFF:
+					tour = RED;
+					break;
+				}
+			}
+			//resets the memory emplacement to 0 when overflow happens
+			if (memIncrease >= 18) {
+				memIncrease = 0;
+			}
+		}
+		prevTouchDetect[i] = touchDetect[i];
+	}
+	//fonction qui affiche l'état de toutes les position
+	LED_Field(fieldState);
+}
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */

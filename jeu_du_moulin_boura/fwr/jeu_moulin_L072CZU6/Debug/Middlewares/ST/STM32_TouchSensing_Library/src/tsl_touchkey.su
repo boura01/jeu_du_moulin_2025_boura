@@ -11,7 +11,7 @@
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:365:6:TSL_tkey_DebReleaseTouchStateProcess	0	static
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:403:6:TSL_tkey_ReleaseStateProcess	8	static
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:475:6:TSL_tkey_DebCalibrationStateProcess	8	static
-../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:507:6:TSL_tkey_CalibrationStateProcess	8	static
+../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:507:6:TSL_tkey_CalibrationStateProcess	16	static
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:589:6:TSL_tkey_DebProxStateProcess	0	static
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:638:6:TSL_tkey_DebProxDetectStateProcess	0	static
 ../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c:686:6:TSL_tkey_DebProxTouchStateProcess	0	static
