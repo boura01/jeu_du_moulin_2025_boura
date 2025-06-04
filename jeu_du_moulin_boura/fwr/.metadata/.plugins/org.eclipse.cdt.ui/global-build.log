@@ -1,4 +1,4 @@
-13:10:55 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+13:56:52 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -7,12 +7,12 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-   8280	     52	   1908	  10240	   2800	jeu_moulin_L072CZU6.elf
+  18796	     56	   2024	  20876	   518c	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-13:13:11 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+13:57:42 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -21,19 +21,12 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  16320	     56	   1912	  18288	   4770	jeu_moulin_L072CZU6.elf
+  18824	     56	   2024	  20904	   51a8	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-13:14:23 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
-make -j8 all 
-arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
-   text	   data	    bss	    dec	    hex	filename
-  16320	     56	   1912	  18288	   4770	jeu_moulin_L072CZU6.elf
-Finished building: default.size.stdout
- 
-13:14:35 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+13:58:39 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -42,12 +35,12 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  16320	     56	   1912	  18288	   4770	jeu_moulin_L072CZU6.elf
+  18824	     56	   2024	  20904	   51a8	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-13:15:46 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+13:59:26 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -56,12 +49,12 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  16320	     56	   1912	  18288	   4770	jeu_moulin_L072CZU6.elf
+  18824	     56	   2024	  20904	   51a8	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-13:17:19 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+14:00:40 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -70,12 +63,12 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  16320	     56	   1912	  18288	   4770	jeu_moulin_L072CZU6.elf
+  18824	     56	   2024	  20904	   51a8	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-13:19:11 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+14:02:24 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -84,26 +77,43 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  16316	     56	   1912	  18284	   476c	jeu_moulin_L072CZU6.elf
+  18824	     56	   2024	  20904	   51a8	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-13:21:14 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+14:03:39 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:197:35: error: 'columnID' undeclared (first use in this function)
+  197 |           columnValue = ((MyTKeys[columnID - 1].p_ChD->Delta) + 250);
+      |                                   ^~~~~~~~
+../Core/Src/main.c:197:35: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:196:19: warning: variable 'columnValue' set but not used [-Wunused-but-set-variable]
+  196 |           uint8_t columnValue = 0;
+      |                   ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:03:52 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:196:19: warning: variable 'columnValue' set but not used [-Wunused-but-set-variable]
+  196 |           uint8_t columnValue = 0;
+      |                   ^~~~~~~~~~~
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: jeu_moulin_L072CZU6.elf
  
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  16324	     56	   1912	  18292	   4774	jeu_moulin_L072CZU6.elf
+  18772	     56	   2024	  20852	   5174	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-13:24:16 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+14:04:29 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -112,12 +122,12 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  16324	     56	   1912	  18292	   4774	jeu_moulin_L072CZU6.elf
+  18796	     56	   2024	  20876	   518c	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-13:25:47 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+14:05:12 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -126,12 +136,12 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  16260	     52	   1908	  18220	   472c	jeu_moulin_L072CZU6.elf
+  18796	     56	   2024	  20876	   518c	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-13:27:02 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+14:06:27 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -140,12 +150,23 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  16252	     52	   1908	  18212	   4724	jeu_moulin_L072CZU6.elf
+  18796	     56	   2024	  20876	   518c	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-13:28:21 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+14:07:43 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:196:11: error: 'tes_C1' undeclared (first use in this function); did you mean 'test_C1'?
+  196 |           tes_C1 = COLUMN_DETECT(C3_TK);
+      |           ^~~~~~
+      |           test_C1
+../Core/Src/main.c:196:11: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:08:33 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -154,12 +175,12 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  16300	     52	   1908	  18260	   4754	jeu_moulin_L072CZU6.elf
+  18824	     56	   2024	  20904	   51a8	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-14:01:35 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+14:14:15 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -168,19 +189,12 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  18780	     56	   2024	  20860	   517c	jeu_moulin_L072CZU6.elf
+  19020	     56	   2024	  21100	   526c	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list
  
-16:02:17 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
-make -j8 all 
-arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
-   text	   data	    bss	    dec	    hex	filename
-  18780	     56	   2024	  20860	   517c	jeu_moulin_L072CZU6.elf
-Finished building: default.size.stdout
- 
-16:06:40 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+14:17:12 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -189,7 +203,299 @@ Finished building target: jeu_moulin_L072CZU6.elf
 arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
 arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
    text	   data	    bss	    dec	    hex	filename
-  18916	     56	   2024	  20996	   5204	jeu_moulin_L072CZU6.elf
+   9384	     52	   1948	  11384	   2c78	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:18:07 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+   9384	     52	   1948	  11384	   2c78	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:19:38 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:217:11: error: 'test_C2' undeclared (first use in this function); did you mean 'test_C1'?
+  217 |           test_C2 = TKEY_DET(L1_TK);
+      |           ^~~~~~~
+      |           test_C1
+../Core/Src/main.c:217:11: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:19:48 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+   9404	     52	   1948	  11404	   2c8c	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:23:13 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'LINE_DETECT':
+../Core/Src/main.c:1635:13: error: 'columnValue' undeclared (first use in this function)
+ 1635 |         if (columnValue >= 9)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1635:13: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:1633:17: warning: variable 'lineValue' set but not used [-Wunused-but-set-variable]
+ 1633 |         uint8_t lineValue = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1643:1: warning: control reaches end of non-void function [-Wreturn-type]
+ 1643 | }
+      | ^
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:23:50 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:222:39: error: 'LineID' undeclared (first use in this function)
+  222 |                 lineValue = ((MyTKeys[LineID - 1].p_ChD->Delta) - 250);
+      |                                       ^~~~~~
+../Core/Src/main.c:222:39: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:24:04 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+   9400	     52	   1948	  11400	   2c88	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:25:24 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+   9404	     52	   1948	  11404	   2c8c	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:25:57 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+   9400	     52	   1948	  11400	   2c88	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:29:39 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+   9404	     52	   1948	  11404	   2c8c	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:34:40 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  18824	     56	   2024	  20904	   51a8	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:40:39 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  19040	     56	   2024	  21120	   5280	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:42:36 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  19040	     56	   2024	  21120	   5280	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:43:58 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  18660	     56	   2024	  20740	   5104	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:52:29 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:201:35: error: 'columnID' undeclared (first use in this function)
+  201 |           columnValue = ((MyTKeys[columnID - 1].p_ChD->Delta) - 250);
+      |                                   ^~~~~~~~
+../Core/Src/main.c:201:35: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'COLUMN_DETECT':
+../Core/Src/main.c:1613:29: error: expected expression before ';' token
+ 1613 |                 lineMargin =;
+      |                             ^
+../Core/Src/main.c:1616:29: error: expected expression before ';' token
+ 1616 |                 lineMargin =;
+      |                             ^
+../Core/Src/main.c:1619:31: error: expected ';' before ':' token
+ 1619 |                 lineMargin = 9:
+      |                               ^
+      |                               ;
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:53:02 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:201:35: error: 'columnID' undeclared (first use in this function)
+  201 |           columnValue = ((MyTKeys[columnID - 1].p_ChD->Delta) - 250);
+      |                                   ^~~~~~~~
+../Core/Src/main.c:201:35: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:53:16 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+   8304	     52	   1916	  10272	   2820	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:54:32 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  18712	     56	   2024	  20792	   5138	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:55:12 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  18712	     56	   2024	  20792	   5138	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:55:43 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  18712	     56	   2024	  20792	   5138	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:57:02 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  18712	     56	   2024	  20792	   5138	jeu_moulin_L072CZU6.elf
+Finished building: default.size.stdout
+ 
+Finished building: jeu_moulin_L072CZU6.list
+ 
+14:57:50 **** Incremental Build of configuration Debug for project jeu_moulin_L072CZU6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L072xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../TOUCHSENSING/App -I../Middlewares/ST/STM32_TouchSensing_Library/inc -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "jeu_moulin_L072CZU6.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\bourquenouda01\OneDrive - EDUETATFR\PHIE\jeu_du_moulin_alexandre_bourquenoud\jeu_du_moulin_2025_boura\jeu_du_moulin_boura\fwr\jeu_moulin_L072CZU6\STM32L072CZUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="jeu_moulin_L072CZU6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: jeu_moulin_L072CZU6.elf
+ 
+arm-none-eabi-size  jeu_moulin_L072CZU6.elf 
+arm-none-eabi-objdump -h -S jeu_moulin_L072CZU6.elf  > "jeu_moulin_L072CZU6.list"
+   text	   data	    bss	    dec	    hex	filename
+  18712	     56	   2024	  20792	   5138	jeu_moulin_L072CZU6.elf
 Finished building: default.size.stdout
  
 Finished building: jeu_moulin_L072CZU6.list

@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 //#include "tsl.h"
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -133,6 +134,9 @@ uint8_t memIncrease = 0; //correspond à la variable utile pour monter de cases 
 uint8_t btnPressed;			 //correspond à la valeur du bouton pressé de 0 à 11
 uint8_t tour = RED;    //correspond au tour actuel, sois au rouges, sois au vert
 char colour = RED; 	   //correspond à la var. utilisé pour changer les LED de couleur dans LED_TEST
+bool test_C1;
+bool test_C2;
+uint8_t columnValue;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -144,6 +148,10 @@ void LED_OFF(void);
 void LED_Field(uint8_t array[13]);
 void LED_TEST(void);
 void TOUCH_DETECT(void);
+bool COLUMN_DETECT(uint8_t columnID);
+bool LINE_DETECT(uint8_t LineID);
+bool COLUMN_RELEASE(uint8_t columnID);
+bool LINE_RELEASE(uint8_t LineID);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -190,9 +198,11 @@ int main(void)
   while (1) {
 	  TOUCH_DETECT();
 
+	  columnValue = ((MyTKeys[C3_TK - 1].p_ChD->Delta) - 250);
+
 	  //LED_TEST();
 
-
+	  /*
 	  LEDP(23,RED);
 	  LEDP(20,RED);
 	  LEDP(17,RED);
@@ -210,7 +220,7 @@ int main(void)
 	  LEDP(15,RED);
 	  LEDP(21,RED);
 	  LEDP(22,RED);
-	  LEDP(10,RED);
+	  LEDP(10,RED);*/
 
   /* USER CODE END WHILE */
   }
@@ -1396,147 +1406,149 @@ void TOUCH_DETECT(void)
 				 ,MyTKeys[id].p_ChD->Meas
 		 	 	 ,MyTKeys[id].p_Data->StateId);*/
 
-				if (TKEY_DET(C1_TK) && (TKEY_DET(L1_TK))) {
+				if ((COLUMN_DETECT(C1_TK)) && (LINE_DETECT(L1_TK))) {
 					touchDetect[1] = 1;
-				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L1_TK))) {
+				} else if ((COLUMN_RELEASE(C1_TK)) && (LINE_RELEASE(L1_TK))) {
 					touchDetect[1] = 0;
 				}
 
-				if (TKEY_DET(C2_TK) && (TKEY_DET(L1_TK))) {
+				if ((COLUMN_DETECT(C2_TK)) && (LINE_DETECT(L1_TK))) {
 					touchDetect[2] = 1;
-				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L1_TK))) {
+				} else if ((COLUMN_RELEASE(C2_TK)) && (LINE_RELEASE(L1_TK))) {
 					touchDetect[2] = 0;
 				}
 
-				if (TKEY_DET(C3_TK) && (TKEY_DET(L1_TK))) {
+				if ((COLUMN_DETECT(C3_TK)) && (LINE_DETECT(L1_TK))) {
 					touchDetect[3] = 1;
-				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L1_TK))) {
-					touchDetect[8] = 0;
+				} else if ((COLUMN_RELEASE(C3_TK)) && (LINE_RELEASE(L1_TK))) {
+					touchDetect[3] = 0;
 				}
 
-				if (TKEY_DET(C1_TK) && (TKEY_DET(L2_TK))) {
+				//NON FUNCTIONAL TOUCH KEAY !
+				/*
+				if ((COLUMN_DETECT(C1_TK)) && (LINE_DETECT(L2_TK))) {
 					touchDetect[4] = 1;
-				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L2_TK))) {
+				} else if ((COLUMN_RELEASE(C1_TK)) && (LINE_RELEASE(L2_TK))) {
 					touchDetect[4] = 0;
 				}
 
-				if (TKEY_DET(C2_TK) && (TKEY_DET(L2_TK))) {
+				if ((COLUMN_DETECT(C2_TK)) && (LINE_DETECT(L2_TK))) {
 					touchDetect[5] = 1;
-				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L2_TK))) {
+				} else if ((COLUMN_RELEASE(C2_TK)) && (LINE_RELEASE(L2_TK))) {
 					touchDetect[5] = 0;
 				}
 
-				if (TKEY_DET(C3_TK) && (TKEY_DET(L2_TK))) {
+				if ((COLUMN_DETECT(C3_TK)) && (LINE_DETECT(L2_TK))) {
 					touchDetect[6] = 1;
-				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L2_TK))) {
+				} else if ((COLUMN_RELEASE(C3_TK)) && (LINE_RELEASE(L2_TK))) {
 					touchDetect[6] = 0;
 				}
 
-				if (TKEY_DET(C1_TK) && (TKEY_DET(L3_TK))) {
+				if ((COLUMN_DETECT(C1_TK)) && (LINE_DETECT(L3_TK))) {
 					touchDetect[7] = 1;
-				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L3_TK))) {
+				} else if ((COLUMN_RELEASE(C1_TK)) && (LINE_RELEASE(L3_TK))) {
 					touchDetect[7] = 0;
 				}
 
-				if (TKEY_DET(C2_TK) && (TKEY_DET(L3_TK))) {
+				if ((COLUMN_DETECT(C2_TK)) && (LINE_DETECT(L3_TK))) {
 					touchDetect[8] = 1;
-				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L3_TK))) {
+				} else if ((COLUMN_RELEASE(C2_TK)) && (LINE_RELEASE(L3_TK))) {
 					touchDetect[8] = 0;
 				}
 
-				if (TKEY_DET(C3_TK) && (TKEY_DET(L3_TK))) {
+				if ((COLUMN_DETECT(C3_TK)) && (LINE_DETECT(L3_TK))) {
 					touchDetect[9] = 1;
-				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L3_TK))) {
+				} else if ((COLUMN_RELEASE(C3_TK)) && (LINE_RELEASE(L3_TK))) {
 					touchDetect[9] = 0;
-				}
+				}*/
 
-				if (TKEY_DET(C1_TK) && (TKEY_DET(L4_TK))) {
+				if ((COLUMN_DETECT(C1_TK)) && (LINE_DETECT(L4_TK))) {
 					touchDetect[10] = 1;
-				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L4_TK))) {
+				} else if ((COLUMN_RELEASE(C1_TK)) && (LINE_RELEASE(L4_TK))) {
 					touchDetect[10] = 0;
 				}
 
-				if (TKEY_DET(C2_TK) && (TKEY_DET(L4_TK))) {
+				if ((COLUMN_DETECT(C2_TK)) && (LINE_DETECT(L4_TK))) {
 					touchDetect[11] = 1;
-				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L4_TK))) {
+				} else if ((COLUMN_RELEASE(C2_TK)) && (LINE_RELEASE(L4_TK))) {
 					touchDetect[11] = 0;
 				}
 
-				if (TKEY_DET(C3_TK) && (TKEY_DET(L4_TK))) {
+				if ((COLUMN_DETECT(C3_TK)) && (LINE_DETECT(L4_TK))) {
 					touchDetect[12] = 1;
-				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L4_TK))) {
+				} else if ((COLUMN_RELEASE(C3_TK)) && (LINE_RELEASE(L4_TK))) {
 					touchDetect[12] = 0;
 				}
-				if (TKEY_DET(C1_TK) && (TKEY_DET(L5_TK))) {
+				if ((COLUMN_DETECT(C1_TK)) && (LINE_DETECT(L5_TK))) {
 					touchDetect[13] = 1;
-				}		//(TKEY_DET(id))// we detect a touch
-				else if (TKEY_REL(C1_TK) && (TKEY_REL(L5_TK))) {
+				}		//(LINE_DETECT(id))// we detect a touch
+				else if ((COLUMN_RELEASE(C1_TK)) && (LINE_RELEASE(L5_TK))) {
 					touchDetect[13] = 0;
 				}
 
-				if (TKEY_DET(C2_TK) && (TKEY_DET(L5_TK))) {
+				if ((COLUMN_DETECT(C2_TK)) && (LINE_DETECT(L5_TK))) {
 					touchDetect[14] = 1;
-				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L5_TK))) {
+				} else if ((COLUMN_RELEASE(C2_TK)) && (LINE_RELEASE(L5_TK))) {
 					touchDetect[14] = 0;
 				}
 
-				if (TKEY_DET(C3_TK) && (TKEY_DET(L5_TK))) {
+				if ((COLUMN_DETECT(C3_TK)) && (LINE_DETECT(L5_TK))) {
 					touchDetect[15] = 1;
-				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L5_TK))) {
+				} else if ((COLUMN_RELEASE(C3_TK)) && (LINE_RELEASE(L5_TK))) {
 					touchDetect[15] = 0;
 				}
 
-				if (TKEY_DET(C1_TK) && (TKEY_DET(L6_TK))) {
+				if ((COLUMN_DETECT(C1_TK)) && (LINE_DETECT(L6_TK))) {
 					touchDetect[16] = 1;
-				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L6_TK))) {
+				} else if ((COLUMN_RELEASE(C1_TK)) && (LINE_RELEASE(L6_TK))) {
 					touchDetect[16] = 0;
 				}
 
-				if (TKEY_DET(C2_TK) && (TKEY_DET(L6_TK))) {
+				if ((COLUMN_DETECT(C2_TK)) && (LINE_DETECT(L6_TK))) {
 					touchDetect[17] = 1;
-				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L6_TK))) {
+				} else if ((COLUMN_RELEASE(C2_TK)) && (LINE_RELEASE(L6_TK))) {
 					touchDetect[17] = 0;
 				}
 
-				if (TKEY_DET(C3_TK) && (TKEY_DET(L6_TK))) {
+				if ((COLUMN_DETECT(C3_TK)) && (LINE_DETECT(L6_TK))) {
 					touchDetect[18] = 1;
-				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L6_TK))) {
+				} else if ((COLUMN_RELEASE(C3_TK)) && (LINE_RELEASE(L6_TK))) {
 					touchDetect[18] = 0;
 				}
 
-				if (TKEY_DET(C1_TK) && (TKEY_DET(L7_TK))) {
+				if ((COLUMN_DETECT(C1_TK)) && (LINE_DETECT(L7_TK))) {
 					touchDetect[19] = 1;
-				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L7_TK))) {
+				} else if ((COLUMN_RELEASE(C1_TK)) && (LINE_RELEASE(L7_TK))) {
 					touchDetect[19] = 0;
 				}
 
-				if (TKEY_DET(C2_TK) && (TKEY_DET(L7_TK))) {
+				if ((COLUMN_DETECT(C2_TK)) && (LINE_DETECT(L7_TK))) {
 					touchDetect[20] = 1;
-				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L7_TK))) {
+				} else if ((COLUMN_RELEASE(C2_TK)) && (LINE_RELEASE(L7_TK))) {
 					touchDetect[20] = 0;
 				}
 
-				if (TKEY_DET(C3_TK) && (TKEY_DET(L7_TK))) {
+				if ((COLUMN_DETECT(C3_TK)) && (LINE_DETECT(L7_TK))) {
 					touchDetect[21] = 1;
-				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L7_TK))) {
+				} else if ((COLUMN_RELEASE(C3_TK)) && (LINE_RELEASE(L7_TK))) {
 					touchDetect[21] = 0;
 				}
 
-				if (TKEY_DET(C1_TK) && (TKEY_DET(L8_TK))) {
+				if ((COLUMN_DETECT(C1_TK)) && (LINE_DETECT(L8_TK))) {
 					touchDetect[22] = 1;
-				} else if (TKEY_REL(C1_TK) && (TKEY_REL(L8_TK))) {
+				} else if ((COLUMN_RELEASE(C1_TK)) && (LINE_RELEASE(L8_TK))) {
 					touchDetect[22] = 0;
 				}
 
-				if (TKEY_DET(C2_TK) && (TKEY_DET(L8_TK))) {
+				if ((COLUMN_DETECT(C2_TK)) && (LINE_DETECT(L8_TK))) {
 					touchDetect[23] = 1;
-				} else if (TKEY_REL(C2_TK) && (TKEY_REL(L8_TK))) {
+				} else if ((COLUMN_RELEASE(C2_TK)) && (LINE_RELEASE(L8_TK))) {
 					touchDetect[23] = 0;
 				}
 
-				if (TKEY_DET(C3_TK) && (TKEY_DET(L8_TK))) {
+				if ((COLUMN_DETECT(C3_TK)) && (LINE_DETECT(L8_TK))) {
 					touchDetect[24] = 1;
-				} else if (TKEY_REL(C3_TK) && (TKEY_REL(L8_TK))) {
+				} else if ((COLUMN_RELEASE(C3_TK)) && (LINE_RELEASE(L8_TK))) {
 					touchDetect[24] = 0;
 				}
 			}
@@ -1587,6 +1599,91 @@ void TOUCH_DETECT(void)
 	}
 	//fonction qui affiche l'état de toutes les position
 	LED_Field(fieldState);
+}
+
+bool COLUMN_DETECT(uint8_t columnID)
+{
+	uint8_t columnValue = 0;
+	uint8_t columnMargin = 0;
+
+	//switch dédié à changer la marge en fonction de quelle colonne est sélectionnée
+	switch(columnID)
+	{
+	case C1_TK :
+		columnMargin = 200;
+		break;
+	case C2_TK :
+		columnMargin = 150;
+		break;
+	case C3_TK :
+		columnMargin = 11;
+		break;
+	}
+		columnValue = ((MyTKeys[columnID - 1].p_ChD->Delta) - 250);
+	if (columnValue >= columnMargin)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+bool LINE_DETECT(uint8_t LineID)
+{
+	uint8_t lineValue = 0;
+	lineValue = ((MyTKeys[LineID - 1].p_ChD->Delta) - 250);
+	if (lineValue >= 20)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool COLUMN_RELEASE(uint8_t columnID)
+{
+	uint8_t columnValue = 0;
+	uint8_t columnMargin = 0;
+
+	//switch dédié à changer la marge en fonction de quelle colonne est sélectionnée
+	switch(columnID)
+	{
+	case C1_TK :
+		columnMargin = 200;
+		break;
+	case C2_TK :
+		columnMargin = 150;
+		break;
+	case C3_TK :
+		columnMargin = 11;
+		break;
+	}
+
+	columnValue = ((MyTKeys[columnID - 1].p_ChD->Delta) - 250);
+	if (columnValue <= 9)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+bool LINE_RELEASE(uint8_t LineID)
+{
+	uint8_t lineValue = 0;
+	lineValue = ((MyTKeys[LineID - 1].p_ChD->Delta) - 250);
+	if (lineValue <= 20)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 void Error_Handler(void)
 {
